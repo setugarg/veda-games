@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Veda's Learning Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:    #ffb3c6;
+      --pink2:   #ff85a1;
+      --lavender:#c9b8f0;
+      --lav2:    #a78bdb;
+      --mint:    #b8f0d8;
+      --mint2:   #6ddba8;
+      --peach:   #ffd6b3;
+      --peach2:  #ffb07c;
+      --sky:     #b3deff;
+      --sky2:    #6dbfff;
+      --yellow:  #fff3b0;
+      --yellow2: #ffd44d;
+      --white:   #ffffff;
+      --bg:      #fdf6ff;
+      --text:    #4a3060;
+      --radius:  24px;
+      --shadow:  0 8px 32px rgba(100,60,160,0.13);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    /* ─── Keyframes ─────────────────────────────────────────────────── */
+    @keyframes fadeIn       { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
+    @keyframes fadeOut      { from{opacity:1} to{opacity:0;pointer-events:none} }
+    @keyframes bounce       { 0%,100%{transform:translateY(0)} 40%{transform:translateY(-18px)} 70%{transform:translateY(-8px)} }
+    @keyframes rainbow      { 0%{color:#ff6b9d} 17%{color:#ff9f6b} 33%{color:#ffe46b} 50%{color:#6bffb8} 67%{color:#6bb5ff} 83%{color:#c46bff} 100%{color:#ff6b9d} }
+    @keyframes rainbowBg    { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    @keyframes floatUp      { 0%{transform:translateY(0) rotate(0deg);opacity:1} 100%{transform:translateY(-110vh) rotate(20deg);opacity:0} }
+    @keyframes confettiFall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 100%{transform:translateY(110vh) rotate(720deg);opacity:0} }
+    @keyframes sparkle      { 0%,100%{transform:scale(0) rotate(0deg);opacity:0} 50%{transform:scale(1) rotate(180deg);opacity:1} }
+    @keyframes popIn        { 0%{transform:scale(0) rotate(-10deg)} 70%{transform:scale(1.15) rotate(3deg)} 100%{transform:scale(1) rotate(0deg)} }
+    @keyframes wobble       { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-6deg)} 75%{transform:rotate(6deg)} }
+    @keyframes pulse        { 0%,100%{transform:scale(1)} 50%{transform:scale(1.07)} }
+    @keyframes bubbleUp     { 0%{transform:translateY(0) scale(1);opacity:.7} 100%{transform:translateY(-90vh) scale(1.4);opacity:0} }
+    @keyframes starSpin     { 0%{transform:rotate(0) scale(0);opacity:1} 100%{transform:rotate(360deg) scale(1.5);opacity:0} }
+    @keyframes slideDown    { from{transform:translateY(-60px);opacity:0} to{transform:translateY(0);opacity:1} }
+    @keyframes letterJump   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    @keyframes shake        { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-8px)} 40%,80%{transform:translateX(8px)} }
+    @keyframes glow         { 0%,100%{box-shadow:0 0 10px #ffe46b,0 0 20px #ffe46b} 50%{box-shadow:0 0 25px #ffe46b,0 0 50px #ff9f6b} }
+    @keyframes countHighlight { 0%,100%{transform:scale(1)} 50%{transform:scale(1.4)} }
+
+    /* ─── Screens ───────────────────────────────────────────────────── */
+    .screen {
+      position: fixed; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 20px;
+      animation: fadeIn .45s cubic-bezier(.34,1.56,.64,1) both;
+      transition: opacity .3s;
+    }
+    .screen.hidden { display: none; }
+
+    /* ─── Welcome Screen ─────────────────────────────────────────────── */
+    #welcome {
+      background: linear-gradient(135deg, #ffe0f7 0%, #d4eeff 50%, #e0fff4 100%);
+      background-size: 300% 300%;
+      animation: fadeIn .6s both, rainbowBg 8s ease infinite;
+    }
+
+    .title-wrap { text-align: center; margin-bottom: 24px; }
+    .title-main {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2rem, 9vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: 1px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 2px;
+    }
+    .title-main .letter {
+      display: inline-block;
+      animation: letterJump 1.2s ease-in-out infinite;
+    }
+    .title-main .letter:nth-child(1){color:#ff6b9d;animation-delay:0s}
+    .title-main .letter:nth-child(2){color:#ff9f6b;animation-delay:.08s}
+    .title-main .letter:nth-child(3){color:#ffe46b;animation-delay:.16s}
+    .title-main .letter:nth-child(4){color:#6bffb8;animation-delay:.24s}
+    .title-main .letter:nth-child(5){color:#6bb5ff;animation-delay:.32s}
+    .title-main .letter:nth-child(6){color:#c46bff;animation-delay:.4s}
+    .title-main .letter:nth-child(7){color:#ff6b9d;animation-delay:.48s}
+    .title-main .letter:nth-child(8){color:#ff9f6b;animation-delay:.56s}
+    .title-main .letter:nth-child(9){color:#ffe46b;animation-delay:.64s}
+    .title-main .letter:nth-child(10){color:#6bffb8;animation-delay:.72s}
+    .title-main .letter:nth-child(11){color:#6bb5ff;animation-delay:.80s}
+    .title-main .letter:nth-child(12){color:#c46bff;animation-delay:.88s}
+    .title-main .letter:nth-child(13){color:#ff6b9d;animation-delay:.96s}
+    .title-main .letter:nth-child(14){color:#ff9f6b;animation-delay:1.04s}
+    .title-main .letter:nth-child(15){color:#ffe46b;animation-delay:1.12s}
+    .title-main .letter:nth-child(16){color:#6bffb8;animation-delay:1.20s}
+    .title-main .letter:nth-child(17){color:#6bb5ff;animation-delay:1.28s}
+    .title-main .letter:nth-child(18){color:#c46bff;animation-delay:1.36s}
+    .title-main .letter:nth-child(n+19){color:#ff6b9d}
+
+    .subtitle { font-size: 1.1rem; color: #8060b0; margin-top: 6px; font-weight: 700; }
+
+    .welcome-emoji { font-size: 4rem; margin: 10px 0; animation: bounce 2s ease-in-out infinite; }
+
+    .name-section { text-align: center; margin: 16px 0; }
+    .name-label { font-size: 1rem; font-weight: 700; color: #7050a0; margin-bottom: 8px; }
+    .name-input {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      padding: 14px 24px; border-radius: 50px;
+      border: 3px solid var(--lavender);
+      background: white; color: var(--text);
+      outline: none; text-align: center;
+      width: min(280px, 85vw);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .name-input:focus { border-color: var(--lav2); box-shadow: 0 0 0 4px rgba(167,139,219,.25); }
+    .name-input::placeholder { color: #c0a8e0; }
+
+    .play-btn {
+      margin-top: 20px;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.6rem; padding: 18px 48px;
+      border-radius: 50px; border: none; cursor: pointer;
+      background: linear-gradient(135deg, #ff85a1, #ffb07c);
+      color: white; box-shadow: 0 6px 24px rgba(255,133,161,.5);
+      animation: pulse 2s ease-in-out infinite;
+      transition: transform .15s, box-shadow .15s;
+      min-width: 200px;
+    }
+    .play-btn:active { transform: scale(.93); }
+
+    /* ─── Main Game Screen ───────────────────────────────────────────── */
+    #game {
+      background: var(--bg);
+      justify-content: flex-start;
+      padding: 0;
+      overflow-y: auto;
+    }
+
+    /* ─── Header ─────────────────────────────────────────────────────── */
+    .game-header {
+      width: 100%; display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px 10px;
+      background: white;
+      box-shadow: 0 2px 12px rgba(100,60,160,.1);
+      position: sticky; top: 0; z-index: 10;
+      animation: slideDown .4s both;
+    }
+    .header-name {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.1rem; color: var(--lav2);
+    }
+    .score-display {
+      display: flex; align-items: center; gap: 4px;
+      font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: var(--yellow2);
+    }
+    .score-stars { display: flex; gap: 2px; }
+    .score-star { font-size: 1.3rem; transition: transform .3s; }
+    .score-star.earned { animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both; }
+
+    /* ─── Mode Tabs ──────────────────────────────────────────────────── */
+    .mode-tabs {
+      display: flex; gap: 10px;
+      padding: 14px 18px 10px;
+      width: 100%;
+    }
+    .tab-btn {
+      flex: 1; padding: 14px 8px;
+      border-radius: var(--radius); border: 3px solid transparent;
+      font-family: 'Fredoka One', cursive; font-size: 1.1rem;
+      cursor: pointer; transition: all .2s;
+      background: white; color: #a090c0;
+      box-shadow: var(--shadow);
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--lavender), var(--sky));
+      color: var(--text); border-color: var(--lav2);
+      box-shadow: 0 4px 18px rgba(167,139,219,.5);
+      transform: translateY(-2px);
+    }
+    .tab-btn:active { transform: scale(.95); }
+
+    /* ─── Game Content ───────────────────────────────────────────────── */
+    .game-content {
+      width: 100%; max-width: 480px;
+      margin: 0 auto;
+      padding: 10px 18px 100px;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 16px;
+    }
+
+    /* ─── Question Card ──────────────────────────────────────────────── */
+    .question-card {
+      width: 100%; background: white;
+      border-radius: var(--radius); padding: 22px 18px;
+      box-shadow: var(--shadow); text-align: center;
+      animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .question-text {
+      font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+      font-weight: 800; color: var(--text); line-height: 1.4;
+    }
+    .question-sub {
+      font-size: .9rem; color: #a090c0; font-weight: 600; margin-top: 4px;
+    }
+
+    /* ─── Emoji Display ──────────────────────────────────────────────── */
+    .emoji-stage {
+      width: 100%; background: linear-gradient(135deg, #fff8ff, #f0f8ff);
+      border-radius: var(--radius); padding: 24px 16px;
+      box-shadow: var(--shadow);
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: 8px; min-height: 120px;
+      animation: popIn .45s .1s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .emoji-item {
+      font-size: clamp(2.2rem, 10vw, 3.2rem);
+      cursor: pointer; transition: transform .15s;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .emoji-item.highlight {
+      animation: countHighlight .5s ease both;
+      filter: drop-shadow(0 0 12px #ffe46b);
+    }
+    .emoji-item:active { transform: scale(1.3); }
+
+    /* ─── Addition Row ───────────────────────────────────────────────── */
+    .addition-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; font-size: 1.8rem; font-family: 'Fredoka One', cursive;
+      color: var(--lav2); flex-wrap: wrap;
+    }
+    .addition-group {
+      display: flex; flex-wrap: wrap; gap: 4px;
+      justify-content: center; align-items: center; max-width: 120px;
+    }
+    .add-emoji { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+    .add-op { font-size: 2rem; color: var(--pink2); padding: 0 4px; }
+    .add-eq { font-size: 2rem; color: var(--lav2); padding: 0 4px; }
+    .add-q  { font-size: 2.5rem; color: var(--yellow2); animation: pulse 1s infinite; }
+
+    /* ─── Picture Card (Words) ───────────────────────────────────────── */
+    .picture-card {
+      width: 100%; background: linear-gradient(135deg, #fff0fb, #f0fff8);
+      border-radius: var(--radius); padding: 30px;
+      box-shadow: var(--shadow); text-align: center;
+      animation: popIn .45s .1s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .big-emoji { font-size: clamp(4.5rem, 20vw, 7rem); line-height: 1; }
+    .big-letter {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(5rem, 22vw, 8rem);
+      background: linear-gradient(135deg, var(--pink2), var(--lav2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; line-height: 1;
+    }
+    .picture-label {
+      font-size: 1rem; color: #a090c0; font-weight: 700; margin-top: 8px;
+    }
+
+    /* ─── Answer Buttons ─────────────────────────────────────────────── */
+    .answers-grid {
+      width: 100%; display: grid;
+      gap: 10px;
+      animation: popIn .45s .2s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .answers-grid.grid-2 { grid-template-columns: 1fr 1fr; }
+    .answers-grid.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .answers-grid.grid-4 { grid-template-columns: 1fr 1fr; }
+    .answers-grid.grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+    .ans-btn {
+      padding: 18px 10px; border-radius: var(--radius);
+      border: 3px solid transparent;
+      font-family: 'Fredoka One', cursive; font-size: 1.5rem;
+      cursor: pointer; transition: all .18s;
+      background: white; color: var(--text);
+      box-shadow: 0 4px 16px rgba(100,60,160,.1);
+      min-height: 72px; display: flex;
+      align-items: center; justify-content: center;
+      flex-direction: column; gap: 4px;
+      line-height: 1.1;
+    }
+    .ans-btn .ans-sub { font-family: 'Nunito', sans-serif; font-size: .75rem; font-weight: 700; color: #a090c0; }
+    .ans-btn:active { transform: scale(.92); }
+    .ans-btn.correct {
+      background: linear-gradient(135deg, #b8f0d8, #d4ffb8);
+      border-color: var(--mint2);
+      animation: glow .6s ease, wobble .4s ease;
+      box-shadow: 0 0 24px rgba(109,219,168,.7);
+    }
+    .ans-btn.wrong {
+      background: linear-gradient(135deg, #ffd6d6, #ffe0c0);
+      border-color: #ff9090;
+      animation: shake .4s ease;
+    }
+    .ans-btn:disabled { cursor: default; }
+
+    /* ─── Count Button ───────────────────────────────────────────────── */
+    .count-btn {
+      margin-top: 4px; padding: 14px 32px;
+      border-radius: 50px; border: none; cursor: pointer;
+      font-family: 'Fredoka One', cursive; font-size: 1.1rem;
+      background: linear-gradient(135deg, var(--sky), var(--lavender));
+      color: white; box-shadow: 0 4px 18px rgba(109,191,255,.4);
+      transition: transform .15s;
+    }
+    .count-btn:active { transform: scale(.93); }
+
+    /* ─── Feedback Banner ────────────────────────────────────────────── */
+    .feedback-banner {
+      position: fixed; top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: linear-gradient(135deg, #ffe46b, #ff9f6b);
+      border-radius: var(--radius); padding: 22px 36px;
+      font-family: 'Fredoka One', cursive; font-size: 1.8rem;
+      color: white; text-align: center;
+      box-shadow: 0 8px 40px rgba(255,160,100,.5);
+      z-index: 200; pointer-events: none;
+      transition: transform .35s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+      white-space: nowrap;
+    }
+    .feedback-banner.show { transform: translate(-50%, -50%) scale(1); }
+    .feedback-banner.hide { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+
+    /* ─── Celebration Screen ──────────────────────────────────────────── */
+    #celebrate {
+      background: linear-gradient(135deg, #ffe0f7, #d4eeff, #e0fff4);
+      background-size: 300% 300%;
+      animation: fadeIn .5s both, rainbowBg 6s ease infinite;
+      z-index: 100;
+    }
+    .celebrate-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2rem, 9vw, 3rem);
+      color: white; text-shadow: 0 3px 12px rgba(100,60,160,.3);
+      text-align: center; animation: bounce 1s ease infinite;
+    }
+    .celebrate-emoji { font-size: 5rem; animation: bounce 1s .2s ease infinite; }
+    .celebrate-msg {
+      font-size: 1.2rem; font-weight: 700; color: #6040a0;
+      text-align: center; margin: 12px 0;
+    }
+    .celebrate-continue {
+      margin-top: 24px; padding: 18px 48px;
+      border-radius: 50px; border: none; cursor: pointer;
+      font-family: 'Fredoka One', cursive; font-size: 1.4rem;
+      background: linear-gradient(135deg, var(--lav2), var(--pink2));
+      color: white; box-shadow: 0 6px 24px rgba(167,139,219,.5);
+      animation: pulse 1.5s infinite;
+    }
+    .celebrate-continue:active { transform: scale(.93); }
+
+    /* ─── Particles Layer ────────────────────────────────────────────── */
+    #particles {
+      position: fixed; inset: 0; pointer-events: none; z-index: 150;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute; width: 12px; height: 12px;
+      border-radius: 3px;
+      animation: confettiFall linear forwards;
+      top: -20px;
+    }
+    .balloon {
+      position: absolute; font-size: 2.2rem;
+      animation: floatUp ease-out forwards;
+      bottom: -60px;
+    }
+    .bubble {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), rgba(200,180,255,.2));
+      border: 2px solid rgba(200,180,255,.4);
+      animation: bubbleUp ease-out forwards;
+      bottom: -80px;
+    }
+    .sparkle {
+      position: absolute; font-size: 1.4rem;
+      animation: sparkle ease-out forwards;
+    }
+    .star-burst {
+      position: absolute; font-size: 2rem;
+      animation: starSpin ease-out forwards;
+    }
+
+    /* ─── Next Button ────────────────────────────────────────────────── */
+    .next-btn {
+      width: 100%; padding: 18px;
+      border-radius: var(--radius); border: none; cursor: pointer;
+      font-family: 'Fredoka One', cursive; font-size: 1.3rem;
+      background: linear-gradient(135deg, var(--lav2), var(--pink2));
+      color: white; box-shadow: 0 6px 24px rgba(167,139,219,.5);
+      transition: transform .15s, opacity .2s;
+      opacity: 0; pointer-events: none; min-height: 64px;
+    }
+    .next-btn.visible { opacity: 1; pointer-events: auto; animation: popIn .4s .1s cubic-bezier(.34,1.56,.64,1) both; }
+    .next-btn:active { transform: scale(.95); }
+
+    /* ─── Mode badge ─────────────────────────────────────────────────── */
+    .mode-badge {
+      font-size: .8rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 50px;
+      background: var(--lavender); color: var(--lav2);
+      align-self: flex-end;
+    }
+
+    /* ─── Counting Helper ────────────────────────────────────────────── */
+    .count-helper {
+      font-size: .9rem; color: #a090c0; font-weight: 700;
+      text-align: center;
+    }
+
+    /* ─── Scrollbar hide ─────────────────────────────────────────────── */
+    #game::-webkit-scrollbar { display: none; }
+    #game { scrollbar-width: none; }
+
+    /* ─── Responsive tweaks ──────────────────────────────────────────── */
+    @media (max-width: 360px) {
+      .ans-btn { font-size: 1.2rem; padding: 14px 8px; min-height: 62px; }
+      .big-emoji { font-size: 4rem; }
+    }
+    @media (min-height: 800px) {
+      .emoji-stage { min-height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Particle layer (always present) -->
+<div id="particles"></div>
+
+<!-- Feedback banner -->
+<div class="feedback-banner" id="feedback"></div>
+
+<!-- ─── Welcome Screen ─────────────────────────────────────────────── -->
+<div class="screen" id="welcome">
+  <div class="title-wrap">
+    <div class="title-main" id="titleLetters"></div>
+    <div class="subtitle">✨ Learn Numbers &amp; Words ✨</div>
+  </div>
+  <div class="welcome-emoji">🎉</div>
+  <div class="name-section">
+    <div class="name-label">What's your name?</div>
+    <input class="name-input" id="nameInput" type="text" placeholder="Type your name..." maxlength="20" autocomplete="off" autocorrect="off" spellcheck="false" />
+  </div>
+  <button class="play-btn" id="playBtn">Let's Play! 🎉</button>
+</div>
+
+<!-- ─── Celebration Screen ────────────────────────────────────────── -->
+<div class="screen hidden" id="celebrate">
+  <div class="celebrate-emoji">🌟</div>
+  <div class="celebrate-title">Amazing Job!</div>
+  <div class="celebrate-msg" id="celebrateMsg">You got 5 right in a row!</div>
+  <div class="celebrate-emoji" style="font-size:3.5rem;animation-delay:.4s">🎈🎉🎈</div>
+  <button class="celebrate-continue" id="celebrateContinue">Keep Going! 🚀</button>
+</div>
+
+<!-- ─── Game Screen ────────────────────────────────────────────────── -->
+<div class="screen hidden" id="game">
+  <div class="game-header">
+    <div class="header-name" id="headerName">Hi Friend!</div>
+    <div class="score-display">
+      <div class="score-stars" id="scoreStars"></div>
+      <span id="scoreCount">0</span>⭐
+    </div>
+  </div>
+
+  <div class="mode-tabs">
+    <button class="tab-btn active" id="tabMath" onclick="switchMode('math')">🔢 Numbers</button>
+    <button class="tab-btn" id="tabWords" onclick="switchMode('words')">🔤 Words</button>
+  </div>
+
+  <div class="game-content" id="gameContent">
+    <!-- dynamically populated -->
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   CONFIG & DATA
+═══════════════════════════════════════════════════════════════════ */
+const TITLE = "Veda's Learning Games";
+const CONFETTI_COLORS = ['#ff85a1','#ffb07c','#ffe46b','#b8f0d8','#6bb5ff','#c9b8f0','#ff6b9d','#6dffb8'];
+const BALLOON_EMOJIS = ['🎈','🎈','🎈','🎉','🌟','💫','✨'];
+const SPARKLE_EMOJIS = ['✨','⭐','💫','🌟','⭐'];
+
+const MATH_OBJECTS = [
+  { emoji: '🍎', name: 'apple', plural: 'apples' },
+  { emoji: '🍊', name: 'orange', plural: 'oranges' },
+  { emoji: '🌸', name: 'flower', plural: 'flowers' },
+  { emoji: '⭐', name: 'star', plural: 'stars' },
+  { emoji: '🍓', name: 'strawberry', plural: 'strawberries' },
+  { emoji: '🐝', name: 'bee', plural: 'bees' },
+  { emoji: '🦋', name: 'butterfly', plural: 'butterflies' },
+];
+
+const WORD_DATA = [
+  { letter: 'A', emoji: '🍎', word: 'APPLE',  choices: ['🍊','🍎','🐶','⭐'] },
+  { letter: 'B', emoji: '🐝', word: 'BEE',    choices: ['🐱','🌸','🐝','🍇'] },
+  { letter: 'C', emoji: '🐱', word: 'CAT',    choices: ['🐱','🐶','🏠','🥚'] },
+  { letter: 'D', emoji: '🐶', word: 'DOG',    choices: ['🍎','🐶','⭐','🌳'] },
+  { letter: 'E', emoji: '🥚', word: 'EGG',    choices: ['🏠','🍇','🥚','🐝'] },
+  { letter: 'F', emoji: '🌸', word: 'FLOWER', choices: ['🌸','🍊','🐱','🌳'] },
+  { letter: 'G', emoji: '🍇', word: 'GRAPES', choices: ['🌸','🍇','🐶','🥚'] },
+  { letter: 'H', emoji: '🏠', word: 'HOUSE',  choices: ['🐝','🏠','🍎','🦋'] },
+  { letter: 'S', emoji: '⭐', word: 'STAR',   choices: ['⭐','🐱','🍓','🌸'] },
+  { letter: 'T', emoji: '🌳', word: 'TREE',   choices: ['🥚','🌳','🏠','🍊'] },
+];
+
+const WORD_NAMES = {
+  '🍎':'Apple','🍊':'Orange','🌸':'Flower','⭐':'Star','🍓':'Strawberry',
+  '🐝':'Bee','🦋':'Butterfly','🐱':'Cat','🐶':'Dog','🥚':'Egg',
+  '🍇':'Grapes','🏠':'House','🌳':'Tree',
+};
+
+const ENCOURAGEMENTS = [
+  "Wonderful! You got it! 🌟","Amazing job! ⭐","You're so smart! 💫",
+  "Fantastic! 🎉","Super duper! 🌈","You're amazing! ✨","Incredible! 🏆",
+  "WOW, great job! 🌟","That's right! 🎊","Perfect! 💖",
+];
+const RETRIES = [
+  "Oops! Let's try again! 💪","You can do it! 🌟","Almost! Try once more! ✨",
+  "Keep trying! You're doing great! 🎈","So close! Give it another go! 💫",
+];
+
+const NUMBER_WORDS = ['','ONE','TWO','THREE','FOUR','FIVE','SIX'];
+
+/* ═══════════════════════════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════════════════════════ */
+let playerName = 'Friend';
+let score = 0;
+let streak = 0;          // correct in a row
+let mode = 'math';       // 'math' | 'words'
+let currentQuestion = null;
+let answering = false;
+let voiceReady = false;
+let selectedVoice = null;
+let mathSubMode = 'count'; // 'count' | 'add'
+let wordSubMode = 'letterPic'; // 'letterPic' | 'picLetter'
+let countStep = 0;        // for tap-to-count
+let questionLock = false; // prevent double next
+
+/* ═══════════════════════════════════════════════════════════════════
+   VOICE
+═══════════════════════════════════════════════════════════════════ */
+function initVoice() {
+  if (!window.speechSynthesis) return;
+  const load = () => {
+    const voices = speechSynthesis.getVoices();
+    if (!voices.length) return;
+    // prefer female English voices
+    const prefer = ['Samantha','Karen','Moira','Fiona','Victoria','Allison',
+                    'Ava','Siri','Google UK English Female','Google US English'];
+    let v = voices.find(v => prefer.includes(v.name) && v.lang.startsWith('en'));
+    if (!v) v = voices.find(v => v.lang.startsWith('en-') && v.name.toLowerCase().includes('female'));
+    if (!v) v = voices.find(v => v.lang.startsWith('en-'));
+    if (!v) v = voices[0];
+    selectedVoice = v;
+    voiceReady = true;
+  };
+  speechSynthesis.onvoiceschanged = load;
+  load();
+}
+
+function speak(text, onEnd) {
+  if (!window.speechSynthesis) { onEnd && onEnd(); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  if (selectedVoice) u.voice = selectedVoice;
+  u.pitch = 1.1;
+  u.rate  = 0.85;
+  u.volume = 1;
+  if (onEnd) u.onend = onEnd;
+  speechSynthesis.speak(u);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TITLE ANIMATION
+═══════════════════════════════════════════════════════════════════ */
+function buildTitle() {
+  const el = document.getElementById('titleLetters');
+  el.innerHTML = '';
+  TITLE.split('').forEach((ch, i) => {
+    const s = document.createElement('span');
+    s.className = 'letter';
+    s.textContent = ch === ' ' ? ' ' : ch;
+    s.style.animationDelay = (i * 0.07) + 's';
+    el.appendChild(s);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCREEN MANAGEMENT
+═══════════════════════════════════════════════════════════════════ */
+function showScreen(id) {
+  ['welcome','game','celebrate'].forEach(s => {
+    document.getElementById(s).classList.toggle('hidden', s !== id);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   WELCOME → GAME
+═══════════════════════════════════════════════════════════════════ */
+document.getElementById('playBtn').addEventListener('click', startGame);
+document.getElementById('nameInput').addEventListener('keydown', e => { if(e.key==='Enter') startGame(); });
+
+function startGame() {
+  const input = document.getElementById('nameInput').value.trim();
+  playerName = input || 'Friend';
+  document.getElementById('headerName').textContent = 'Hi ' + playerName + '!';
+  showScreen('game');
+  updateScoreDisplay();
+  // warm up speech
+  speak('');
+  setTimeout(() => {
+    nextQuestion();
+    speak("Let's learn together, " + playerName + "!");
+  }, 400);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MODE SWITCH
+═══════════════════════════════════════════════════════════════════ */
+function switchMode(m) {
+  if (mode === m) return;
+  mode = m;
+  document.getElementById('tabMath').classList.toggle('active', m === 'math');
+  document.getElementById('tabWords').classList.toggle('active', m === 'words');
+  mathSubMode = 'count';
+  wordSubMode  = 'letterPic';
+  nextQuestion();
+  speak(m === 'math' ? "Numbers time! Let's count!" : "Words time! Let's learn letters!");
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCORE
+═══════════════════════════════════════════════════════════════════ */
+function updateScoreDisplay() {
+  document.getElementById('scoreCount').textContent = score;
+  const stars = document.getElementById('scoreStars');
+  stars.innerHTML = '';
+  const show = Math.min(score, 5);
+  for (let i = 0; i < show; i++) {
+    const s = document.createElement('span');
+    s.className = 'score-star earned';
+    s.textContent = '⭐';
+    s.style.animationDelay = (i * .06) + 's';
+    stars.appendChild(s);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   QUESTION GENERATION
+═══════════════════════════════════════════════════════════════════ */
+function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function shuffle(arr) { return [...arr].sort(() => Math.random() - .5); }
+function pick(arr) { return arr[rand(0, arr.length - 1)]; }
+
+function nextQuestion() {
+  if (questionLock) return;
+  questionLock = true;
+  countStep = 0;
+  answering = false;
+
+  // every 5 correct → mini celebration
+  if (streak > 0 && streak % 5 === 0) {
+    showCelebration();
+    questionLock = false;
+    return;
+  }
+
+  if (mode === 'math') {
+    // alternate between counting and addition
+    if (streak % 3 === 2) mathSubMode = 'add'; else mathSubMode = 'count';
+    if (mathSubMode === 'count') buildCountQuestion();
+    else buildAddQuestion();
+  } else {
+    // alternate word sub-modes
+    wordSubMode = (streak % 2 === 0) ? 'letterPic' : 'picLetter';
+    if (wordSubMode === 'letterPic') buildLetterPicQuestion();
+    else buildPicLetterQuestion();
+  }
+  questionLock = false;
+}
+
+/* ─── MATH: Count ───────────────────────────────────────────────── */
+function buildCountQuestion() {
+  const obj  = pick(MATH_OBJECTS);
+  const count = rand(1, 5);
+  const wrongOptions = shuffle([1,2,3,4,5,6].filter(n => n !== count)).slice(0, 2);
+  const allOptions = shuffle([count, ...wrongOptions]);
+
+  currentQuestion = { type: 'count', obj, count };
+
+  const items = Array.from({length: count}, () => obj.emoji);
+
+  const questionText = `How many ${obj.plural} do you see?`;
+  const sub = 'Tap each one to count, then pick the number!';
+
+  const html = `
+    <div class="question-card">
+      <div class="question-text">${questionText}</div>
+      <div class="question-sub">${sub}</div>
+    </div>
+    <div class="emoji-stage" id="emojiStage">
+      ${items.map((e,i) => `<span class="emoji-item" data-idx="${i}" onclick="tapCount(this)">${e}</span>`).join('')}
+    </div>
+    <div class="count-helper" id="countHelper">Tap each ${obj.name} to count! 👆</div>
+    <div class="answers-grid grid-3" id="answersGrid">
+      ${allOptions.map(n => `<button class="ans-btn" onclick="checkMathAnswer(${n}, ${count}, this)">${n}</button>`).join('')}
+    </div>
+    <button class="next-btn" id="nextBtn" onclick="goNext()">Next Question ➡️</button>
+  `;
+  document.getElementById('gameContent').innerHTML = html;
+  speak(questionText);
+}
+
+function tapCount(el) {
+  if (answering) return;
+  if (el.classList.contains('highlight')) return;
+  countStep++;
+  el.classList.add('highlight');
+  const helper = document.getElementById('countHelper');
+  if (helper) helper.textContent = NUMBER_WORDS[countStep] || countStep;
+  speak(String(countStep));
+}
+
+/* ─── MATH: Addition ─────────────────────────────────────────────── */
+function buildAddQuestion() {
+  const obj   = pick(MATH_OBJECTS);
+  const a     = rand(1, 3);
+  const b     = rand(1, 3);
+  const ans   = a + b;
+  const wrong = shuffle([1,2,3,4,5,6].filter(n => n !== ans)).slice(0, 2);
+  const options = shuffle([ans, ...wrong]);
+
+  currentQuestion = { type: 'add', obj, a, b, ans };
+
+  const makeGroup = (n) => Array.from({length:n}, () => `<span class="add-emoji">${obj.emoji}</span>`).join('');
+
+  const html = `
+    <div class="question-card">
+      <div class="question-text">${a} ${obj.plural} + ${b} ${obj.plural} = ?</div>
+      <div class="question-sub">Count all the ${obj.plural} together!</div>
+    </div>
+    <div class="emoji-stage">
+      <div class="addition-row">
+        <div class="addition-group">${makeGroup(a)}</div>
+        <span class="add-op">+</span>
+        <div class="addition-group">${makeGroup(b)}</div>
+        <span class="add-eq">=</span>
+        <span class="add-q">?</span>
+      </div>
+    </div>
+    <div class="answers-grid grid-3" id="answersGrid">
+      ${options.map(n => `<button class="ans-btn" onclick="checkMathAnswer(${n}, ${ans}, this)">${n}</button>`).join('')}
+    </div>
+    <button class="next-btn" id="nextBtn" onclick="goNext()">Next Question ➡️</button>
+  `;
+  document.getElementById('gameContent').innerHTML = html;
+  speak(`${a} ${obj.plural} plus ${b} ${obj.plural} equals how many?`);
+}
+
+function checkMathAnswer(chosen, correct, btn) {
+  if (answering) return;
+  answering = true;
+  disableButtons();
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    onCorrect(`Yes! There ${correct===1?'is':'are'} ${NUMBER_WORDS[correct]} ${correct===1?currentQuestion.obj.name:currentQuestion.obj.plural}!`);
+  } else {
+    btn.classList.add('wrong');
+    onWrong();
+  }
+}
+
+/* ─── WORDS: Letter → Picture ────────────────────────────────────── */
+function buildLetterPicQuestion() {
+  const item = pick(WORD_DATA);
+  // correct + 3 distractors (unique)
+  const distractors = shuffle(WORD_DATA.filter(d => d.letter !== item.letter)).slice(0, 3);
+  const choices = shuffle([item, ...distractors]);
+
+  currentQuestion = { type: 'letterPic', item };
+
+  const html = `
+    <div class="question-card">
+      <div class="question-text">Which picture starts with the letter <span style="color:var(--pink2);font-family:'Fredoka One',cursive">${item.letter}</span>?</div>
+    </div>
+    <div class="picture-card">
+      <div class="big-letter">${item.letter}</div>
+      <div class="picture-label">Find the picture that starts with ${item.letter}!</div>
+    </div>
+    <div class="answers-grid grid-2" id="answersGrid">
+      ${choices.map(c => `
+        <button class="ans-btn" onclick="checkWordAnswer('${c.letter}','${item.letter}',this)">
+          <span style="font-size:2.2rem">${c.emoji}</span>
+          <span class="ans-sub">${WORD_NAMES[c.emoji]||''}</span>
+        </button>
+      `).join('')}
+    </div>
+    <button class="next-btn" id="nextBtn" onclick="goNext()">Next Question ➡️</button>
+  `;
+  document.getElementById('gameContent').innerHTML = html;
+  speak(`Which picture starts with the letter ${item.letter}?`);
+}
+
+/* ─── WORDS: Picture → Letter ────────────────────────────────────── */
+function buildPicLetterQuestion() {
+  const item = pick(WORD_DATA);
+  const distractorLetters = shuffle(WORD_DATA.filter(d => d.letter !== item.letter).map(d => d.letter)).slice(0, 3);
+  const choices = shuffle([item.letter, ...distractorLetters]);
+
+  currentQuestion = { type: 'picLetter', item };
+
+  const html = `
+    <div class="question-card">
+      <div class="question-text">What letter does <span style="color:var(--lav2)">${WORD_NAMES[item.emoji]||item.word}</span> start with?</div>
+    </div>
+    <div class="picture-card">
+      <div class="big-emoji">${item.emoji}</div>
+      <div class="picture-label">${item.word}</div>
+    </div>
+    <div class="answers-grid grid-2" id="answersGrid">
+      ${choices.map(l => `<button class="ans-btn" onclick="checkWordAnswer('${l}','${item.letter}',this)" style="font-size:2.2rem;font-family:'Fredoka One',cursive">${l}</button>`).join('')}
+    </div>
+    <button class="next-btn" id="nextBtn" onclick="goNext()">Next Question ➡️</button>
+  `;
+  document.getElementById('gameContent').innerHTML = html;
+  speak(`What letter does ${WORD_NAMES[item.emoji]||item.word} start with?`);
+}
+
+function checkWordAnswer(chosen, correct, btn) {
+  if (answering) return;
+  answering = true;
+  disableButtons();
+  if (chosen === correct) {
+    btn.classList.add('correct');
+    const item = currentQuestion.item;
+    onCorrect(`Yes! ${WORD_NAMES[item.emoji]||item.word} starts with the letter ${correct}!`);
+  } else {
+    btn.classList.add('wrong');
+    onWrong();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CORRECT / WRONG
+═══════════════════════════════════════════════════════════════════ */
+function onCorrect(spokenMsg) {
+  score++;
+  streak++;
+  updateScoreDisplay();
+
+  const msg = pick(ENCOURAGEMENTS);
+  showFeedback(msg, true);
+  launchCelebration();
+  showNextBtn();
+  speak(pick(ENCOURAGEMENTS.slice(0,5)) + ' ' + spokenMsg);
+}
+
+function onWrong() {
+  // allow retry — re-enable buttons but not the already-wrong one
+  const grid = document.getElementById('answersGrid');
+  if (grid) {
+    grid.querySelectorAll('.ans-btn:not(.wrong)').forEach(b => b.disabled = false);
+  }
+  answering = false;
+  const msg = pick(RETRIES);
+  showFeedback(msg, false);
+  speak(msg);
+}
+
+function disableButtons() {
+  const grid = document.getElementById('answersGrid');
+  if (grid) grid.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
+}
+
+function showNextBtn() {
+  const btn = document.getElementById('nextBtn');
+  if (btn) btn.classList.add('visible');
+}
+
+function goNext() {
+  if (questionLock) return;
+  nextQuestion();
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FEEDBACK BANNER
+═══════════════════════════════════════════════════════════════════ */
+let feedbackTimer = null;
+function showFeedback(text, good) {
+  const el = document.getElementById('feedback');
+  el.textContent = text;
+  el.style.background = good
+    ? 'linear-gradient(135deg,#b8f0d8,#6dffb8)'
+    : 'linear-gradient(135deg,#ffd6b3,#ffb07c)';
+  el.style.color = good ? '#206040' : '#804020';
+  el.classList.remove('hide');
+  el.classList.add('show');
+  if (feedbackTimer) clearTimeout(feedbackTimer);
+  feedbackTimer = setTimeout(() => {
+    el.classList.remove('show');
+    el.classList.add('hide');
+    setTimeout(() => el.classList.remove('hide'), 350);
+  }, 1800);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CELEBRATION PARTICLES
+═══════════════════════════════════════════════════════════════════ */
+function launchCelebration() {
+  const layer = document.getElementById('particles');
+  // confetti
+  for (let i = 0; i < 28; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      el.style.left = (rand(5,95)) + 'vw';
+      el.style.background = pick(CONFETTI_COLORS);
+      el.style.width  = rand(8,16) + 'px';
+      el.style.height = rand(8,16) + 'px';
+      el.style.borderRadius = rand(0,8) + 'px';
+      const dur = rand(1000,2000);
+      el.style.animationDuration = dur + 'ms';
+      el.style.animationDelay   = '0ms';
+      layer.appendChild(el);
+      setTimeout(() => el.remove(), dur + 100);
+    }, i * 40);
+  }
+  // balloons
+  for (let i = 0; i < 6; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'balloon';
+      el.textContent = pick(BALLOON_EMOJIS);
+      el.style.left = rand(5,90) + 'vw';
+      const dur = rand(2200,3500);
+      el.style.animationDuration = dur + 'ms';
+      layer.appendChild(el);
+      setTimeout(() => el.remove(), dur + 100);
+    }, i * 160);
+  }
+  // bubbles
+  for (let i = 0; i < 8; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'bubble';
+      const sz = rand(24,60);
+      el.style.width  = sz + 'px';
+      el.style.height = sz + 'px';
+      el.style.left = rand(5,90) + 'vw';
+      const dur = rand(1800,3000);
+      el.style.animationDuration = dur + 'ms';
+      layer.appendChild(el);
+      setTimeout(() => el.remove(), dur + 100);
+    }, i * 120);
+  }
+  // sparkles around screen center
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'sparkle';
+      el.textContent = pick(SPARKLE_EMOJIS);
+      el.style.left = rand(20,80) + 'vw';
+      el.style.top  = rand(20,70) + 'vh';
+      const dur = rand(700,1200);
+      el.style.animationDuration = dur + 'ms';
+      layer.appendChild(el);
+      setTimeout(() => el.remove(), dur + 100);
+    }, i * 80);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MINI CELEBRATION SCREEN
+═══════════════════════════════════════════════════════════════════ */
+function showCelebration() {
+  document.getElementById('celebrateMsg').textContent =
+    `${playerName}, you got ${streak} right! You're incredible! 🌟`;
+  showScreen('celebrate');
+  launchCelebration();
+  speak(`Amazing ${playerName}! You got ${streak} right! You are incredible! Keep going!`);
+  // big confetti burst
+  for (let i = 0; i < 20; i++) {
+    setTimeout(() => launchCelebration(), i * 200);
+  }
+}
+
+document.getElementById('celebrateContinue').addEventListener('click', () => {
+  showScreen('game');
+  nextQuestion();
+});
+
+/* ═══════════════════════════════════════════════════════════════════
+   BOOT
+═══════════════════════════════════════════════════════════════════ */
+buildTitle();
+initVoice();
+
+// also init voice on first interaction (some browsers require user gesture)
+document.body.addEventListener('touchstart', () => { if (!voiceReady) initVoice(); }, { once: true });
+document.body.addEventListener('click',      () => { if (!voiceReady) initVoice(); }, { once: true });
+</script>
+</body>
+</html>
