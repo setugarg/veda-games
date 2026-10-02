@@ -1,0 +1,68 @@
+{
+  "id": "bihari",
+  "name": "Bihari Rasoi",
+  "emoji": "🌾",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Dadi", "Nani", "Baba"],
+  "summary": "The power of sattu: litti chokha, ghugni and cooling sattu drinks.",
+  "foods": [
+    {
+      "id": "litti-chokha",
+      "name": "Litti Chokha",
+      "emoji": "🧆",
+      "blurb": "Wheat balls stuffed with sattu, with smoky mashed brinjal-tomato.",
+      "nutrients": ["protein", "fiber", "iron", "vitaminC"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "sattu-drink",
+      "name": "Sattu Sharbat",
+      "emoji": "🥤",
+      "blurb": "Roasted gram flour stirred into water with lemon and salt.",
+      "nutrients": ["protein", "iron", "fiber", "water"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ghugni",
+      "name": "Ghugni",
+      "emoji": "🫘",
+      "blurb": "Spiced black chana or dried peas.",
+      "nutrients": ["protein", "fiber", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chura-dahi",
+      "name": "Chura Dahi",
+      "emoji": "🍚",
+      "blurb": "Flattened rice with curd. A Makar Sankranti classic.",
+      "nutrients": ["probiotics", "carbs", "calcium", "iron"],
+      "tags": ["grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "dal-pitha",
+      "name": "Dal Pitha",
+      "emoji": "🥟",
+      "blurb": "Steamed rice dumplings stuffed with spiced chana dal.",
+      "nutrients": ["carbs", "protein", "fiber"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "thekua",
+      "name": "Thekua",
+      "emoji": "🍪",
+      "blurb": "Crunchy fried wheat-and-jaggery cookies made for Chhath.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

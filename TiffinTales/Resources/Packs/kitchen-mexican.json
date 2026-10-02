@@ -1,0 +1,74 @@
+{
+  "id": "mexican",
+  "name": "Mexican Cocina",
+  "emoji": "🌮",
+  "region": "latinAmerica",
+  "countries": ["MX", "US"],
+  "elderNames": ["Abuela", "Abuelita", "Abuelo"],
+  "summary": "Beans, corn, squash and salsa from abuela's stove.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "frijoles",
+      "name": "Frijoles de Olla",
+      "emoji": "🫘",
+      "blurb": "Pinto beans simmered slowly in a clay pot.",
+      "nutrients": ["protein", "fiber", "iron", "magnesium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "corn-tortilla",
+      "name": "Corn Tortillas",
+      "emoji": "🫓",
+      "blurb": "Nixtamal corn tortillas. The lime they're made with adds calcium!",
+      "nutrients": ["carbs", "calcium", "fiber"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "guacamole",
+      "name": "Guacamole",
+      "emoji": "🥑",
+      "blurb": "Mashed avocado with lime and tomato.",
+      "nutrients": ["healthyFats", "potassium", "fiber", "vitaminC"],
+      "diet": "vegan"
+    },
+    {
+      "id": "sopa-lentejas",
+      "name": "Sopa de Lentejas",
+      "emoji": "🍲",
+      "blurb": "Lentil soup with carrots and tomatoes.",
+      "nutrients": ["protein", "iron", "fiber", "vitaminA"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "calabacitas",
+      "name": "Calabacitas",
+      "emoji": "🎃",
+      "blurb": "Sautéed squash, corn and tomato.",
+      "nutrients": ["vitaminC", "fiber", "vitaminA", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "huevos-rancheros",
+      "name": "Huevos Rancheros",
+      "emoji": "🍳",
+      "blurb": "Eggs on tortillas with fresh salsa.",
+      "nutrients": ["protein", "vitaminD", "carbs", "vitaminC"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "churros",
+      "name": "Churros",
+      "emoji": "🥖",
+      "blurb": "Fried dough with cinnamon sugar. A fiesta treat!",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

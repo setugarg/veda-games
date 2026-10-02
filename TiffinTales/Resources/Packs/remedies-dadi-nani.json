@@ -1,0 +1,155 @@
+{
+  "id": "dadi-nani",
+  "name": "Dadi-Nani ke Nuskhe",
+  "emoji": "👵🏽",
+  "region": "southAsia",
+  "countries": ["IN", "PK", "NP"],
+  "summary": "North Indian grandmother cures: adrak-tulsi, haldi doodh, laung, ajwain and hing.",
+  "remedies": [
+    {
+      "id": "ginger-lemon-tea",
+      "name": "Ginger Lemon Honey Tea",
+      "localName": "Adrak Nimbu Shahad",
+      "emoji": "🍋",
+      "treats": ["cough", "sniffles", "soreThroat"],
+      "howItHelps": "Ginger has gingerol that calms swelling, lemon brings vitamin C, and honey coats a scratchy throat.",
+      "steps": [
+        "Grown-up boils a few slices of ginger in water.",
+        "Let it cool till warm, then add lemon and a spoon of honey.",
+        "Sip slowly."
+      ],
+      "diet": "vegetarian"
+    },
+    {
+      "id": "tulsi-kadha",
+      "name": "Tulsi Adrak Kadha",
+      "localName": "Kadha",
+      "emoji": "🌿",
+      "treats": ["cough", "sniffles", "soreThroat"],
+      "howItHelps": "Tulsi (holy basil) leaves have oils that help open a stuffy nose and fight germs.",
+      "steps": [
+        "Boil 5 tulsi leaves, a slice of ginger and a pinch of black pepper in water.",
+        "Strain, add a little gur or honey.",
+        "Sip while warm."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "haldi-doodh",
+      "name": "Haldi Doodh",
+      "localName": "Golden Milk",
+      "emoji": "🥛",
+      "treats": ["cough", "tiredMuscles"],
+      "howItHelps": "Turmeric's curcumin calms sore, swollen spots. Warm milk helps you sleep and heal.",
+      "steps": ["Warm a cup of milk with a pinch of turmeric and black pepper.", "Drink it before bed."],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "laung",
+      "name": "Clove for a Toothache",
+      "localName": "Laung",
+      "emoji": "🦷",
+      "treats": ["toothache"],
+      "howItHelps": "Clove has eugenol, a natural numbing oil that quiets an achy tooth for a while.",
+      "steps": [
+        "Grown-up places one whole clove gently near the sore tooth.",
+        "Hold it there; don't chew hard.",
+        "Still see a dentist!"
+      ],
+      "caution": "Only a grown-up should use clove oil, and never swallow it.",
+      "diet": "vegan"
+    },
+    {
+      "id": "ajwain-namak",
+      "name": "Ajwain with Kala Namak",
+      "emoji": "🌱",
+      "treats": ["tummyAche"],
+      "howItHelps": "Ajwain's thymol helps break up gas bubbles in a grumbly tummy.",
+      "steps": [
+        "Grown-up mixes a pinch of roasted ajwain and black salt.",
+        "Chew it and sip warm water."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "hing-paste",
+      "name": "Hing Paste on the Tummy",
+      "localName": "Hing",
+      "emoji": "🟡",
+      "treats": ["tummyAche"],
+      "howItHelps": "A Marwari and Baniya favourite: hing (asafoetida) warms the tummy and eases gas.",
+      "steps": [
+        "Grown-up mixes a pinch of hing with a few drops of warm water.",
+        "Rub it gently around the belly button."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "saunf-mishri",
+      "name": "Saunf Mishri",
+      "emoji": "💚",
+      "treats": ["travelTummy", "tummyAche"],
+      "howItHelps": "Fennel seeds relax the tummy muscles and freshen your breath.",
+      "steps": ["Chew half a spoon of saunf with a crystal of mishri after meals."],
+      "diet": "vegan"
+    },
+    {
+      "id": "elaichi",
+      "name": "Chew an Elaichi",
+      "localName": "Elaichi",
+      "emoji": "🫛",
+      "treats": ["travelTummy"],
+      "howItHelps": "Cardamom's fragrance settles a queasy, wobbly tummy on long rides.",
+      "steps": ["Chew one green cardamom pod slowly while you travel."],
+      "diet": "vegan"
+    },
+    {
+      "id": "kishmish",
+      "name": "Soaked Kishmish & Anjeer",
+      "emoji": "🍇",
+      "treats": ["stuckTummy"],
+      "howItHelps": "Soaked raisins and figs are full of soft fiber that gets a stuck tummy moving.",
+      "steps": [
+        "Soak 8 raisins and 1 fig in water overnight.",
+        "Eat them in the morning and drink the water."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "aam-panna",
+      "name": "Aam Panna",
+      "emoji": "🥭",
+      "treats": ["tooHot"],
+      "howItHelps": "Raw mango drink with jeera and salt puts back the salts you sweat out on hot days.",
+      "steps": [
+        "Grown-up boils raw mango and blends the pulp.",
+        "Mix with water, roasted jeera, black salt and a little gur.",
+        "Drink cool, not icy."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "honey-pepper",
+      "name": "Honey & Black Pepper",
+      "emoji": "🍯",
+      "treats": ["cough"],
+      "howItHelps": "Honey soothes a tickly throat, and pepper helps loosen the cough.",
+      "steps": ["Mix a spoon of honey with a tiny pinch of black pepper.", "Lick it slowly."],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "haldi-lep",
+      "name": "Haldi Lep",
+      "emoji": "🟠",
+      "treats": ["itchyBite"],
+      "howItHelps": "A paste of turmeric calms the swelling around an itchy bite.",
+      "steps": [
+        "Grown-up mixes turmeric with a few drops of water.",
+        "Dab a little on the bite. Try not to scratch!"
+      ],
+      "diet": "vegan"
+    }
+  ]
+}

@@ -98,7 +98,7 @@ struct HomeView: View {
                     Text(mission == StoryContent.allMissions.first ? "Start the story" : "Continue")
                         .font(.kid(14, weight: .heavy))
                         .foregroundStyle(.white.opacity(0.9))
-                    Text(mission.title)
+                    Text(store.text(mission.title))
                         .font(.kid(20, weight: .heavy))
                         .foregroundStyle(.white)
                 }
@@ -138,7 +138,7 @@ struct HomeView: View {
                             Text("Chapter \(chapter.number)")
                                 .font(.kid(12, weight: .heavy))
                                 .foregroundStyle(Palette.inkSoft)
-                            Text(chapter.title)
+                            Text(store.text(chapter.title))
                                 .font(.kid(18, weight: .heavy))
                                 .foregroundStyle(Palette.ink)
                             HStack(spacing: 4) {

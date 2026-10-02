@@ -1,0 +1,145 @@
+{
+  "id": "everyday-care",
+  "name": "Everyday Care",
+  "emoji": "🩹",
+  "region": "everyday",
+  "summary": "Rest, water, warm and cool tricks that work in every home.",
+  "isCore": true,
+  "remedies": [
+    {
+      "id": "salt-gargle",
+      "name": "Warm Salt-Water Gargle",
+      "emoji": "🧂",
+      "treats": ["soreThroat"],
+      "howItHelps": "Salt water pulls puffiness out of a swollen throat and washes germs away.",
+      "steps": [
+        "Grown-up mixes half a spoon of salt in a cup of warm water.",
+        "Gargle, 'Gaa-gaa-gaa!', then spit it out.",
+        "Repeat 3 times a day."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "steam",
+      "name": "Steam Breathing",
+      "emoji": "♨️",
+      "treats": ["cough", "sniffles"],
+      "howItHelps": "Warm, wet air loosens the mucus so your nose and chest can clear.",
+      "steps": [
+        "Grown-up fills a bowl with hot water.",
+        "Sit far enough away, cover your head with a towel.",
+        "Breathe slowly for a few minutes."
+      ],
+      "caution": "Hot water! Only with a grown-up, and never lean too close.",
+      "diet": "vegan"
+    },
+    {
+      "id": "slow-sips",
+      "name": "Slow Sips of Water",
+      "emoji": "🥤",
+      "treats": ["hiccups", "mildHeadache"],
+      "howItHelps": "Slow sips calm the jumpy diaphragm and refill a thirsty brain.",
+      "steps": ["Take ten tiny sips of water, one after another.", "Breathe slowly through your nose."],
+      "diet": "vegan"
+    },
+    {
+      "id": "shade-water",
+      "name": "Shade, Water & a Wet Cloth",
+      "emoji": "⛱️",
+      "treats": ["tooHot"],
+      "howItHelps": "Cooling down in the shade and drinking water brings your body temperature back down.",
+      "steps": [
+        "Move to a cool, shady spot.",
+        "Sip water slowly.",
+        "Put a cool wet cloth on your neck and forehead."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "rinse-dentist",
+      "name": "Rinse & Tell a Grown-up",
+      "emoji": "🪥",
+      "treats": ["toothache"],
+      "howItHelps": "Rinsing removes stuck food. A grown-up can check if a dentist visit is needed.",
+      "steps": [
+        "Swish warm water around your mouth.",
+        "Gently floss around the sore tooth.",
+        "Show a grown-up where it hurts."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "cold-compress",
+      "name": "Cold Compress",
+      "emoji": "🧊",
+      "treats": ["itchyBite", "mildHeadache"],
+      "howItHelps": "Cold makes the swelling and itch shrink, and calms a thumpy head.",
+      "steps": [
+        "Wrap ice in a clean cloth (never ice straight on skin).",
+        "Hold it on the spot for a few minutes."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "rest-stretch",
+      "name": "Rest & Gentle Stretches",
+      "emoji": "🧘",
+      "treats": ["tiredMuscles"],
+      "howItHelps": "Muscles repair themselves while you rest. Gentle stretches help blood bring them food.",
+      "steps": ["Lie down with your legs up on a pillow.", "Do slow, gentle stretches. No bouncing!"],
+      "diet": "vegan"
+    },
+    {
+      "id": "wash-face",
+      "name": "Wash Face & Change Clothes",
+      "emoji": "🚿",
+      "treats": ["sneezyAllergy"],
+      "howItHelps": "Pollen sticks to skin, hair and clothes. Washing it off means fewer sneezes.",
+      "steps": [
+        "Wash your face and hands after playing outside.",
+        "Change into fresh clothes.",
+        "Keep windows closed on windy pollen days."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "look-far",
+      "name": "Fresh Air & Look Far Away",
+      "emoji": "🪟",
+      "treats": ["travelTummy"],
+      "howItHelps": "Looking at the far horizon helps your eyes and ears agree, and fresh air settles the tummy.",
+      "steps": [
+        "Open the window a little.",
+        "Look far away, not at a book or screen.",
+        "Take slow, deep breaths."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "water-fruit-walk",
+      "name": "Water, Fruit & a Walk",
+      "emoji": "🚶",
+      "treats": ["stuckTummy"],
+      "howItHelps": "Water softens, fruit fiber sweeps, and walking wakes up a lazy tummy.",
+      "steps": [
+        "Drink a big glass of water.",
+        "Eat a fruit like papaya or guava.",
+        "Go for a short walk."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "warm-bottle",
+      "name": "Warm Water Bottle & Rest",
+      "emoji": "🫖",
+      "treats": ["tummyAche"],
+      "howItHelps": "Gentle warmth relaxes tight tummy muscles.",
+      "steps": [
+        "Grown-up fills a bottle with warm (not hot!) water.",
+        "Lie down and rest it on your tummy."
+      ],
+      "caution": "Make sure it's warm, not hot.",
+      "diet": "vegan"
+    }
+  ]
+}

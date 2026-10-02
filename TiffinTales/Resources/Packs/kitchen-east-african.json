@@ -1,0 +1,65 @@
+{
+  "id": "east-african",
+  "name": "East African Kitchen",
+  "emoji": "🦒",
+  "region": "africa",
+  "countries": ["KE", "TZ", "UG", "RW"],
+  "elderNames": ["Cucu", "Bibi", "Shosho", "Guka"],
+  "summary": "Ugali and sukuma wiki, githeri, ndengu and uji from Kenya, Tanzania and Uganda.",
+  "foods": [
+    {
+      "id": "ugali-sukuma",
+      "name": "Ugali & Sukuma Wiki",
+      "emoji": "🥬",
+      "blurb": "Maize porridge with stir-fried collard greens.",
+      "nutrients": ["carbs", "iron", "calcium", "vitaminA", "fiber"],
+      "tags": ["grain", "greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "githeri",
+      "name": "Githeri",
+      "emoji": "🌽",
+      "blurb": "Maize and beans cooked together.",
+      "nutrients": ["protein", "fiber", "carbs", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ndengu",
+      "name": "Ndengu",
+      "emoji": "🫘",
+      "blurb": "Green gram stew with tomato and coriander.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "matoke",
+      "name": "Matoke",
+      "emoji": "🍌",
+      "blurb": "Green bananas stewed with tomatoes.",
+      "nutrients": ["carbs", "potassium", "vitaminA", "fiber"],
+      "diet": "vegan"
+    },
+    {
+      "id": "uji",
+      "name": "Uji",
+      "emoji": "🥣",
+      "blurb": "Warm millet or sorghum porridge for breakfast.",
+      "nutrients": ["carbs", "magnesium", "iron"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "mandazi",
+      "name": "Mandazi",
+      "emoji": "🍩",
+      "blurb": "Fried coconut doughnuts. A sometimes treat!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "your-remedies-id",
+  "name": "Your Remedy Pack Name",
+  "emoji": "🌿",
+  "region": "latinAmerica",
+  "countries": ["MX"],
+  "summary": "One sentence parents see when choosing remedy packs.",
+  "remedies": [
+    {
+      "id": "unique-remedy-id",
+      "name": "Remedy Name",
+      "localName": "Local name (optional)",
+      "emoji": "🍵",
+      "treats": ["soreThroat", "cough"],
+      "howItHelps": "What the key ingredient does, in words a child understands.",
+      "steps": [
+        "Step one, done with a grown-up.",
+        "Step two."
+      ],
+      "caution": "Optional safety note, e.g. hot water, not for babies.",
+      "diet": "vegan",
+      "allergens": []
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "west-india",
+  "name": "Gujarati, Marwari & Marathi Gharelu Upay",
+  "emoji": "🪁",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "summary": "Sunth goli, raab, chaas, kokum and variyali from western India.",
+  "remedies": [
+    {
+      "id": "sunth-goli",
+      "name": "Sunth Gud Goli",
+      "emoji": "🟤",
+      "treats": ["sniffles", "soreThroat"],
+      "howItHelps": "Dry ginger and jaggery balls warm the throat. A Gujarati winter staple.",
+      "steps": [
+        "Grown-up mixes sunth powder, a little ghee and gur into tiny balls.",
+        "Eat one ball with warm water."
+      ],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "raab-remedy",
+      "name": "Warm Bajra Raab",
+      "localName": "Raab",
+      "emoji": "🥣",
+      "treats": ["cough", "sniffles"],
+      "howItHelps": "A warm, thin bajra porridge with ajwain and sunth, made when kids have a cold.",
+      "steps": [
+        "Grown-up roasts bajra flour in a little ghee.",
+        "Adds water, gur, ajwain and sunth and cooks till thin.",
+        "Sip it warm."
+      ],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "jeera-chaas",
+      "name": "Jeera Chaas",
+      "emoji": "🥛",
+      "treats": ["tooHot", "tummyAche"],
+      "howItHelps": "Buttermilk with roasted jeera cools you and has friendly bacteria for the tummy.",
+      "steps": ["Whisk curd with water.", "Add roasted jeera and a pinch of salt."],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "kokum-sharbat",
+      "name": "Kokum Sharbat",
+      "emoji": "🩷",
+      "treats": ["tooHot"],
+      "howItHelps": "Kokum from the Konkan coast is a natural cooler on a blazing day.",
+      "steps": ["Soak kokum in water, then strain.", "Add jeera and a little jaggery."],
+      "diet": "vegan"
+    },
+    {
+      "id": "variyali-sharbat",
+      "name": "Variyali Sharbat",
+      "emoji": "💚",
+      "treats": ["tooHot", "tummyAche"],
+      "howItHelps": "Fennel seed sherbet is cooling and gentle on the tummy.",
+      "steps": ["Soak saunf overnight and grind it.", "Strain into cool water with a little mishri."],
+      "diet": "vegan"
+    },
+    {
+      "id": "ajwain-potli",
+      "name": "Ajwain Potli",
+      "emoji": "👝",
+      "treats": ["sniffles"],
+      "howItHelps": "A warm cloth bundle of roasted ajwain gives a soothing smell that opens a stuffy nose.",
+      "steps": [
+        "Grown-up roasts ajwain and ties it in a cotton cloth.",
+        "Check it's warm, not hot, and hold it near your chest and nose."
+      ],
+      "caution": "Grown-up checks the temperature first.",
+      "diet": "vegan"
+    },
+    {
+      "id": "methi-dana",
+      "name": "Soaked Methi Dana",
+      "emoji": "🌾",
+      "treats": ["stuckTummy"],
+      "howItHelps": "Soaked fenugreek seeds turn slippery and help a stuck tummy.",
+      "steps": [
+        "Soak half a spoon of methi seeds overnight.",
+        "Swallow them with the water in the morning."
+      ],
+      "diet": "vegan"
+    }
+  ]
+}

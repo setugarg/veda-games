@@ -1,0 +1,56 @@
+{
+  "id": "ethiopian",
+  "name": "Ethiopian Kitchen",
+  "emoji": "🫓",
+  "region": "africa",
+  "countries": ["ET", "ER"],
+  "elderNames": ["Ayat", "Akoko"],
+  "summary": "Injera with misir wat, shiro and gomen, shared from one big plate.",
+  "foods": [
+    {
+      "id": "injera",
+      "name": "Teff Injera",
+      "emoji": "🫓",
+      "blurb": "Spongy fermented flatbread of teff, the tiniest grain in the world.",
+      "nutrients": ["iron", "calcium", "carbs", "fiber", "probiotics"],
+      "tags": ["grain", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "misir-wat",
+      "name": "Misir Wat",
+      "emoji": "🍲",
+      "blurb": "Red lentils in berbere spice.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "shiro",
+      "name": "Shiro",
+      "emoji": "🥣",
+      "blurb": "Smooth chickpea stew.",
+      "nutrients": ["protein", "fiber", "magnesium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "gomen",
+      "name": "Gomen",
+      "emoji": "🥬",
+      "blurb": "Collard greens cooked with garlic and ginger.",
+      "nutrients": ["calcium", "vitaminA", "vitaminC", "iron"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "doro-wat",
+      "name": "Doro Wat",
+      "emoji": "🍗",
+      "blurb": "Festive chicken stew with a boiled egg.",
+      "nutrients": ["protein", "zinc", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["dairy", "egg"]
+    }
+  ]
+}

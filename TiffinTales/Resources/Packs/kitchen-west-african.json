@@ -1,0 +1,66 @@
+{
+  "id": "west-african",
+  "name": "West African Kitchen",
+  "emoji": "🌍",
+  "region": "africa",
+  "countries": ["NG", "GH", "SN", "CI"],
+  "elderNames": ["Grandma", "Nana", "Mama"],
+  "summary": "Red-red, moi moi, egusi and jollof from Ghana and Nigeria.",
+  "foods": [
+    {
+      "id": "red-red",
+      "name": "Red-Red & Plantain",
+      "emoji": "🍌",
+      "blurb": "Black-eyed pea stew with ripe plantains.",
+      "nutrients": ["protein", "fiber", "vitaminA", "potassium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "moi-moi",
+      "name": "Moi Moi",
+      "emoji": "🫘",
+      "blurb": "Steamed bean pudding with peppers.",
+      "nutrients": ["protein", "fiber", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "egusi",
+      "name": "Egusi Soup",
+      "emoji": "🥬",
+      "blurb": "Ground melon seeds cooked with spinach.",
+      "nutrients": ["protein", "iron", "vitaminA", "healthyFats"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "jollof",
+      "name": "Veggie Jollof Rice",
+      "emoji": "🍚",
+      "blurb": "Tomato-pepper rice, the star of every party.",
+      "nutrients": ["carbs", "vitaminA", "vitaminC"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "groundnut-soup",
+      "name": "Groundnut Soup",
+      "emoji": "🥜",
+      "blurb": "Creamy peanut soup with tomatoes.",
+      "nutrients": ["protein", "healthyFats", "magnesium"],
+      "diet": "nonVegetarian",
+      "allergens": ["peanuts"]
+    },
+    {
+      "id": "puff-puff",
+      "name": "Puff-Puff",
+      "emoji": "🟤",
+      "blurb": "Sweet fried dough balls. Sometimes treat!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

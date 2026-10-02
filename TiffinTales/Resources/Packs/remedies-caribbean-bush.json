@@ -1,0 +1,48 @@
+{
+  "id": "caribbean-bush",
+  "name": "Caribbean Bush Teas",
+  "emoji": "🏝️",
+  "region": "latinAmerica",
+  "countries": ["JM", "TT", "BB", "DO", "PR", "HT", "CU", "BS"],
+  "summary": "Ginger tea, fever grass, coconut water and mint from island grandmothers.",
+  "remedies": [
+    {
+      "id": "ginger-tea-caribbean",
+      "name": "Ginger Tea",
+      "emoji": "🫚",
+      "treats": ["travelTummy", "tummyAche"],
+      "howItHelps": "Fresh ginger tea is the Caribbean go-to for an upset tummy.",
+      "steps": ["Grown-up simmers grated ginger.", "Strain and add a little honey."],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "fever-grass",
+      "name": "Fever Grass Tea",
+      "localName": "Lemongrass",
+      "emoji": "🌿",
+      "treats": ["sniffles"],
+      "howItHelps": "Lemongrass tea is drunk warm when you have a cold.",
+      "steps": ["Steep lemongrass stalks in hot water.", "Sip when warm."],
+      "diet": "vegan"
+    },
+    {
+      "id": "jelly-coconut",
+      "name": "Jelly Coconut Water",
+      "emoji": "🥥",
+      "treats": ["tooHot"],
+      "howItHelps": "Fresh young coconut water replaces salts you sweat out.",
+      "steps": ["Sip cool coconut water in the shade."],
+      "diet": "vegan"
+    },
+    {
+      "id": "mint-bush",
+      "name": "Mint Bush Tea",
+      "emoji": "🌱",
+      "treats": ["tummyAche"],
+      "howItHelps": "Mint tea relaxes the tummy.",
+      "steps": ["Steep fresh mint leaves.", "Cool a little and sip."],
+      "diet": "vegan"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "chinese",
+  "name": "Chinese Home Kitchen",
+  "emoji": "🥢",
+  "region": "eastAsia",
+  "countries": ["CN", "TW", "HK", "SG", "MY"],
+  "elderNames": ["Nainai", "Laolao", "Popo", "Yeye"],
+  "summary": "Jiachang cai: congee, steamed fish, tomato-egg and greens.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "congee",
+      "name": "Congee",
+      "emoji": "🥣",
+      "blurb": "Silky rice porridge, gentle on any tummy.",
+      "nutrients": ["water", "carbs"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "steamed-fish",
+      "name": "Ginger-Scallion Steamed Fish",
+      "emoji": "🐟",
+      "blurb": "Whole fish steamed with ginger and spring onion.",
+      "nutrients": ["protein", "omega3", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish", "soy"]
+    },
+    {
+      "id": "bok-choy",
+      "name": "Garlic Bok Choy",
+      "emoji": "🥬",
+      "blurb": "Quick stir-fried baby greens.",
+      "nutrients": ["calcium", "vitaminA", "vitaminC", "fiber"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "tomato-egg",
+      "name": "Tomato Egg Stir-Fry",
+      "emoji": "🍅",
+      "blurb": "Fluffy eggs with sweet-sour tomatoes, every kid's favourite.",
+      "nutrients": ["protein", "vitaminC", "vitaminA"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "mapo-tofu-mild",
+      "name": "Mild Tofu & Veggies",
+      "emoji": "🧈",
+      "blurb": "Soft tofu braised with mushrooms and peas.",
+      "nutrients": ["protein", "calcium", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "jiaozi",
+      "name": "Steamed Dumplings",
+      "emoji": "🥟",
+      "blurb": "Pleated dumplings filled with cabbage and pork or mushrooms.",
+      "nutrients": ["protein", "carbs", "fiber"],
+      "diet": "nonVegetarian",
+      "allergens": ["gluten", "soy"]
+    },
+    {
+      "id": "mooncake",
+      "name": "Mooncake",
+      "emoji": "🥮",
+      "blurb": "Mid-Autumn Festival treat. Rich and sweet.",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

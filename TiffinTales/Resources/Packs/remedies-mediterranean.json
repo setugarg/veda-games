@@ -1,0 +1,57 @@
+{
+  "id": "mediterranean",
+  "name": "Mediterranean & Middle Eastern",
+  "emoji": "🫒",
+  "region": "middleEast",
+  "countries": ["GR", "TR", "LB", "IR", "IL"],
+  "summary": "Sage tea, fennel tea, ayran and chicken soup from Greece to the Levant.",
+  "remedies": [
+    {
+      "id": "faskomilo",
+      "name": "Sage Tea",
+      "localName": "Faskomilo",
+      "emoji": "🌿",
+      "treats": ["soreThroat"],
+      "howItHelps": "Greek grandmothers make sage tea with honey for sore throats.",
+      "steps": ["Steep a few sage leaves in hot water.", "Add honey and lemon when warm."],
+      "diet": "vegetarian"
+    },
+    {
+      "id": "fennel-tea",
+      "name": "Fennel Tea",
+      "emoji": "💚",
+      "treats": ["tummyAche"],
+      "howItHelps": "Fennel seed tea eases gas bubbles.",
+      "steps": ["Crush a spoon of fennel seeds and steep in hot water.", "Strain and sip warm."],
+      "diet": "vegan"
+    },
+    {
+      "id": "ayran",
+      "name": "Ayran / Doogh",
+      "emoji": "🥛",
+      "treats": ["tooHot"],
+      "howItHelps": "Salted yogurt drink that cools you down in Turkish and Persian summers.",
+      "steps": ["Whisk yogurt with cold water and a pinch of salt.", "Add dried mint for doogh."],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "chicken-soup-remedy",
+      "name": "Grandma's Chicken Soup",
+      "emoji": "🍲",
+      "treats": ["sniffles"],
+      "howItHelps": "Warm soup keeps you hydrated, and the steam helps a stuffy nose.",
+      "steps": ["Sip warm chicken broth with carrots and celery."],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "prunes",
+      "name": "Stewed Prunes & Figs",
+      "emoji": "🟣",
+      "treats": ["stuckTummy"],
+      "howItHelps": "Dried plums and figs are packed with soft fiber.",
+      "steps": ["Simmer a few prunes and figs in water.", "Eat them warm."],
+      "diet": "vegan"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "kannada",
+  "name": "Kannada Adige",
+  "emoji": "🐘",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Ajji", "Ajja"],
+  "summary": "Ragi mudde, bisi bele bath, akki rotti and kosambari.",
+  "foods": [
+    {
+      "id": "ragi-mudde",
+      "name": "Ragi Mudde & Saaru",
+      "emoji": "🟤",
+      "blurb": "Finger-millet balls dipped in thin dal saaru. Farmers' strength food.",
+      "nutrients": ["calcium", "iron", "carbs", "magnesium", "fiber"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "bisi-bele-bath",
+      "name": "Bisi Bele Bath",
+      "emoji": "🍲",
+      "blurb": "Rice, dal and vegetables cooked into one hot, tangy pot.",
+      "nutrients": ["protein", "carbs", "fiber", "vitaminA"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "akki-rotti",
+      "name": "Akki Rotti",
+      "emoji": "🫓",
+      "blurb": "Rice-flour flatbread with carrot, dill and coconut.",
+      "nutrients": ["carbs", "fiber", "vitaminA"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kosambari",
+      "name": "Kosambari",
+      "emoji": "🥗",
+      "blurb": "Soaked moong dal salad with cucumber, carrot and lemon.",
+      "nutrients": ["protein", "vitaminC", "water", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "neer-dosa",
+      "name": "Neer Dosa",
+      "emoji": "🫓",
+      "blurb": "Soft, lacy rice crepes from Mangaluru. Plain, gentle fuel.",
+      "nutrients": ["carbs"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "mysore-pak",
+      "name": "Mysore Pak",
+      "emoji": "🟨",
+      "blurb": "Rich besan-ghee-sugar sweet. A sometimes treat!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "vietnamese",
+  "name": "Vietnamese Home Kitchen",
+  "emoji": "🍜",
+  "region": "southeastAsia",
+  "countries": ["VN"],
+  "elderNames": ["Bà", "Ông", "Bà Nội", "Bà Ngoại"],
+  "summary": "Cơm, canh, rau: rice, a soup and greens at every family meal.",
+  "foods": [
+    {
+      "id": "canh-chua",
+      "name": "Canh Chua",
+      "emoji": "🍲",
+      "blurb": "Sweet-sour tamarind soup with fish, tomato and pineapple.",
+      "nutrients": ["vitaminC", "protein", "water", "omega3"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "rau-muong",
+      "name": "Rau Muống Xào Tỏi",
+      "emoji": "🥬",
+      "blurb": "Water spinach stir-fried with garlic.",
+      "nutrients": ["iron", "vitaminA", "vitaminC", "fiber"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dau-hu-sot-ca",
+      "name": "Đậu Hũ Sốt Cà Chua",
+      "emoji": "🍅",
+      "blurb": "Soft tofu in a fresh tomato sauce.",
+      "nutrients": ["protein", "calcium", "vitaminC", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "goi-cuon",
+      "name": "Gỏi Cuốn",
+      "emoji": "🌯",
+      "blurb": "Fresh rice-paper rolls with herbs, vegetables and shrimp.",
+      "nutrients": ["protein", "vitaminA", "fiber", "water"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "pho-ga",
+      "name": "Phở Gà",
+      "emoji": "🍜",
+      "blurb": "Rice-noodle soup with chicken, ginger and herbs.",
+      "nutrients": ["protein", "water", "carbs", "zinc"],
+      "tags": ["grain"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "chao",
+      "name": "Cháo",
+      "emoji": "🥣",
+      "blurb": "Soft rice porridge, for little ones and sick days.",
+      "nutrients": ["water", "carbs"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "che",
+      "name": "Chè Ba Màu",
+      "emoji": "🍧",
+      "blurb": "Three-colour sweet bean and coconut dessert. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

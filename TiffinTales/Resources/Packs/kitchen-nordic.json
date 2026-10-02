@@ -1,0 +1,71 @@
+{
+  "id": "nordic",
+  "name": "Nordic Kitchen",
+  "emoji": "🌲",
+  "region": "europe",
+  "countries": ["SE", "NO", "DK", "FI", "IS"],
+  "elderNames": ["Mormor", "Farmor", "Mummi", "Amma"],
+  "summary": "Rye bread, oat porridge, fish, pea soup and skyr from the far north.",
+  "foods": [
+    {
+      "id": "rye-bread",
+      "name": "Rye Bread",
+      "localName": "Rugbrød / Ruisleipä",
+      "emoji": "🍞",
+      "blurb": "Dark, dense whole-grain rye bread.",
+      "nutrients": ["fiber", "carbs", "magnesium", "iron"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "salmon-potatoes",
+      "name": "Salmon & Dill Potatoes",
+      "emoji": "🐟",
+      "blurb": "Baked salmon with boiled new potatoes.",
+      "nutrients": ["omega3", "vitaminD", "protein", "potassium"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "havregrot",
+      "name": "Oat Porridge with Lingonberries",
+      "localName": "Havregrynsgröt",
+      "emoji": "🥣",
+      "blurb": "Creamy oats with tart red berries.",
+      "nutrients": ["fiber", "carbs", "magnesium", "vitaminC"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "artsoppa",
+      "name": "Pea Soup",
+      "localName": "Ärtsoppa",
+      "emoji": "🍲",
+      "blurb": "Yellow pea soup, a Thursday tradition in Sweden and Finland.",
+      "nutrients": ["protein", "fiber", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "skyr",
+      "name": "Skyr",
+      "emoji": "🥛",
+      "blurb": "Thick, high-protein Icelandic cultured dairy.",
+      "nutrients": ["protein", "calcium", "probiotics"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "kanelbulle",
+      "name": "Kanelbulle",
+      "emoji": "🌀",
+      "blurb": "Cinnamon buns for fika. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

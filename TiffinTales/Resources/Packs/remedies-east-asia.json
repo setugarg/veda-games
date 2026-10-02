@@ -1,0 +1,59 @@
+{
+  "id": "east-asia",
+  "name": "East Asian Home Remedies",
+  "emoji": "🥢",
+  "region": "eastAsia",
+  "countries": ["CN", "JP", "KR", "TW"],
+  "summary": "Ginger tea, congee, barley tea, yuja-cha and steamed pear from China, Japan and Korea.",
+  "remedies": [
+    {
+      "id": "ginger-tea-asia",
+      "name": "Brown Sugar Ginger Tea",
+      "localName": "Jiāng Chá",
+      "emoji": "🫖",
+      "treats": ["sniffles", "travelTummy"],
+      "howItHelps": "Warm ginger tea is used across China and Korea to settle tummies and warm up after a chill.",
+      "steps": ["Simmer sliced ginger in water.", "Add a little brown sugar and sip."],
+      "diet": "vegan"
+    },
+    {
+      "id": "okayu",
+      "name": "Okayu / Congee",
+      "emoji": "🥣",
+      "treats": ["tummyAche"],
+      "howItHelps": "Soft rice porridge, what Japanese and Chinese families eat when tummies are upset.",
+      "steps": ["Simmer rice in lots of water for an hour.", "Add a pinch of salt."],
+      "diet": "vegan"
+    },
+    {
+      "id": "barley-tea",
+      "name": "Barley Tea",
+      "localName": "Mugicha / Boricha",
+      "emoji": "🍵",
+      "treats": ["tooHot"],
+      "howItHelps": "Roasted barley tea served cold is summer's favourite drink in Japan and Korea.",
+      "steps": ["Steep roasted barley in water.", "Chill and drink."],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "yuja-cha",
+      "name": "Yuja-cha",
+      "emoji": "🍋",
+      "treats": ["soreThroat"],
+      "howItHelps": "Korean citron marmalade tea, full of vitamin C, soothes a scratchy throat.",
+      "steps": ["Stir a spoon of yuja marmalade into warm water."],
+      "diet": "vegan"
+    },
+    {
+      "id": "steamed-pear",
+      "name": "Steamed Pear with Honey",
+      "localName": "Baesuk / Xuělí",
+      "emoji": "🍐",
+      "treats": ["cough"],
+      "howItHelps": "Pear steamed with honey and jujube is a gentle cough soother in Korea and China.",
+      "steps": ["Grown-up cores a pear and fills it with honey.", "Steam until soft and eat it warm."],
+      "diet": "vegetarian"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "pacific",
+  "name": "Pacific Islands Kitchen",
+  "emoji": "🌺",
+  "region": "oceania",
+  "countries": ["FJ", "WS", "TO", "PG", "NZ", "AU"],
+  "elderNames": ["Bubu", "Kuia", "Nana", "Tutu"],
+  "summary": "Taro, breadfruit, coconut greens and fresh fish from Fiji, Samoa, Tonga and Aotearoa.",
+  "foods": [
+    {
+      "id": "rourou",
+      "name": "Rourou / Palusami",
+      "emoji": "🥬",
+      "blurb": "Taro leaves cooked in coconut cream.",
+      "nutrients": ["iron", "calcium", "vitaminA", "healthyFats"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dalo",
+      "name": "Boiled Dalo (Taro)",
+      "emoji": "🥔",
+      "blurb": "Taro root, boiled until soft.",
+      "nutrients": ["carbs", "fiber", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "breadfruit",
+      "name": "Roasted Breadfruit",
+      "emoji": "🍈",
+      "blurb": "Breadfruit roasted in the fire.",
+      "nutrients": ["carbs", "fiber", "potassium", "vitaminC"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kokoda",
+      "name": "Kokoda / Ota Ika",
+      "emoji": "🐟",
+      "blurb": "Fresh fish in lime juice and coconut cream.",
+      "nutrients": ["protein", "omega3", "vitaminC", "healthyFats"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "boil-up",
+      "name": "Boil-Up",
+      "emoji": "🍲",
+      "blurb": "Māori pork bones simmered with watercress and potatoes.",
+      "nutrients": ["protein", "iron", "vitaminA", "water"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "papaya-lime",
+      "name": "Papaya with Lime",
+      "emoji": "🍈",
+      "blurb": "Ripe papaya with a squeeze of lime.",
+      "nutrients": ["vitaminC", "vitaminA", "fiber", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "panikeke",
+      "name": "Panikeke",
+      "emoji": "🟤",
+      "blurb": "Fried pancake balls. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

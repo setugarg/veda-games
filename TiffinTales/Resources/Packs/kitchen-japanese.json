@@ -1,0 +1,78 @@
+{
+  "id": "japanese",
+  "name": "Japanese Home Kitchen",
+  "emoji": "🍙",
+  "region": "eastAsia",
+  "countries": ["JP"],
+  "elderNames": ["Obaachan", "Ojiichan"],
+  "summary": "Ichiju-sansai: rice, miso soup and small side dishes.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "miso-soup",
+      "name": "Miso Soup with Tofu",
+      "emoji": "🍵",
+      "blurb": "Fermented soybean soup with tofu and seaweed.",
+      "nutrients": ["probiotics", "protein", "water"],
+      "tags": ["legume", "fermented"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "onigiri",
+      "name": "Onigiri",
+      "emoji": "🍙",
+      "blurb": "Rice balls wrapped in nori seaweed.",
+      "nutrients": ["carbs", "fiber"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "grilled-salmon",
+      "name": "Grilled Salmon",
+      "emoji": "🐟",
+      "blurb": "Simply salted and grilled.",
+      "nutrients": ["protein", "omega3", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "edamame",
+      "name": "Edamame",
+      "emoji": "🫛",
+      "blurb": "Young soybeans, popped straight from the pod.",
+      "nutrients": ["protein", "fiber", "bVitamins", "magnesium"],
+      "tags": ["legume"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "tamagoyaki",
+      "name": "Tamagoyaki",
+      "emoji": "🥚",
+      "blurb": "Rolled omelette, sliced for the bento box.",
+      "nutrients": ["protein", "vitaminD", "bVitamins"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "goma-ae",
+      "name": "Spinach Goma-ae",
+      "emoji": "🥬",
+      "blurb": "Blanched spinach with a sesame dressing.",
+      "nutrients": ["iron", "calcium", "vitaminA", "magnesium"],
+      "tags": ["greens"],
+      "diet": "vegan",
+      "allergens": ["sesame", "soy"]
+    },
+    {
+      "id": "mochi",
+      "name": "Mochi Sweets",
+      "emoji": "🍡",
+      "blurb": "Chewy rice-cake sweets for New Year. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

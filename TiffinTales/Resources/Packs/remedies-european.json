@@ -1,0 +1,84 @@
+{
+  "id": "european",
+  "name": "European Grandmothers' Remedies",
+  "emoji": "🏰",
+  "region": "europe",
+  "countries": ["PL", "UA", "RU", "DE", "FR", "SE", "NO", "FI", "DK", "CZ", "RO", "IT", "ES"],
+  "summary": "Raspberry and linden tea, chicken broth, chamomile, blackcurrant and dill from Babcia, Oma and Mormor.",
+  "remedies": [
+    {
+      "id": "raspberry-tea",
+      "name": "Raspberry Tea",
+      "localName": "Herbata z malinami",
+      "emoji": "🍓",
+      "treats": ["sniffles"],
+      "howItHelps": "Warm tea with raspberry preserves is a classic cold drink in Poland and Russia. The warmth and fluids help.",
+      "steps": [
+        "Stir a spoon of raspberry jam into warm tea or water.",
+        "Sip and rest under a blanket."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "linden-tea",
+      "name": "Linden Blossom Tea",
+      "localName": "Lipa / Lindenblütentee",
+      "emoji": "🌼",
+      "treats": ["sniffles", "soreThroat"],
+      "howItHelps": "Linden flowers make a soothing warm tea for colds across Europe.",
+      "steps": ["Steep dried linden flowers in hot water.", "Add honey when it's warm."],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "rosol",
+      "name": "Chicken Broth",
+      "localName": "Rosół / Hühnersuppe",
+      "emoji": "🍲",
+      "treats": ["sniffles"],
+      "howItHelps": "Warm broth keeps you hydrated, and the steam helps a stuffy nose.",
+      "steps": ["Sip warm broth with carrots and noodles."],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "chamomile-eu",
+      "name": "Chamomile Tea",
+      "localName": "Rumianek / Kamillentee",
+      "emoji": "🌼",
+      "treats": ["tummyAche"],
+      "howItHelps": "Chamomile relaxes the tummy and helps you rest.",
+      "steps": ["Steep chamomile flowers in hot water.", "Cool till warm and sip slowly."],
+      "diet": "vegan"
+    },
+    {
+      "id": "dill-water",
+      "name": "Dill Seed Water",
+      "localName": "Koperek",
+      "emoji": "🌿",
+      "treats": ["tummyAche"],
+      "howItHelps": "Dill and fennel seeds are old European remedies for gas bubbles.",
+      "steps": ["Steep a pinch of dill or fennel seeds in hot water.", "Strain, cool and sip."],
+      "diet": "vegan"
+    },
+    {
+      "id": "blackcurrant",
+      "name": "Warm Blackcurrant Drink",
+      "localName": "Mustaherukka / Solbær",
+      "emoji": "🫐",
+      "treats": ["sniffles", "soreThroat"],
+      "howItHelps": "Blackcurrants are bursting with vitamin C. Nordic families drink them warm when they have a cold.",
+      "steps": ["Stir blackcurrant juice or jam into warm water.", "Sip slowly."],
+      "diet": "vegan"
+    },
+    {
+      "id": "kefir-remedy",
+      "name": "A Glass of Kefir",
+      "emoji": "🥛",
+      "treats": ["stuckTummy"],
+      "howItHelps": "Kefir's friendly bacteria help keep a tummy moving.",
+      "steps": ["Drink a small glass of kefir with breakfast."],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    }
+  ]
+}

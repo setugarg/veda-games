@@ -1,0 +1,75 @@
+{
+  "id": "persian",
+  "name": "Persian Kitchen",
+  "emoji": "🌹",
+  "region": "middleEast",
+  "countries": ["IR", "AF"],
+  "elderNames": ["Maman Bozorg", "Baba Bozorg", "Mamani"],
+  "summary": "Herbs by the handful: ash, kuku sabzi, adas polo and mast-o-khiar.",
+  "foods": [
+    {
+      "id": "ash-reshteh",
+      "name": "Ash Reshteh",
+      "emoji": "🍲",
+      "blurb": "Thick herb, bean and noodle soup with a swirl of kashk.",
+      "nutrients": ["protein", "fiber", "iron", "vitaminA"],
+      "tags": ["legume", "grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"]
+    },
+    {
+      "id": "kuku-sabzi",
+      "name": "Kuku Sabzi",
+      "emoji": "🥚",
+      "blurb": "A frittata packed with green herbs.",
+      "nutrients": ["protein", "vitaminA", "iron", "vitaminC"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "treeNuts"]
+    },
+    {
+      "id": "adas-polo",
+      "name": "Adas Polo",
+      "emoji": "🍚",
+      "blurb": "Rice layered with lentils, raisins and dates.",
+      "nutrients": ["protein", "carbs", "iron", "fiber"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "mast-o-khiar",
+      "name": "Mast-o-Khiar",
+      "emoji": "🥒",
+      "blurb": "Yogurt with cucumber, mint and dried rose petals.",
+      "nutrients": ["probiotics", "calcium", "water"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "shirazi-salad",
+      "name": "Salad Shirazi",
+      "emoji": "🥗",
+      "blurb": "Cucumber, tomato and onion with lime.",
+      "nutrients": ["vitaminC", "water", "fiber"],
+      "diet": "vegan"
+    },
+    {
+      "id": "khoresh-sabzi",
+      "name": "Ghormeh Sabzi",
+      "emoji": "🍲",
+      "blurb": "Herb stew with kidney beans and lamb.",
+      "nutrients": ["iron", "protein", "fiber", "vitaminA"],
+      "tags": ["legume"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "sholeh-zard",
+      "name": "Sholeh Zard",
+      "emoji": "🍮",
+      "blurb": "Saffron rice pudding for celebrations. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["treeNuts"],
+      "sometimes": true
+    }
+  ]
+}

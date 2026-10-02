@@ -1,0 +1,98 @@
+{
+  "id": "baniya",
+  "name": "Baniya Rasoi",
+  "emoji": "🪔",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Dadi", "Nani", "Dada", "Nana"],
+  "summary": "Simple, satvik vegetarian food from Agarwal & Baniya homes of North India: dal, seasonal sabzi, chilla and dalia.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "arhar-dal",
+      "name": "Arhar Dal & Rice",
+      "localName": "Dal Chawal",
+      "emoji": "🍛",
+      "blurb": "Yellow toor dal with a jeera-hing tadka, served on soft rice.",
+      "nutrients": ["protein", "carbs", "fiber", "iron", "bVitamins"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "lauki-chana",
+      "name": "Lauki Chana Dal",
+      "emoji": "🥒",
+      "blurb": "Bottle gourd cooked with chana dal. Light, cooling and filling.",
+      "nutrients": ["water", "protein", "fiber", "potassium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "moong-chilla",
+      "name": "Moong Dal Chilla",
+      "emoji": "🥞",
+      "blurb": "Savoury pancakes of ground moong dal, with ginger and coriander.",
+      "nutrients": ["protein", "iron", "fiber", "bVitamins"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "veg-dalia",
+      "name": "Vegetable Dalia",
+      "emoji": "🥣",
+      "blurb": "Broken wheat cooked soft with peas and carrots.",
+      "nutrients": ["carbs", "fiber", "iron", "magnesium", "vitaminA"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "kaddu-sabzi",
+      "name": "Khatta-Meetha Kaddu",
+      "localName": "Kaddu ki Sabzi",
+      "emoji": "🎃",
+      "blurb": "Sweet-and-sour pumpkin with methi seeds and a touch of gur.",
+      "nutrients": ["vitaminA", "fiber", "potassium", "carbs"],
+      "diet": "vegan"
+    },
+    {
+      "id": "aloo-methi-roti",
+      "name": "Aloo Methi & Phulka",
+      "emoji": "🫓",
+      "blurb": "Potatoes tossed with fresh fenugreek leaves, with hot phulkas.",
+      "nutrients": ["carbs", "iron", "fiber", "vitaminC"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "moong-sprouts",
+      "name": "Sprouted Moong Chaat",
+      "emoji": "🌱",
+      "blurb": "Sprouts with tomato, cucumber, lemon and chaat masala.",
+      "nutrients": ["protein", "vitaminC", "fiber", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "bathua-raita",
+      "name": "Bathua Raita",
+      "emoji": "🥗",
+      "blurb": "Winter greens folded into cool curd.",
+      "nutrients": ["probiotics", "calcium", "iron", "vitaminA"],
+      "tags": ["greens"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "moong-halwa",
+      "name": "Moong Dal Halwa",
+      "emoji": "🍯",
+      "blurb": "A rich winter-wedding sweet made with lots of ghee and sugar.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

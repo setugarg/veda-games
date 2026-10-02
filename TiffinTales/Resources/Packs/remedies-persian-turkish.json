@@ -1,0 +1,49 @@
+{
+  "id": "persian-turkish",
+  "name": "Persian & Turkish Remedies",
+  "emoji": "🧿",
+  "region": "middleEast",
+  "countries": ["IR", "TR", "AF", "AZ"],
+  "summary": "Ihlamur, sekanjabin, barley soup and nane-limon from Persian and Turkish homes.",
+  "remedies": [
+    {
+      "id": "ihlamur",
+      "name": "Ihlamur",
+      "emoji": "🌼",
+      "treats": ["sniffles", "soreThroat"],
+      "howItHelps": "Turkish linden tea with lemon and honey, the classic winter cold remedy.",
+      "steps": ["Steep linden flowers in hot water.", "Add lemon and honey when warm."],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "nane-limon",
+      "name": "Nane Limon",
+      "emoji": "🍋",
+      "treats": ["sniffles", "tummyAche"],
+      "howItHelps": "Mint and lemon tea, for colds and grumbly tummies.",
+      "steps": ["Boil dried mint with lemon slices.", "Cool till warm and sip."],
+      "diet": "vegan"
+    },
+    {
+      "id": "sekanjabin",
+      "name": "Sekanjabin with Cucumber",
+      "emoji": "🥒",
+      "treats": ["tooHot"],
+      "howItHelps": "A Persian mint and vinegar syrup mixed with cool water and grated cucumber for hot days.",
+      "steps": ["Stir a spoon of sekanjabin into cold water.", "Add grated cucumber and sip."],
+      "diet": "vegan"
+    },
+    {
+      "id": "ash-e-jo",
+      "name": "Barley Soup",
+      "localName": "Soup-e Jo",
+      "emoji": "🍲",
+      "treats": ["sniffles"],
+      "howItHelps": "Warm barley soup is the Persian sick-day meal.",
+      "steps": ["Simmer barley with carrots and a little lemon.", "Eat it warm."],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    }
+  ]
+}

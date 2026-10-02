@@ -1,0 +1,75 @@
+{
+  "id": "jain",
+  "name": "Jain Rasoi",
+  "emoji": "🕊️",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Dadi", "Nani", "Ba", "Dada"],
+  "summary": "No onion, garlic or root vegetables. Clever, flavourful cooking from Jain homes.",
+  "foods": [
+    {
+      "id": "dal-dhokli",
+      "name": "Dal Dhokli",
+      "emoji": "🍲",
+      "blurb": "Wheat dumplings simmered in sweet-sour toor dal.",
+      "nutrients": ["protein", "carbs", "fiber", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten", "peanuts"]
+    },
+    {
+      "id": "kacha-kela",
+      "name": "Kacha Kela Sabzi",
+      "emoji": "🍌",
+      "blurb": "Raw banana cooked with ajwain and hing instead of potatoes.",
+      "nutrients": ["fiber", "potassium", "carbs", "vitaminC"],
+      "diet": "vegan"
+    },
+    {
+      "id": "moong-khichdi",
+      "name": "Moong Khichdi",
+      "emoji": "🍚",
+      "blurb": "Rice and moong dal cooked soft with a ghee-jeera tadka.",
+      "nutrients": ["protein", "carbs", "fiber", "magnesium"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "tindora",
+      "name": "Tindora Sabzi",
+      "emoji": "🥒",
+      "blurb": "Crunchy ivy gourd stir-fry.",
+      "nutrients": ["fiber", "vitaminC", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "papad-sabzi",
+      "name": "Gatte & Papad Sabzi",
+      "emoji": "🟡",
+      "blurb": "Besan dumplings and papad in a tangy curd gravy.",
+      "nutrients": ["protein", "iron", "calcium"],
+      "tags": ["legume"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "rajgira-thepla",
+      "name": "Rajgira Thepla",
+      "emoji": "🫓",
+      "blurb": "Amaranth flatbreads, a fasting-day favourite packed with minerals.",
+      "nutrients": ["protein", "calcium", "iron", "magnesium"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "jain-chaas",
+      "name": "Masala Chaas",
+      "emoji": "🥛",
+      "blurb": "Thin, salted buttermilk with roasted jeera.",
+      "nutrients": ["probiotics", "water", "calcium"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "italian",
+  "name": "Italian Nonna's Kitchen",
+  "emoji": "🍅",
+  "region": "europe",
+  "countries": ["IT"],
+  "elderNames": ["Nonna", "Nonno"],
+  "summary": "Cucina povera: minestrone, beans and pasta, greens and frittata.",
+  "foods": [
+    {
+      "id": "minestrone",
+      "name": "Minestrone",
+      "emoji": "🍲",
+      "blurb": "Vegetable and bean soup that changes with the seasons.",
+      "nutrients": ["fiber", "vitaminA", "protein", "water"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pasta-fagioli",
+      "name": "Pasta e Fagioli",
+      "emoji": "🍝",
+      "blurb": "Pasta and beans in a tomato broth.",
+      "nutrients": ["protein", "fiber", "carbs", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "spinach-frittata",
+      "name": "Spinach Frittata",
+      "emoji": "🥚",
+      "blurb": "Baked egg pie full of greens.",
+      "nutrients": ["protein", "iron", "vitaminA", "vitaminD"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg"]
+    },
+    {
+      "id": "ricotta-toast",
+      "name": "Ricotta & Tomato Toast",
+      "emoji": "🍞",
+      "blurb": "Fresh ricotta on whole-grain bread with tomatoes.",
+      "nutrients": ["calcium", "protein", "vitaminC", "carbs"],
+      "tags": ["grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"]
+    },
+    {
+      "id": "sardines",
+      "name": "Sardines on Toast",
+      "emoji": "🐟",
+      "blurb": "Tiny fish with big brain power.",
+      "nutrients": ["omega3", "calcium", "protein", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish", "gluten"]
+    },
+    {
+      "id": "gelato",
+      "name": "Gelato",
+      "emoji": "🍦",
+      "blurb": "Creamy and sweet, for warm summer evenings.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

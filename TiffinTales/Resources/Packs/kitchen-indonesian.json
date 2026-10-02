@@ -1,0 +1,66 @@
+{
+  "id": "indonesian",
+  "name": "Indonesian & Malay Kitchen",
+  "emoji": "🌺",
+  "region": "southeastAsia",
+  "countries": ["ID", "MY", "SG", "BN"],
+  "elderNames": ["Nenek", "Kakek", "Atuk"],
+  "summary": "Tempeh, gado-gado, sayur asem and bubur from Nenek's kitchen.",
+  "foods": [
+    {
+      "id": "tempeh",
+      "name": "Tempeh Bacem",
+      "emoji": "🟫",
+      "blurb": "Fermented soybean cake simmered with coconut water and spices.",
+      "nutrients": ["protein", "probiotics", "iron", "bVitamins"],
+      "tags": ["legume", "fermented"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "gado-gado",
+      "name": "Gado-Gado",
+      "emoji": "🥗",
+      "blurb": "Vegetables, tofu and egg with peanut sauce.",
+      "nutrients": ["protein", "fiber", "vitaminA", "healthyFats"],
+      "tags": ["legume"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "peanuts", "soy"]
+    },
+    {
+      "id": "sayur-asem",
+      "name": "Sayur Asem",
+      "emoji": "🍲",
+      "blurb": "Sour tamarind vegetable soup with corn and long beans.",
+      "nutrients": ["vitaminC", "fiber", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "soto-ayam",
+      "name": "Soto Ayam",
+      "emoji": "🍜",
+      "blurb": "Turmeric chicken soup with rice cake and greens.",
+      "nutrients": ["protein", "water", "vitaminA"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "bubur-kacang",
+      "name": "Bubur Kacang Hijau",
+      "emoji": "🥣",
+      "blurb": "Mung bean porridge with coconut milk.",
+      "nutrients": ["protein", "fiber", "iron", "magnesium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pisang-goreng",
+      "name": "Pisang Goreng",
+      "emoji": "🍌",
+      "blurb": "Fried banana fritters. A sometimes snack!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

@@ -8,17 +8,27 @@ final class GameStore {
     var progress: PlayerProgress
     /// Tips, remedies and recorded stories from the child's own family.
     var familyTips: [FamilyTip]
+    /// Dishes and remedies the family created in the grown-up area.
+    var familyFoods: [Food] { didSet { Catalog.library.familyFoods = familyFoods } }
+    var familyRemedies: [Remedy] { didSet { Catalog.library.familyRemedies = familyRemedies } }
 
     private let defaults: UserDefaults
     private static let settingsKey = "tiffin.settings.v1"
     private static let progressKey = "tiffin.progress.v1"
     private static let familyKey = "tiffin.family.v1"
+    private static let familyFoodsKey = "tiffin.familyFoods.v1"
+    private static let familyRemediesKey = "tiffin.familyRemedies.v1"
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
-        settings = Self.load(FamilySettings.self, key: Self.settingsKey, from: defaults) ?? FamilySettings()
+        settings = Self.load(FamilySettings.self, key: Self.settingsKey, from: defaults)
+            ?? FamilySettings.suggested(forCountry: Locale.current.region?.identifier)
         progress = Self.load(PlayerProgress.self, key: Self.progressKey, from: defaults) ?? PlayerProgress()
         familyTips = Self.load([FamilyTip].self, key: Self.familyKey, from: defaults) ?? []
+        familyFoods = Self.load([Food].self, key: Self.familyFoodsKey, from: defaults) ?? []
+        familyRemedies = Self.load([Remedy].self, key: Self.familyRemediesKey, from: defaults) ?? []
+        Catalog.library.familyFoods = familyFoods
+        Catalog.library.familyRemedies = familyRemedies
     }
 
     var name: String { settings.displayName }
@@ -70,6 +80,39 @@ final class GameStore {
     }
 
     func saveFamily() { save(familyTips, key: Self.familyKey) }
+
+    // MARK: Family kitchen & remedies
+
+    /// Adds a new family dish, or replaces one with the same id.
+    func saveFamilyFood(_ food: Food) {
+        if let index = familyFoods.firstIndex(where: { $0.id == food.id }) {
+            familyFoods[index] = food
+        } else {
+            familyFoods.insert(food, at: 0)
+        }
+        save(familyFoods, key: Self.familyFoodsKey)
+    }
+
+    func deleteFamilyFood(_ food: Food) {
+        familyFoods.removeAll { $0.id == food.id }
+        save(familyFoods, key: Self.familyFoodsKey)
+    }
+
+    func saveFamilyRemedy(_ remedy: Remedy) {
+        if let index = familyRemedies.firstIndex(where: { $0.id == remedy.id }) {
+            if let old = familyRemedies[index].audioFile, old != remedy.audioFile { VoiceFiles.delete(old) }
+            familyRemedies[index] = remedy
+        } else {
+            familyRemedies.insert(remedy, at: 0)
+        }
+        save(familyRemedies, key: Self.familyRemediesKey)
+    }
+
+    func deleteFamilyRemedy(_ remedy: Remedy) {
+        if let file = remedy.audioFile { VoiceFiles.delete(file) }
+        familyRemedies.removeAll { $0.id == remedy.id }
+        save(familyRemedies, key: Self.familyRemediesKey)
+    }
 
     func completeRemedy(_ mission: Mission, stars: Int, remedy: Remedy) {
         progress.record(stars: stars, for: mission)

@@ -1,0 +1,65 @@
+{
+  "id": "caribbean",
+  "name": "Caribbean Kitchen",
+  "emoji": "🏝️",
+  "region": "latinAmerica",
+  "countries": ["JM", "TT", "BB", "DO", "PR", "HT", "CU", "BS"],
+  "elderNames": ["Granny", "Grandma", "Abuela", "Gran"],
+  "summary": "Rice and peas, callaloo, steamed fish and plantain from the islands.",
+  "foods": [
+    {
+      "id": "rice-peas",
+      "name": "Rice & Peas",
+      "emoji": "🍛",
+      "blurb": "Rice cooked with kidney beans, coconut milk and thyme.",
+      "nutrients": ["protein", "carbs", "fiber", "healthyFats"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "callaloo",
+      "name": "Callaloo",
+      "emoji": "🥬",
+      "blurb": "Leafy greens simmered with onion, garlic and thyme.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ackee-saltfish",
+      "name": "Ackee & Saltfish",
+      "emoji": "🐟",
+      "blurb": "Jamaica's national breakfast.",
+      "nutrients": ["protein", "healthyFats", "vitaminC"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "steamed-fish-okra",
+      "name": "Steamed Fish & Okra",
+      "emoji": "🐠",
+      "blurb": "Fish steamed with okra, carrots and pepper.",
+      "nutrients": ["protein", "omega3", "fiber", "vitaminC"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "plantain-baked",
+      "name": "Baked Ripe Plantain",
+      "emoji": "🍌",
+      "blurb": "Sweet plantain baked until golden.",
+      "nutrients": ["carbs", "potassium", "vitaminA", "fiber"],
+      "diet": "vegan"
+    },
+    {
+      "id": "festival",
+      "name": "Festival Dumplings",
+      "emoji": "🥖",
+      "blurb": "Sweet fried cornmeal dumplings. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

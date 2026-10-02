@@ -1,13 +1,13 @@
 import Foundation
 
-/// "Tiffin Tales": {name} and Tiffy, a talking steel tiffin box from Dadi's
+/// "Tiffin Tales": {name} and Tiffy, a talking steel tiffin box from a grandparent's
 /// kitchen, go through one big year of small adventures. Each mission is a
 /// bite-sized tricky spot that the right food or home remedy fixes.
 enum StoryContent {
     static let companionName = "Tiffy"
 
     static let prologue = """
-    On {name}'s birthday, Dadi gave a very special present: a shiny steel tiffin box. \
+    On {name}'s birthday, {elder} gave a very special present: a shiny steel tiffin box. \
     When {name} opened the lid, it giggled! "Hello! I'm Tiffy. I carry the recipes of \
     every grandma in the world. Whenever you're stuck, open me up, and together we'll \
     find the food that helps!"
@@ -25,7 +25,7 @@ enum StoryContent {
                     kind: .wisdom(.breakfast), stuckMood: .worried,
                     successText: "{name} eats a proper breakfast and walks into class bright and ready.", successEmoji: "🎒"),
             Mission(id: "c1m2", title: "The Spelling Bee", scene: "🐝📝",
-                    situation: "Ms. Rao calls out 'ELEPHANT'. {name}'s brain feels foggy, and the letters are jumbling up!",
+                    situation: "The teacher calls out 'ELEPHANT'. {name}'s brain feels foggy, and the letters are jumbling up!",
                     kind: .meal(needs: [.focus], avoid: nil), stuckMood: .worried,
                     successText: "E-L-E-P-H-A-N-T! {name} spells it perfectly. The class claps!", successEmoji: "🏅"),
             Mission(id: "c1m3", title: "The Heavy Library Books", scene: "📚📚",
@@ -70,20 +70,20 @@ enum StoryContent {
                     successText: "Catch, zoom, finish! {name}'s team wins the relay!", successEmoji: "🥇"),
         ]),
 
-        Chapter(id: "c3", number: 3, title: "Holidays at Nani's Village", emoji: "🌾",
-                intro: "Summer holidays! {name} and Tiffy are off to Nani's village.", tint: 2, missions: [
+        Chapter(id: "c3", number: 3, title: "Holidays at {elder}'s Village", emoji: "🌾",
+                intro: "Summer holidays! {name} and Tiffy are off to {elder}'s village.", tint: 2, missions: [
             Mission(id: "c3m1", title: "Wobbly Train Ride", scene: "🚂🌀",
                     situation: "The train rocks side to side, and {name}'s tummy is wobbling with it.",
                     kind: .remedy(.travelTummy), stuckMood: .sick,
                     successText: "Tummy settled, {name} counts cows and fields out of the window.", successEmoji: "🐄"),
             Mission(id: "c3m2", title: "Helping in the Garden", scene: "🪴🪣",
-                    situation: "Nani needs help carrying water buckets and bending to plant seeds.",
+                    situation: "{elder} needs help carrying water buckets and bending to plant seeds.",
                     kind: .meal(needs: [.strength, .flexibility], avoid: nil), stuckMood: .tired,
                     successText: "Bucket by bucket, seed by seed. The whole garden is planted!", successEmoji: "🌱"),
             Mission(id: "c3w1", title: "Lunch Under the Neem Tree", scene: "🌳🍛",
-                    situation: "Lunch at Nani's! {elder} says, 'Every dish has a best friend. Can you guess who it is?'",
+                    situation: "Lunch at {elder}'s house! {elder} says, 'Every dish has a best friend. Can you guess who it is?'",
                     kind: .wisdom(.grainPartner), stuckMood: .worried,
-                    successText: "{name} matches every dish with its best friend. Nani laughs: 'You know more than your parents!'", successEmoji: "🤝"),
+                    successText: "{name} matches every dish with its best friend. {elder} laughs: 'You know more than your parents!'", successEmoji: "🤝"),
             Mission(id: "c3m3", title: "Mosquito Party", scene: "🦟🌙",
                     situation: "Evening in the courtyard, and a mosquito bit {name}'s arm. It is SO itchy!",
                     kind: .remedy(.itchyBite), stuckMood: .worried,
@@ -96,21 +96,21 @@ enum StoryContent {
                     situation: "Rajma for dinner! But last time, everyone's tummy puffed up like a balloon afterwards.",
                     kind: .wisdom(.beansGas), stuckMood: .worried,
                     successText: "Rajma night with happy tummies all round!", successEmoji: "🎈"),
-            Mission(id: "c3m4", title: "Too Many Laddoos", scene: "🍬🦷",
+            Mission(id: "c3m4", title: "Too Many Sweets", scene: "🍬🦷",
                     situation: "After the village fair and lots of sweets, one of {name}'s teeth starts to ache.",
                     kind: .remedy(.toothache), stuckMood: .sick,
-                    successText: "The ache calms down. {name} promises to brush twice a day, and Nani books a dentist visit.", successEmoji: "🪥"),
-            Mission(id: "c3m5", title: "Nani's Cooking Lesson", scene: "👵🏽🍳",
-                    situation: "Nani is teaching {name} a family recipe. It needs careful measuring and a steady, calm mind.",
+                    successText: "The ache calms down. {name} promises to brush twice a day, and {elder} books a dentist visit.", successEmoji: "🪥"),
+            Mission(id: "c3m5", title: "{elder}'s Cooking Lesson", scene: "👵🏽🍳",
+                    situation: "{elder} is teaching {name} a family recipe. It needs careful measuring and a steady, calm mind.",
                     kind: .meal(needs: [.focus, .calm], avoid: nil), stuckMood: .worried,
-                    successText: "Perfectly measured! Nani says {name} cooks just like she did as a child.", successEmoji: "🥘"),
-            Mission(id: "c3e1", title: "Ask Nani a Question", scene: "🎙️👵🏽",
+                    successText: "Perfectly measured! {elder} says {name} cooks just like {elder} did as a child.", successEmoji: "🥘"),
+            Mission(id: "c3e1", title: "Ask {elder} a Question", scene: "🎙️👵🏽",
                     situation: "On the last night of the holidays, Tiffy has an idea: 'Grandparents know things that aren't in any book. Go and ask!'",
                     kind: .askElder(question: WisdomContent.elderQuestions[2]), stuckMood: .happy,
                     successText: "{name} saved the answer in the Wisdom Book, to keep forever.", successEmoji: "📜"),
         ]),
 
-        Chapter(id: "c4", number: 4, title: "Monsoon Mysteries", emoji: "🌧️",
+        Chapter(id: "c4", number: 4, title: "Rainy Season Mysteries", emoji: "🌧️",
                 intro: "The rains are here! Puddles, paper boats and a few sniffles.", tint: 3, missions: [
             Mission(id: "c4m1", title: "Rainy Day Sniffles", scene: "☔️🤧",
                     situation: "Splash! {name} got soaked in the rain, and now the nose won't stop dripping.",
@@ -137,7 +137,7 @@ enum StoryContent {
                     kind: .meal(needs: [.focus, .calm], avoid: nil), stuckMood: .worried,
                     successText: "Ten perfect boats sail down the puddle river!", successEmoji: "⛵️"),
             Mission(id: "c4m5", title: "Stuck Tummy", scene: "🚽😖",
-                    situation: "With all the indoor days and fried pakoras, {name}'s tummy feels stuck and uncomfy.",
+                    situation: "With all the indoor days and fried snacks, {name}'s tummy feels stuck and uncomfy.",
                     kind: .remedy(.stuckTummy), stuckMood: .sick,
                     successText: "Ahh, much better! {name}'s tummy is back on track.", successEmoji: "🌀"),
         ]),
@@ -181,17 +181,17 @@ enum StoryContent {
                     kind: .remedy(.sneezyAllergy), stuckMood: .sick,
                     successText: "Fewer sneezes! And {name} tells a grown-up, so a doctor can help too.", successEmoji: "🌷"),
             Mission(id: "c6m3", title: "Dance-Off!", scene: "💃🕺",
-                    situation: "Aarav's birthday party has a dance-off! {name} needs bendy moves and energy to keep dancing.",
+                    situation: "Mateo's birthday party has a dance-off! {name} needs bendy moves and energy to keep dancing.",
                     kind: .meal(needs: [.energy, .flexibility, .hydration], avoid: nil), stuckMood: .tired,
                     successText: "Spin, jump, groove! {name} dances till the last song.", successEmoji: "🪩"),
             Mission(id: "c6w1", title: "Planning the Party Plate", scene: "🎉🍽️",
                     situation: "{name} and {elder} are planning food for a get-together. Which plate is a proper meal?",
                     kind: .wisdom(.balancedPlate), stuckMood: .worried,
                     successText: "The party plate has a little of everything, and everyone goes home happy.", successEmoji: "🍽️"),
-            Mission(id: "c6m4", title: "Ishaan Can't Have Milk", scene: "🥛🚫",
-                    situation: "Ishaan is coming over and is allergic to dairy. Make a strong-bones snack for both of you with NO milk.",
+            Mission(id: "c6m4", title: "Amara Can't Have Milk", scene: "🥛🚫",
+                    situation: "Amara is coming over and is allergic to dairy. Make a strong-bones snack for both of you with NO milk.",
                     kind: .meal(needs: [.bones, .strength], avoid: .dairy), stuckMood: .worried,
-                    successText: "Calcium without milk! Ishaan and {name} build a giant block tower.", successEmoji: "🧱"),
+                    successText: "Calcium without milk! Amara and {name} build a giant block tower.", successEmoji: "🧱"),
             Mission(id: "c6m5", title: "Party Tummy", scene: "🎂🤢",
                     situation: "Cake, chips and cola at the party, and now {name}'s tummy is grumbling.",
                     kind: .remedy(.tummyAche), stuckMood: .sick,

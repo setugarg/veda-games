@@ -1,0 +1,75 @@
+{
+  "id": "greek",
+  "name": "Greek Yiayia's Kitchen",
+  "emoji": "🫒",
+  "region": "europe",
+  "countries": ["GR", "CY"],
+  "elderNames": ["Yiayia", "Pappou"],
+  "summary": "Ladera vegetables, bean soups and yogurt, all with good olive oil.",
+  "foods": [
+    {
+      "id": "fasolada",
+      "name": "Fasolada",
+      "emoji": "🍲",
+      "blurb": "White bean soup with carrots, celery and olive oil.",
+      "nutrients": ["protein", "fiber", "iron", "healthyFats"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "fakes",
+      "name": "Fakes",
+      "emoji": "🍲",
+      "blurb": "Lentil soup finished with a splash of vinegar.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "gigantes",
+      "name": "Gigantes Plaki",
+      "emoji": "🫘",
+      "blurb": "Giant beans baked in tomato and dill.",
+      "nutrients": ["protein", "fiber", "vitaminA"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "horiatiki",
+      "name": "Horiatiki Salad",
+      "emoji": "🥗",
+      "blurb": "Tomato, cucumber, olives and feta.",
+      "nutrients": ["vitaminC", "healthyFats", "calcium", "water"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "spanakopita",
+      "name": "Spanakopita",
+      "emoji": "🥧",
+      "blurb": "Spinach and feta pie in crisp pastry.",
+      "nutrients": ["iron", "calcium", "vitaminA", "protein"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"]
+    },
+    {
+      "id": "yogurt-honey",
+      "name": "Yogurt with Honey & Walnuts",
+      "emoji": "🍯",
+      "blurb": "Thick yogurt with a drizzle of honey.",
+      "nutrients": ["probiotics", "calcium", "protein", "omega3"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "treeNuts"]
+    },
+    {
+      "id": "loukoumades",
+      "name": "Loukoumades",
+      "emoji": "🍯",
+      "blurb": "Honey-soaked doughnut puffs. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

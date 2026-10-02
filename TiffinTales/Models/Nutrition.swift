@@ -226,10 +226,11 @@ enum Allergen: String, CaseIterable, Codable, Identifiable {
 }
 
 /// Dietary style of a dish; a family's preference filters what shows up.
-enum Diet: Int, CaseIterable, Codable, Identifiable, Comparable {
-    case vegan = 0, vegetarian, eggetarian, nonVegetarian
+/// Ordered: a vegetarian family can eat vegan dishes, and so on.
+enum Diet: String, CaseIterable, Codable, Identifiable, Comparable {
+    case vegan, vegetarian, eggetarian, nonVegetarian
 
-    var id: Int { rawValue }
+    var id: String { rawValue }
 
     var name: String {
         switch self {
@@ -240,5 +241,7 @@ enum Diet: Int, CaseIterable, Codable, Identifiable, Comparable {
         }
     }
 
-    static func < (lhs: Diet, rhs: Diet) -> Bool { lhs.rawValue < rhs.rawValue }
+    private var rank: Int { Diet.allCases.firstIndex(of: self) ?? 0 }
+
+    static func < (lhs: Diet, rhs: Diet) -> Bool { lhs.rank < rhs.rank }
 }

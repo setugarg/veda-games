@@ -1,0 +1,82 @@
+{
+  "id": "kerala",
+  "name": "Kerala Adukkala",
+  "emoji": "🥥",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Ammamma", "Ammachi", "Appooppan"],
+  "summary": "Coconut, curry leaves and rice: puttu, avial, appam and kanji.",
+  "foods": [
+    {
+      "id": "puttu-kadala",
+      "name": "Puttu & Kadala Curry",
+      "emoji": "🧆",
+      "blurb": "Steamed rice-coconut cylinders with black chickpea curry.",
+      "nutrients": ["carbs", "protein", "fiber", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "avial",
+      "name": "Avial",
+      "emoji": "🥘",
+      "blurb": "Mixed vegetables in coconut and curd with coconut oil.",
+      "nutrients": ["fiber", "vitaminA", "healthyFats", "potassium"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "appam-stew",
+      "name": "Appam & Veg Stew",
+      "emoji": "🥞",
+      "blurb": "Lacy rice pancakes with a mild coconut-milk stew.",
+      "nutrients": ["carbs", "healthyFats", "vitaminA"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "thoran",
+      "name": "Cabbage Thoran",
+      "emoji": "🥬",
+      "blurb": "Stir-fried cabbage with grated coconut.",
+      "nutrients": ["fiber", "vitaminC", "healthyFats"],
+      "diet": "vegan"
+    },
+    {
+      "id": "meen-curry",
+      "name": "Meen Curry",
+      "emoji": "🐟",
+      "blurb": "Tangy fish curry with kudampuli.",
+      "nutrients": ["protein", "omega3", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "kanji-payar",
+      "name": "Kanji & Cherupayar",
+      "emoji": "🥣",
+      "blurb": "Rice gruel with green gram. What grandma makes on sick days.",
+      "nutrients": ["water", "carbs", "protein", "fiber"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "egg-roast",
+      "name": "Mutta Roast",
+      "emoji": "🥚",
+      "blurb": "Boiled eggs in a thick onion masala.",
+      "nutrients": ["protein", "vitaminD", "bVitamins"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "banana-chips",
+      "name": "Banana Chips",
+      "emoji": "🍌",
+      "blurb": "Fried in coconut oil and salted. Sometimes crunch!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

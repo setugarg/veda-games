@@ -1,0 +1,86 @@
+{
+  "id": "eastern-european",
+  "name": "Eastern European Kitchen",
+  "emoji": "🥟",
+  "region": "europe",
+  "countries": ["PL", "UA", "RU", "BY", "LT", "LV", "EE", "RO", "BG", "CZ", "SK"],
+  "elderNames": ["Babcia", "Babusya", "Babushka", "Bunica", "Dziadek"],
+  "summary": "Borscht, kasha, kefir, sauerkraut and pierogi from Babcia's kitchen.",
+  "foods": [
+    {
+      "id": "borscht",
+      "name": "Borscht",
+      "emoji": "🍲",
+      "blurb": "Beetroot soup with cabbage and potatoes.",
+      "nutrients": ["vitaminC", "fiber", "potassium", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kasha",
+      "name": "Buckwheat Kasha",
+      "localName": "Grechka",
+      "emoji": "🥣",
+      "blurb": "Toasty buckwheat groats; despite the name, buckwheat is not wheat!",
+      "nutrients": ["carbs", "magnesium", "fiber", "iron", "protein"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kefir",
+      "name": "Kefir",
+      "emoji": "🥛",
+      "blurb": "Tangy fermented milk drink.",
+      "nutrients": ["probiotics", "calcium", "protein"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "sauerkraut",
+      "name": "Sauerkraut",
+      "localName": "Kiszona Kapusta",
+      "emoji": "🥬",
+      "blurb": "Cabbage fermented in big crocks.",
+      "nutrients": ["probiotics", "vitaminC", "fiber"],
+      "tags": ["fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pierogi",
+      "name": "Pierogi Ruskie",
+      "emoji": "🥟",
+      "blurb": "Dumplings filled with potato and farmer's cheese.",
+      "nutrients": ["carbs", "protein", "calcium"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"]
+    },
+    {
+      "id": "syrniki",
+      "name": "Syrniki",
+      "emoji": "🥞",
+      "blurb": "Little cottage-cheese pancakes.",
+      "nutrients": ["protein", "calcium", "carbs"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"]
+    },
+    {
+      "id": "golubtsy",
+      "name": "Cabbage Rolls",
+      "localName": "Gołąbki / Holubtsi",
+      "emoji": "🥬",
+      "blurb": "Cabbage leaves rolled around rice and meat in tomato sauce.",
+      "nutrients": ["protein", "fiber", "vitaminC"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "paczki",
+      "name": "Pączki",
+      "emoji": "🍩",
+      "blurb": "Jam-filled doughnuts for Fat Thursday. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

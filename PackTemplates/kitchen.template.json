@@ -1,0 +1,32 @@
+{
+  "id": "your-kitchen-id",
+  "name": "Your Kitchen Name",
+  "emoji": "🍲",
+  "region": "southeastAsia",
+  "countries": ["VN"],
+  "elderNames": ["Bà", "Ông"],
+  "summary": "One sentence parents see when choosing kitchens: what this cuisine cooks every day.",
+  "foods": [
+    {
+      "id": "unique-dish-id",
+      "name": "Dish Name",
+      "localName": "What families call it at home (optional)",
+      "emoji": "🍛",
+      "blurb": "One or two sentences a 5-year-old understands.",
+      "nutrients": ["protein", "fiber", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "unique-treat-id",
+      "name": "Festival Sweet",
+      "emoji": "🍬",
+      "blurb": "Every kitchen gets one or two treats so kids learn about sometimes foods.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

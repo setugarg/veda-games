@@ -13,13 +13,13 @@ struct FamilySettings: Codable, Equatable {
     var childName: String = "Veda"
     var diet: Diet = .vegetarian
     var allergies: Set<Allergen> = []
-    var foodPackages: Set<String> = ["baniya", "gujarati"]
-    var remedyPackages: Set<String> = ["dadi-nani"]
+    var foodPackages: Set<String> = ["western", "greek", "japanese", "mexican"]
+    var remedyPackages: Set<String> = ["western-remedies"]
     var avatar = AvatarStyle()
     var readAloud: Bool = true
     var hasCompletedSetup: Bool = false
     /// What the child calls the grandparent who teaches in the story: Dadi, Nani, Ba, Aaji, Paati, Abuela…
-    var elderName: String = "Dadi"
+    var elderName: String = "Grandma"
 
     var displayName: String {
         let trimmed = childName.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -28,17 +28,27 @@ struct FamilySettings: Codable, Equatable {
 
     var displayElder: String {
         let trimmed = elderName.trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmed.isEmpty ? "Dadi" : trimmed
+        return trimmed.isEmpty ? "Grandma" : trimmed
     }
 
     init() {}
+
+    /// A first-launch setup that fits the family's country (from the device region).
+    static func suggested(forCountry country: String?) -> FamilySettings {
+        var settings = FamilySettings()
+        let suggestion = Catalog.suggestedPacks(forCountry: country)
+        settings.foodPackages = suggestion.food
+        settings.remedyPackages = suggestion.remedies
+        settings.elderName = suggestion.elder
+        return settings
+    }
 
     // Tolerant decoding, so adding settings in an update never wipes a family's choices.
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         let d = FamilySettings()
         childName = try c.decodeIfPresent(String.self, forKey: .childName) ?? d.childName
-        diet = try c.decodeIfPresent(Diet.self, forKey: .diet) ?? d.diet
+        diet = (try? c.decodeIfPresent(Diet.self, forKey: .diet)) ?? d.diet
         allergies = try c.decodeIfPresent(Set<Allergen>.self, forKey: .allergies) ?? d.allergies
         foodPackages = try c.decodeIfPresent(Set<String>.self, forKey: .foodPackages) ?? d.foodPackages
         remedyPackages = try c.decodeIfPresent(Set<String>.self, forKey: .remedyPackages) ?? d.remedyPackages

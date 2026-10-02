@@ -1,0 +1,241 @@
+{
+  "id": "everyday",
+  "name": "Everyday Pantry",
+  "emoji": "🧺",
+  "region": "everyday",
+  "summary": "Fruit, water, milk, eggs, seeds and staples found in homes all over the world.",
+  "isCore": true,
+  "foods": [
+    {
+      "id": "water",
+      "name": "Glass of Water",
+      "emoji": "🥛",
+      "blurb": "Plain water. The best drink for thinking, playing and cooling down.",
+      "nutrients": ["water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "banana",
+      "name": "Banana",
+      "emoji": "🍌",
+      "blurb": "Nature's energy bar. Quick fuel plus potassium for muscles.",
+      "nutrients": ["carbs", "potassium", "bVitamins", "fiber", "magnesium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "emoji": "🍎",
+      "blurb": "Crunchy, juicy and full of fiber.",
+      "nutrients": ["fiber", "vitaminC", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "emoji": "🍊",
+      "blurb": "Juicy segments of vitamin C to fight germs.",
+      "nutrients": ["vitaminC", "water", "fiber"],
+      "diet": "vegan"
+    },
+    {
+      "id": "guava",
+      "name": "Guava",
+      "emoji": "🍐",
+      "blurb": "One guava has more vitamin C than four oranges!",
+      "nutrients": ["vitaminC", "fiber", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "carrot",
+      "name": "Carrot Sticks",
+      "emoji": "🥕",
+      "blurb": "Crunchy orange sticks for sharp eyes.",
+      "nutrients": ["vitaminA", "fiber", "water"],
+      "diet": "vegan"
+    },
+    {
+      "id": "cucumber",
+      "name": "Cucumber Slices",
+      "emoji": "🥒",
+      "blurb": "Cool, crunchy and almost all water.",
+      "nutrients": ["water", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "milk",
+      "name": "Warm Milk",
+      "emoji": "🥛",
+      "blurb": "Builds bones and teeth.",
+      "nutrients": ["calcium", "protein", "vitaminD", "bVitamins"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "curd",
+      "name": "Bowl of Yogurt",
+      "emoji": "🍶",
+      "blurb": "Plain yogurt (curd) full of friendly tummy bacteria.",
+      "nutrients": ["probiotics", "calcium", "protein"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "roasted-chana",
+      "name": "Roasted Chickpeas",
+      "emoji": "🫘",
+      "blurb": "Crunchy roasted chickpeas. A protein-packed pocket snack.",
+      "nutrients": ["protein", "fiber", "iron", "magnesium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pumpkin-seeds",
+      "name": "Pumpkin Seeds",
+      "emoji": "🎃",
+      "blurb": "Tiny green seeds with big calm-and-shield powers.",
+      "nutrients": ["magnesium", "zinc", "iron", "healthyFats"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dates",
+      "name": "Dates",
+      "emoji": "🟤",
+      "blurb": "Naturally sweet energy with a little iron.",
+      "nutrients": ["carbs", "iron", "potassium", "fiber"],
+      "diet": "vegan"
+    },
+    {
+      "id": "palak",
+      "name": "Spinach",
+      "emoji": "🥬",
+      "blurb": "Leafy greens: iron for focus and vitamin A for eyes.",
+      "nutrients": ["iron", "vitaminA", "calcium", "magnesium", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "boiled-egg",
+      "name": "Boiled Egg",
+      "emoji": "🥚",
+      "blurb": "A perfect little package of protein.",
+      "nutrients": ["protein", "vitaminD", "bVitamins", "healthyFats"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "sweet-potato",
+      "name": "Roasted Sweet Potato",
+      "emoji": "🍠",
+      "blurb": "Roasted until soft. Sweet, slow energy.",
+      "nutrients": ["carbs", "vitaminA", "fiber", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "oats",
+      "name": "Bowl of Oats",
+      "emoji": "🥣",
+      "blurb": "Warm oats: slow energy that lasts all morning.",
+      "nutrients": ["fiber", "carbs", "magnesium", "iron"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chips",
+      "name": "Packet Chips",
+      "emoji": "🥔",
+      "blurb": "Salty and crunchy, but mostly oil and salt.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    },
+    {
+      "id": "cola",
+      "name": "Fizzy Cola",
+      "emoji": "🥤",
+      "blurb": "Lots of sugar bubbles. A quick zoom, then a big crash.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    },
+    {
+      "id": "candy",
+      "name": "Candy",
+      "emoji": "🍬",
+      "blurb": "Sticky sugar that stays on your teeth.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    },
+    {
+      "id": "instant-noodles",
+      "name": "Instant Noodles",
+      "emoji": "🍜",
+      "blurb": "Quick to cook, but low on the good stuff and high in salt.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["gluten"],
+      "sometimes": true
+    },
+    {
+      "id": "cream-biscuits",
+      "name": "Cream Biscuits",
+      "emoji": "🍪",
+      "blurb": "Sweet and tasty, but mostly sugar and flour.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"],
+      "sometimes": true
+    },
+    {
+      "id": "ice-cream",
+      "name": "Ice Cream",
+      "emoji": "🍨",
+      "blurb": "A cold treat for special days.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    },
+    {
+      "id": "sugary-cereal",
+      "name": "Sugary Cereal",
+      "emoji": "🥣",
+      "blurb": "Bright and crunchy, but mostly sugar.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["gluten"],
+      "sometimes": true
+    },
+    {
+      "id": "fries",
+      "name": "French Fries",
+      "emoji": "🍟",
+      "blurb": "Deep-fried and delicious. Perfect for a party, not for a mission.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    },
+    {
+      "id": "cake",
+      "name": "Birthday Cake",
+      "emoji": "🎂",
+      "blurb": "For birthdays! Lots of sugar and butter.",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"],
+      "sometimes": true
+    },
+    {
+      "id": "peanut-chikki",
+      "name": "Peanut Brittle",
+      "emoji": "🥜",
+      "blurb": "Crunchy peanuts in hard candy. Yummy, but very sticky and sweet.",
+      "nutrients": ["carbs", "protein"],
+      "diet": "vegan",
+      "allergens": ["peanuts"],
+      "sometimes": true
+    }
+  ]
+}

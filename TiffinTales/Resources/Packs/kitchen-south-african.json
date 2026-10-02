@@ -1,0 +1,66 @@
+{
+  "id": "south-african",
+  "name": "South African Kitchen",
+  "emoji": "🦁",
+  "region": "africa",
+  "countries": ["ZA", "ZW", "BW", "LS"],
+  "elderNames": ["Gogo", "Ouma", "Mkhulu", "Oupa"],
+  "summary": "Pap and chakalaka, umngqusho, morogo greens and amasi.",
+  "foods": [
+    {
+      "id": "pap-chakalaka",
+      "name": "Pap & Chakalaka",
+      "emoji": "🌶️",
+      "blurb": "Maize porridge with a spicy bean and vegetable relish.",
+      "nutrients": ["carbs", "fiber", "vitaminA", "protein"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "umngqusho",
+      "name": "Umngqusho",
+      "emoji": "🫘",
+      "blurb": "Samp and beans, slow-cooked.",
+      "nutrients": ["protein", "fiber", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "morogo",
+      "name": "Morogo",
+      "emoji": "🥬",
+      "blurb": "Wild leafy greens cooked with onion and tomato.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "amasi",
+      "name": "Amasi",
+      "emoji": "🥛",
+      "blurb": "Thick fermented milk, eaten with pap.",
+      "nutrients": ["probiotics", "calcium", "protein"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "butternut",
+      "name": "Roast Butternut",
+      "emoji": "🎃",
+      "blurb": "Butternut squash roasted with a little cinnamon.",
+      "nutrients": ["vitaminA", "fiber", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "koeksister",
+      "name": "Koeksister",
+      "emoji": "🥨",
+      "blurb": "Plaited, fried, syrup-soaked dough. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

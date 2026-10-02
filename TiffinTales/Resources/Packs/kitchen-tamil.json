@@ -1,0 +1,96 @@
+{
+  "id": "tamil",
+  "name": "Tamil Samayalarai",
+  "emoji": "🌺",
+  "region": "southAsia",
+  "countries": ["IN", "LK"],
+  "elderNames": ["Paati", "Thatha"],
+  "summary": "Idli, sambar, rasam, keerai and curd rice from Tamil homes.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "idli-sambar",
+      "name": "Idli Sambar",
+      "emoji": "⚪️",
+      "blurb": "Steamed fermented rice-urad cakes with veggie-filled sambar.",
+      "nutrients": ["carbs", "protein", "probiotics", "fiber", "bVitamins"],
+      "tags": ["legume", "grain", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dosa-chutney",
+      "name": "Dosa & Coconut Chutney",
+      "emoji": "🫓",
+      "blurb": "Crispy fermented crepe with fresh coconut chutney.",
+      "nutrients": ["carbs", "protein", "healthyFats"],
+      "tags": ["legume", "grain", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ven-pongal",
+      "name": "Ven Pongal",
+      "emoji": "🍚",
+      "blurb": "Rice and moong dal with pepper, cumin and ghee.",
+      "nutrients": ["carbs", "protein", "magnesium"],
+      "tags": ["legume", "grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "treeNuts"]
+    },
+    {
+      "id": "rasam-rice",
+      "name": "Rasam Rice",
+      "emoji": "🍲",
+      "blurb": "Peppery tomato-tamarind soup over rice.",
+      "nutrients": ["vitaminC", "water", "potassium", "carbs"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "keerai",
+      "name": "Keerai Masiyal",
+      "emoji": "🥬",
+      "blurb": "Mashed greens with a little dal and garlic.",
+      "nutrients": ["iron", "calcium", "vitaminA", "magnesium"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "curd-rice",
+      "name": "Thayir Sadam",
+      "emoji": "🍶",
+      "blurb": "Cool curd rice with pomegranate and a mustard tadka.",
+      "nutrients": ["probiotics", "calcium", "carbs", "water"],
+      "tags": ["grain", "fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "sundal",
+      "name": "Chana Sundal",
+      "emoji": "🫘",
+      "blurb": "Boiled chickpeas tossed with coconut and curry leaves.",
+      "nutrients": ["protein", "fiber", "iron", "healthyFats"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ragi-koozh",
+      "name": "Ragi Koozh",
+      "emoji": "🥣",
+      "blurb": "Fermented finger-millet drink. Calcium champion!",
+      "nutrients": ["calcium", "iron", "carbs", "magnesium", "probiotics"],
+      "tags": ["grain", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "payasam",
+      "name": "Payasam",
+      "emoji": "🍮",
+      "blurb": "Sweet milk pudding for festivals.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "treeNuts"],
+      "sometimes": true
+    }
+  ]
+}

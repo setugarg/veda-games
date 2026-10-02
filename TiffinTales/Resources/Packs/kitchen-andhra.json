@@ -1,0 +1,57 @@
+{
+  "id": "andhra",
+  "name": "Telugu Vantillu",
+  "emoji": "🌶️",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Ammamma", "Nanamma", "Thatha"],
+  "summary": "Pesarattu, pappu and ragi sangati from Andhra and Telangana.",
+  "foods": [
+    {
+      "id": "pesarattu",
+      "name": "Pesarattu",
+      "emoji": "🥞",
+      "blurb": "Green moong dosa with ginger.",
+      "nutrients": ["protein", "iron", "fiber", "bVitamins"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "gongura-pappu",
+      "name": "Gongura Pappu",
+      "emoji": "🍛",
+      "blurb": "Toor dal with tangy sorrel leaves.",
+      "nutrients": ["protein", "iron", "vitaminC"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ragi-sangati",
+      "name": "Ragi Sangati",
+      "emoji": "🟤",
+      "blurb": "Finger-millet and rice balls, eaten with curry.",
+      "nutrients": ["calcium", "iron", "carbs", "magnesium"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "majjiga",
+      "name": "Majjiga",
+      "emoji": "🥛",
+      "blurb": "Spiced buttermilk with curry leaves and ginger.",
+      "nutrients": ["probiotics", "water", "calcium"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "tomato-pappu",
+      "name": "Tomato Pappu",
+      "emoji": "🍅",
+      "blurb": "Toor dal cooked with lots of tomatoes.",
+      "nutrients": ["protein", "vitaminC", "potassium"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    }
+  ]
+}

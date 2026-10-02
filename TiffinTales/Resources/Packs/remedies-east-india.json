@@ -1,0 +1,75 @@
+{
+  "id": "east-india",
+  "name": "Odia, Bengali & Bihari Totke",
+  "emoji": "🛕",
+  "region": "southAsia",
+  "countries": ["IN", "BD"],
+  "summary": "Pakhala, bel pana, sattu, thankuni and sorse tel from eastern India.",
+  "remedies": [
+    {
+      "id": "pakhala-remedy",
+      "name": "Pakhala Pani",
+      "emoji": "🍚",
+      "treats": ["tooHot"],
+      "howItHelps": "Fermented rice water from Odisha keeps you cool and gives salts and good bacteria.",
+      "steps": [
+        "Soak cooked rice in water overnight.",
+        "Drink the water with salt and a squeeze of lime."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "bel-pana",
+      "name": "Bel Pana",
+      "emoji": "🟠",
+      "treats": ["stuckTummy", "tooHot"],
+      "howItHelps": "Wood-apple drink made for Pana Sankranti. Cools you down and its fiber helps the tummy.",
+      "steps": ["Scoop out bel pulp and soak it in water.", "Mash, strain, and add a little jaggery."],
+      "diet": "vegan"
+    },
+    {
+      "id": "sattu-remedy",
+      "name": "Namkeen Sattu Ghol",
+      "emoji": "🥤",
+      "treats": ["tooHot"],
+      "howItHelps": "Bihar's summer saviour: roasted gram in salted lemon water.",
+      "steps": ["Stir two spoons of sattu into cold water.", "Add salt, roasted jeera and lemon."],
+      "diet": "vegan"
+    },
+    {
+      "id": "thankuni",
+      "name": "Thankuni Pata Bata",
+      "emoji": "🍀",
+      "treats": ["tummyAche"],
+      "howItHelps": "Bengali grandmothers grind thankuni (Indian pennywort) leaves for upset tummies.",
+      "steps": [
+        "Grind a few thankuni leaves with a pinch of salt.",
+        "Eat a little with the first bite of rice."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "sorse-tel",
+      "name": "Warm Mustard Oil Massage",
+      "localName": "Sorse Tel Malish",
+      "emoji": "🫙",
+      "treats": ["sniffles", "tiredMuscles"],
+      "howItHelps": "Gently warmed mustard oil with garlic is rubbed on legs and chest to warm and soothe.",
+      "steps": [
+        "Grown-up warms mustard oil with a garlic clove.",
+        "Cool it till warm, then massage legs, soles and chest."
+      ],
+      "caution": "Grown-up checks the oil isn't hot.",
+      "diet": "vegan"
+    },
+    {
+      "id": "tulsi-madhu",
+      "name": "Tulsi Pata & Madhu",
+      "emoji": "🌿",
+      "treats": ["cough", "soreThroat"],
+      "howItHelps": "Tulsi juice with honey, a classic for coughs in Bengal and Odisha.",
+      "steps": ["Crush a few tulsi leaves to get juice.", "Mix with a spoon of honey and lick slowly."],
+      "diet": "vegetarian"
+    }
+  ]
+}

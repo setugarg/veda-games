@@ -1,0 +1,73 @@
+{
+  "id": "paati",
+  "name": "Paati Vaidhyam (South India)",
+  "emoji": "🌺",
+  "region": "southAsia",
+  "countries": ["IN", "LK"],
+  "summary": "Rasam, sukku malli kaapi, karpooravalli, neer mor and kanji.",
+  "remedies": [
+    {
+      "id": "milagu-rasam",
+      "name": "Milagu Jeera Rasam",
+      "emoji": "🍲",
+      "treats": ["cough", "sniffles", "soreThroat"],
+      "howItHelps": "Pepper and cumin rasam is hot and spicy; it opens a blocked nose and warms the throat.",
+      "steps": [
+        "Grown-up boils tamarind water with tomato, pepper, jeera and garlic.",
+        "Add a ghee-mustard tadka.",
+        "Sip from a cup or have it with rice."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "sukku-kaapi",
+      "name": "Sukku Malli Kaapi",
+      "emoji": "☕️",
+      "treats": ["sniffles", "soreThroat"],
+      "howItHelps": "No coffee in it! Dry ginger and coriander seeds boiled with palm jaggery.",
+      "steps": [
+        "Boil dry ginger, coriander seeds and pepper in water.",
+        "Add karupatti (palm jaggery) and strain."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "karpooravalli",
+      "name": "Karpooravalli Leaf",
+      "localName": "Doddapatre / Panikoorka",
+      "emoji": "🍃",
+      "treats": ["cough"],
+      "howItHelps": "Indian borage leaves are thick and fragrant, and their juice soothes a cough.",
+      "steps": ["Warm a leaf over the flame, squeeze out the juice.", "Mix with honey and lick."],
+      "diet": "vegetarian"
+    },
+    {
+      "id": "neer-mor",
+      "name": "Neer Mor",
+      "emoji": "🥛",
+      "treats": ["tooHot"],
+      "howItHelps": "Thin, spiced buttermilk handed out to everyone in Tamil summers.",
+      "steps": ["Thin curd with lots of water.", "Add curry leaves, ginger and salt."],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "kanji-remedy",
+      "name": "Rice Kanji",
+      "emoji": "🥣",
+      "treats": ["tummyAche"],
+      "howItHelps": "Kerala's rice gruel is the gentlest food for a sick tummy, with water and salts.",
+      "steps": ["Cook rice in lots of water until soft.", "Add salt and sip it warm."],
+      "diet": "vegan"
+    },
+    {
+      "id": "inji-murabba",
+      "name": "Inji Murappa",
+      "emoji": "🫚",
+      "treats": ["travelTummy"],
+      "howItHelps": "Ginger candy is the South Indian travel trick for wobbly tummies.",
+      "steps": ["Suck a small piece of ginger-jaggery candy slowly during the trip."],
+      "diet": "vegan"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "western",
+  "name": "American & British Home",
+  "emoji": "🥪",
+  "region": "northAmerica",
+  "countries": ["US", "GB", "CA", "AU", "NZ", "IE"],
+  "elderNames": ["Grandma", "Grandpa", "Granny", "Nana"],
+  "summary": "Oatmeal, beans on toast, soups and simple lunchbox food.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "oatmeal-berries",
+      "name": "Oatmeal with Berries",
+      "emoji": "🥣",
+      "blurb": "Warm oats topped with berries.",
+      "nutrients": ["fiber", "carbs", "magnesium", "vitaminC", "iron"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "beans-toast",
+      "name": "Beans on Toast",
+      "emoji": "🍞",
+      "blurb": "Baked beans on whole-grain toast.",
+      "nutrients": ["protein", "fiber", "iron", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "pb-sandwich",
+      "name": "Peanut Butter & Banana Sandwich",
+      "emoji": "🥪",
+      "blurb": "Whole-wheat bread with peanut butter and banana slices.",
+      "nutrients": ["protein", "healthyFats", "potassium", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten", "peanuts"]
+    },
+    {
+      "id": "scrambled-eggs",
+      "name": "Scrambled Eggs",
+      "emoji": "🍳",
+      "blurb": "Soft scrambled eggs.",
+      "nutrients": ["protein", "vitaminD", "bVitamins"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg"]
+    },
+    {
+      "id": "baked-potato",
+      "name": "Baked Potato & Broccoli",
+      "emoji": "🥔",
+      "blurb": "Fluffy jacket potato with steamed broccoli.",
+      "nutrients": ["carbs", "potassium", "vitaminC", "fiber"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chicken-soup",
+      "name": "Chicken Vegetable Soup",
+      "emoji": "🍲",
+      "blurb": "Warm broth with chicken, carrots and celery.",
+      "nutrients": ["protein", "water", "vitaminA", "zinc"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "donut",
+      "name": "Glazed Donut",
+      "emoji": "🍩",
+      "blurb": "Sugary and fried. A sometimes treat!",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

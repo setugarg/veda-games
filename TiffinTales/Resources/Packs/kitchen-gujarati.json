@@ -1,0 +1,99 @@
+{
+  "id": "gujarati",
+  "name": "Gujarati Rasoi",
+  "emoji": "🪁",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Ba", "Bapuji", "Dadi", "Nani"],
+  "summary": "Steamed, fermented and sweet-sour: dhokla, thepla, handvo and the full dal-bhaat-rotli-shaak.",
+  "foods": [
+    {
+      "id": "methi-thepla",
+      "name": "Methi Thepla",
+      "emoji": "🫓",
+      "blurb": "Soft spiced flatbreads with fenugreek leaves. Great for travel!",
+      "nutrients": ["carbs", "iron", "fiber", "vitaminA"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "dhokla",
+      "name": "Khaman Dhokla",
+      "emoji": "🧽",
+      "blurb": "Fluffy steamed besan cake. Fermenting adds B vitamins.",
+      "nutrients": ["protein", "bVitamins", "carbs"],
+      "tags": ["legume", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "khandvi",
+      "name": "Khandvi",
+      "emoji": "🌀",
+      "blurb": "Silky rolls of besan cooked in buttermilk.",
+      "nutrients": ["protein", "calcium"],
+      "tags": ["legume"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "sesame"]
+    },
+    {
+      "id": "handvo",
+      "name": "Handvo",
+      "emoji": "🍰",
+      "blurb": "Savoury baked lentil-rice cake with lauki and carrots, topped with til.",
+      "nutrients": ["protein", "fiber", "vitaminA", "bVitamins"],
+      "tags": ["legume", "grain", "fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "sesame"]
+    },
+    {
+      "id": "undhiyu",
+      "name": "Undhiyu",
+      "emoji": "🫕",
+      "blurb": "Winter mixed vegetables slow-cooked with methi muthiya.",
+      "nutrients": ["fiber", "vitaminA", "potassium", "iron"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "khichdi-kadhi",
+      "name": "Khichdi Kadhi",
+      "emoji": "🍚",
+      "blurb": "Comforting rice-dal khichdi with sweet-tangy Gujarati kadhi.",
+      "nutrients": ["protein", "carbs", "calcium", "probiotics"],
+      "tags": ["legume", "grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "muthiya",
+      "name": "Lauki Muthiya",
+      "emoji": "🥟",
+      "blurb": "Steamed dumplings of bottle gourd and flour.",
+      "nutrients": ["fiber", "iron", "carbs", "water"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten", "sesame"]
+    },
+    {
+      "id": "gujarati-thali",
+      "name": "Dal-Bhaat-Rotli-Shaak",
+      "emoji": "🍱",
+      "blurb": "The everyday plate: sweet-sour dal, rice, rotli and a seasonal shaak.",
+      "nutrients": ["protein", "carbs", "fiber", "iron", "vitaminC"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "fafda-jalebi",
+      "name": "Fafda Jalebi",
+      "emoji": "🥨",
+      "blurb": "Dussehra-morning special! Fried and sweet, so it's for sometimes.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

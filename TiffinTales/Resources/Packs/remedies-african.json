@@ -1,0 +1,67 @@
+{
+  "id": "african",
+  "name": "African Grandmothers' Remedies",
+  "emoji": "🌍",
+  "region": "africa",
+  "countries": ["KE", "TZ", "UG", "NG", "GH", "ZA", "ET", "SN", "ZW"],
+  "summary": "Tangawizi, rooibos, bissap, baobab and soft uji from across Africa.",
+  "remedies": [
+    {
+      "id": "tangawizi",
+      "name": "Tangawizi Tea",
+      "localName": "Chai ya tangawizi",
+      "emoji": "🫚",
+      "treats": ["cough", "sniffles", "soreThroat"],
+      "howItHelps": "East African ginger tea warms the throat and helps a stuffy nose.",
+      "steps": ["Grown-up boils grated ginger in water.", "Add a squeeze of lemon and a little honey."],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "rooibos",
+      "name": "Rooibos Tea",
+      "emoji": "🍵",
+      "treats": ["tummyAche"],
+      "howItHelps": "South African red bush tea has no caffeine. Grandmothers give it warm for sore tummies; scientists are still studying it.",
+      "steps": ["Steep rooibos in hot water.", "Cool till warm and sip."],
+      "diet": "vegan"
+    },
+    {
+      "id": "bissap",
+      "name": "Bissap / Zobo",
+      "emoji": "🌺",
+      "treats": ["tooHot"],
+      "howItHelps": "A cool hibiscus drink from West Africa that helps you drink more on hot days. Go easy on sugar!",
+      "steps": ["Steep dried hibiscus petals in water.", "Strain, add a little ginger and chill."],
+      "diet": "vegan"
+    },
+    {
+      "id": "bouye",
+      "name": "Baobab Drink",
+      "localName": "Bouye",
+      "emoji": "🌳",
+      "treats": ["stuckTummy", "tooHot"],
+      "howItHelps": "Baobab fruit powder has vitamin C and fiber. A cooling drink in Senegal.",
+      "steps": ["Stir baobab powder into cool water.", "Sip slowly."],
+      "diet": "vegan"
+    },
+    {
+      "id": "uji-sick",
+      "name": "Thin Uji",
+      "emoji": "🥣",
+      "treats": ["tummyAche"],
+      "howItHelps": "Thin, warm porridge is the gentle food grandmothers give a sick child.",
+      "steps": ["Cook millet or maize flour in lots of water.", "Serve it thin and warm."],
+      "diet": "vegan"
+    },
+    {
+      "id": "aloe-africa",
+      "name": "Aloe Leaf Gel",
+      "emoji": "🪴",
+      "treats": ["itchyBite"],
+      "howItHelps": "Cool aloe gel calms itchy, swollen skin.",
+      "steps": ["Grown-up cuts an aloe leaf.", "Dab the clear gel on the bite."],
+      "diet": "vegan"
+    }
+  ]
+}

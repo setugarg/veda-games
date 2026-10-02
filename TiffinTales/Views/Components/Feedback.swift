@@ -14,8 +14,9 @@ final class Narrator {
     func speak(_ text: String) {
         if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
         let utterance = AVSpeechUtterance(string: text.replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: ""))
-        // An Indian-English voice pronounces dish names like "dalma" or "thepla" more naturally.
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-IN") ?? AVSpeechSynthesisVoice(language: "en-US")
+        // Use the family's local English accent (en-IN, en-NG, en-AU…) when the device has one.
+        let region = Locale.current.region?.identifier ?? "US"
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-\(region)") ?? AVSpeechSynthesisVoice(language: "en-US")
         utterance.rate = 0.44
         utterance.pitchMultiplier = 1.12
         synthesizer.speak(utterance)

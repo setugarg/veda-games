@@ -1,0 +1,94 @@
+{
+  "id": "bengali",
+  "name": "Bengali Rannaghor",
+  "emoji": "🐟",
+  "region": "southAsia",
+  "countries": ["IN", "BD"],
+  "elderNames": ["Thakuma", "Dida", "Dadu"],
+  "summary": "Bitter-to-sweet courses: shukto, shaak, moong dal, macher jhol and doi.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "shukto",
+      "name": "Shukto",
+      "emoji": "🥗",
+      "blurb": "A gently bitter mixed-vegetable starter that wakes up digestion.",
+      "nutrients": ["fiber", "vitaminA", "potassium", "vitaminC"],
+      "diet": "vegan"
+    },
+    {
+      "id": "macher-jhol",
+      "name": "Macher Jhol & Bhaat",
+      "emoji": "🐟",
+      "blurb": "Light fish curry with potatoes, and rice.",
+      "nutrients": ["protein", "omega3", "vitaminD", "carbs"],
+      "tags": ["grain"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "bhaja-moong",
+      "name": "Bhaja Moong Dal",
+      "emoji": "🍛",
+      "blurb": "Roasted moong dal, nutty and golden.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "shaak-bhaja",
+      "name": "Shaak Bhaja",
+      "emoji": "🥬",
+      "blurb": "Greens like lal shaak or pui shaak fried with kalo jeere.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chhana-gur",
+      "name": "Chhana with Gur",
+      "emoji": "🧀",
+      "blurb": "Fresh soft cheese with a little date-palm jaggery.",
+      "nutrients": ["protein", "calcium", "bVitamins"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "jhal-muri",
+      "name": "Jhal Muri",
+      "emoji": "🍿",
+      "blurb": "Puffed rice tossed with chana, onion, cucumber and mustard oil.",
+      "nutrients": ["carbs", "protein", "fiber", "vitaminC"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["peanuts"]
+    },
+    {
+      "id": "aloo-posto",
+      "name": "Aloo Posto",
+      "emoji": "🥔",
+      "blurb": "Potatoes in creamy poppy-seed paste.",
+      "nutrients": ["calcium", "magnesium", "healthyFats", "carbs"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dim-dalna",
+      "name": "Dimer Dalna",
+      "emoji": "🥚",
+      "blurb": "Egg and potato curry.",
+      "nutrients": ["protein", "vitaminD", "bVitamins"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "rosogolla",
+      "name": "Rosogolla",
+      "emoji": "⚪️",
+      "blurb": "Spongy sweets in syrup. A sometimes joy!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

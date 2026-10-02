@@ -1,0 +1,66 @@
+{
+  "id": "assamese",
+  "name": "Assamese Rasoi",
+  "emoji": "🍃",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Aita", "Koka"],
+  "summary": "Light, tangy dishes from Assam: masor tenga, khar and pitika.",
+  "foods": [
+    {
+      "id": "masor-tenga",
+      "name": "Masor Tenga",
+      "emoji": "🐠",
+      "blurb": "Sour fish curry with tomatoes or elephant apple.",
+      "nutrients": ["protein", "omega3", "vitaminC"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "khar",
+      "name": "Papaya Khar",
+      "emoji": "🥘",
+      "blurb": "Raw papaya and dal cooked with traditional alkaline khar.",
+      "nutrients": ["fiber", "potassium", "vitaminA"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "aloo-pitika",
+      "name": "Aloo Pitika",
+      "emoji": "🥔",
+      "blurb": "Mashed potato with mustard oil, onion and green chilli.",
+      "nutrients": ["carbs", "potassium", "vitaminC"],
+      "diet": "vegan"
+    },
+    {
+      "id": "jolpan",
+      "name": "Jolpan",
+      "emoji": "🥣",
+      "blurb": "Flattened rice with curd and a little jaggery for breakfast.",
+      "nutrients": ["carbs", "probiotics", "calcium"],
+      "tags": ["grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "lai-xaak",
+      "name": "Lai Xaak",
+      "emoji": "🥬",
+      "blurb": "Mustard greens, lightly cooked.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "til-pitha",
+      "name": "Til Pitha",
+      "emoji": "🌯",
+      "blurb": "Sticky rice rolls filled with sesame and jaggery for Bihu.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["sesame"],
+      "sometimes": true
+    }
+  ]
+}

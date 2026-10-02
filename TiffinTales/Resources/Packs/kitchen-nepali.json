@@ -1,0 +1,74 @@
+{
+  "id": "nepali",
+  "name": "Nepali Bhanchha",
+  "emoji": "🏔️",
+  "region": "southAsia",
+  "countries": ["NP", "IN"],
+  "elderNames": ["Hajurama", "Hajurbuwa"],
+  "summary": "Dal-bhat-tarkari twice a day, fermented gundruk and millet dhido from Himalayan homes.",
+  "foods": [
+    {
+      "id": "dal-bhat",
+      "name": "Dal Bhat Tarkari",
+      "emoji": "🍛",
+      "blurb": "Lentil soup, rice and a vegetable curry. 'Dal bhat power, 24 hour!'",
+      "nutrients": ["protein", "carbs", "fiber", "iron", "vitaminA"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "gundruk",
+      "name": "Gundruk Soup",
+      "emoji": "🥬",
+      "blurb": "Fermented, sun-dried mustard greens made into a tangy soup.",
+      "nutrients": ["probiotics", "iron", "vitaminC", "fiber"],
+      "tags": ["fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dhido",
+      "name": "Dhido",
+      "emoji": "🟤",
+      "blurb": "Thick millet or buckwheat porridge eaten with greens and dal.",
+      "nutrients": ["carbs", "fiber", "magnesium", "iron"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kwati",
+      "name": "Kwati",
+      "emoji": "🫘",
+      "blurb": "A soup of nine kinds of sprouted beans, made for the festival of Janai Purnima.",
+      "nutrients": ["protein", "fiber", "iron", "zinc"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "saag-nepali",
+      "name": "Rayo ko Saag",
+      "emoji": "🥬",
+      "blurb": "Mustard greens stir-fried with garlic and chilli.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "momo",
+      "name": "Steamed Momo",
+      "emoji": "🥟",
+      "blurb": "Steamed dumplings filled with vegetables or meat.",
+      "nutrients": ["protein", "carbs"],
+      "diet": "nonVegetarian",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "sel-roti",
+      "name": "Sel Roti",
+      "emoji": "🍩",
+      "blurb": "Sweet, ring-shaped rice bread fried for Tihar. A sometimes treat!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

@@ -118,8 +118,8 @@ enum MissionEngine {
             case .nutrients(let required):
                 return required.allSatisfy(nutrients.contains)
             case .legumeAndGrain:
-                return everyday.contains { WisdomContent.legumeDishes.contains($0.id) }
-                    && everyday.contains { WisdomContent.grainDishes.contains($0.id) }
+                return everyday.contains { $0.tags.contains(.legume) }
+                    && everyday.contains { $0.tags.contains(.grain) }
             }
         }
     }
@@ -137,10 +137,12 @@ enum MissionEngine {
                                                         pantry: Pantry,
                                                         using rng: inout R) -> [RemedyChoice] {
         let helpful = pantry.remedies.filter { $0.treats.contains(ailment) }
-        // Prefer showing a family's cultural remedy over generic care, when they have one.
+        // The family's own remedy first, then their culture's, then generic everyday care.
+        let packID = { (remedy: Remedy) in Catalog.package(of: remedy)?.id }
+        let family = helpful.filter { packID($0) == ContentLibrary.familyRemediesID }.shuffled(using: &rng)
         let cultural = helpful.filter { Catalog.package(of: $0)?.isCore != true }.shuffled(using: &rng)
-        let generic = helpful.filter { Catalog.package(of: $0)?.isCore == true }
-        let correct = Array((cultural + generic).prefix(2))
+        let generic = helpful.filter { Catalog.package(of: $0)?.isCore == true && packID($0) != ContentLibrary.familyRemediesID }
+        let correct = Array((family + cultural + generic).prefix(2))
 
         let wrong = pantry.remedies
             .filter { !$0.treats.contains(ailment) }

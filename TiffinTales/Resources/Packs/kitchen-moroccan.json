@@ -1,0 +1,66 @@
+{
+  "id": "moroccan",
+  "name": "Moroccan Kitchen",
+  "emoji": "🫖",
+  "region": "middleEast",
+  "countries": ["MA", "DZ", "TN"],
+  "elderNames": ["Mima", "Jedda", "Jeddi"],
+  "summary": "Harira, couscous, zaalouk and bissara from North African homes.",
+  "foods": [
+    {
+      "id": "harira",
+      "name": "Harira",
+      "emoji": "🍲",
+      "blurb": "Tomato, lentil and chickpea soup that breaks the Ramadan fast.",
+      "nutrients": ["protein", "iron", "fiber", "vitaminC"],
+      "tags": ["legume"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "veg-couscous",
+      "name": "Seven-Vegetable Couscous",
+      "emoji": "🥘",
+      "blurb": "Friday couscous piled with vegetables and chickpeas.",
+      "nutrients": ["carbs", "fiber", "vitaminA", "potassium"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "zaalouk",
+      "name": "Zaalouk",
+      "emoji": "🍆",
+      "blurb": "Smoky eggplant and tomato salad with olive oil.",
+      "nutrients": ["fiber", "vitaminC", "potassium", "healthyFats"],
+      "diet": "vegan"
+    },
+    {
+      "id": "bissara",
+      "name": "Bissara",
+      "emoji": "🥣",
+      "blurb": "Creamy split fava bean soup with cumin and olive oil.",
+      "nutrients": ["protein", "fiber", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chicken-tagine",
+      "name": "Chicken Tagine with Olives",
+      "emoji": "🍗",
+      "blurb": "Slow-cooked chicken with preserved lemon and olives.",
+      "nutrients": ["protein", "vitaminC", "zinc"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "chebakia",
+      "name": "Chebakia",
+      "emoji": "🌸",
+      "blurb": "Honey-soaked sesame cookies for Ramadan. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["gluten", "sesame"],
+      "sometimes": true
+    }
+  ]
+}

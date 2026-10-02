@@ -1,0 +1,46 @@
+{
+  "id": "western-remedies",
+  "name": "American & European Home Care",
+  "emoji": "🏡",
+  "region": "northAmerica",
+  "countries": ["US", "GB", "CA", "AU", "IE"],
+  "summary": "Honey-lemon, ginger chews, oatmeal baths and peppermint.",
+  "remedies": [
+    {
+      "id": "honey-lemon",
+      "name": "Warm Honey Lemon Water",
+      "emoji": "🍯",
+      "treats": ["cough", "soreThroat"],
+      "howItHelps": "Honey coats the throat and lemon brings vitamin C.",
+      "steps": ["Stir honey and lemon juice into warm water."],
+      "diet": "vegetarian"
+    },
+    {
+      "id": "ginger-chews",
+      "name": "Ginger Chews",
+      "emoji": "🫚",
+      "treats": ["travelTummy"],
+      "howItHelps": "Ginger candies help settle motion sickness.",
+      "steps": ["Chew one ginger chew slowly during the ride."],
+      "diet": "vegan"
+    },
+    {
+      "id": "oatmeal-bath",
+      "name": "Oatmeal Bath",
+      "emoji": "🛁",
+      "treats": ["itchyBite"],
+      "howItHelps": "Finely ground oats in a lukewarm bath calm itchy skin.",
+      "steps": ["Grown-up blends oats into powder.", "Mix into a lukewarm bath and soak."],
+      "diet": "vegan"
+    },
+    {
+      "id": "peppermint",
+      "name": "Peppermint Tea",
+      "emoji": "🌱",
+      "treats": ["tummyAche"],
+      "howItHelps": "Peppermint relaxes tummy muscles.",
+      "steps": ["Steep peppermint leaves in hot water.", "Let it cool till warm."],
+      "diet": "vegan"
+    }
+  ]
+}

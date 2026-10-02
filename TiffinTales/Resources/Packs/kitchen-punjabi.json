@@ -1,0 +1,98 @@
+{
+  "id": "punjabi",
+  "name": "Punjabi Rasoi",
+  "emoji": "🌻",
+  "region": "southAsia",
+  "countries": ["IN", "PK"],
+  "elderNames": ["Bebe", "Dadi", "Nani", "Dada"],
+  "summary": "Hearty farmhouse food: saag-makki, rajma-chawal, lassi and paneer.",
+  "featured": true,
+  "foods": [
+    {
+      "id": "saag-makki",
+      "name": "Sarson da Saag & Makki di Roti",
+      "emoji": "🥬",
+      "blurb": "Slow-cooked mustard greens with maize flatbread and a little makkhan.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC", "fiber", "carbs"],
+      "tags": ["grain", "greens"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "rajma-chawal",
+      "name": "Rajma Chawal",
+      "emoji": "🫘",
+      "blurb": "Kidney beans in onion-tomato gravy with rice. A Sunday favourite.",
+      "nutrients": ["protein", "iron", "fiber", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chole-roti",
+      "name": "Chole & Roti",
+      "emoji": "🧆",
+      "blurb": "Spiced chickpeas with whole-wheat roti.",
+      "nutrients": ["protein", "fiber", "iron", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "lassi",
+      "name": "Plain Lassi",
+      "emoji": "🥛",
+      "blurb": "Churned curd drink. Ask for less sugar!",
+      "nutrients": ["probiotics", "calcium", "protein", "water"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "paneer-bhurji",
+      "name": "Paneer Bhurji",
+      "emoji": "🧀",
+      "blurb": "Scrambled paneer with tomatoes and capsicum.",
+      "nutrients": ["protein", "calcium", "vitaminD"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "aloo-paratha",
+      "name": "Aloo Paratha with Dahi",
+      "emoji": "🫓",
+      "blurb": "Stuffed paratha with a bowl of curd.",
+      "nutrients": ["carbs", "probiotics", "calcium", "potassium"],
+      "tags": ["grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"]
+    },
+    {
+      "id": "kali-dal",
+      "name": "Dal Makhani (Maa ki Dal)",
+      "emoji": "🍲",
+      "blurb": "Whole urad and rajma cooked low and slow overnight.",
+      "nutrients": ["protein", "iron", "fiber", "zinc"],
+      "tags": ["legume"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "chicken-curry",
+      "name": "Home Chicken Curry",
+      "emoji": "🍗",
+      "blurb": "Everyday chicken curry with onion-tomato masala.",
+      "nutrients": ["protein", "zinc", "bVitamins"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "pinni",
+      "name": "Atta Pinni",
+      "emoji": "🟤",
+      "blurb": "Winter ladoos of wheat, ghee and sugar. Sometimes treats.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten", "treeNuts"],
+      "sometimes": true
+    }
+  ]
+}

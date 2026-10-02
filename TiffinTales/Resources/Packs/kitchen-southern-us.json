@@ -1,0 +1,65 @@
+{
+  "id": "southern-us",
+  "name": "Southern US Home Kitchen",
+  "emoji": "🍑",
+  "region": "northAmerica",
+  "countries": ["US"],
+  "elderNames": ["Grandma", "MeMaw", "Nana", "Big Mama"],
+  "summary": "Greens, beans, sweet potatoes and cornbread from Southern family tables.",
+  "foods": [
+    {
+      "id": "collards-peas",
+      "name": "Collard Greens & Black-Eyed Peas",
+      "emoji": "🥬",
+      "blurb": "Slow-cooked greens with black-eyed peas, eaten for luck on New Year's Day.",
+      "nutrients": ["iron", "calcium", "vitaminA", "protein", "fiber"],
+      "tags": ["legume", "greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "red-beans-rice",
+      "name": "Red Beans & Rice",
+      "emoji": "🍛",
+      "blurb": "Monday's slow-simmered beans over rice.",
+      "nutrients": ["protein", "carbs", "fiber", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "okra-tomatoes",
+      "name": "Okra & Tomatoes",
+      "emoji": "🍅",
+      "blurb": "Stewed okra with tomatoes and onion.",
+      "nutrients": ["fiber", "vitaminC", "vitaminA"],
+      "diet": "vegan"
+    },
+    {
+      "id": "baked-sweet-potato",
+      "name": "Baked Sweet Potato",
+      "emoji": "🍠",
+      "blurb": "Roasted in its jacket until soft and sweet.",
+      "nutrients": ["vitaminA", "fiber", "carbs", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "cornbread",
+      "name": "Skillet Cornbread",
+      "emoji": "🌽",
+      "blurb": "Cornbread from a cast-iron pan.",
+      "nutrients": ["carbs"],
+      "tags": ["grain"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"]
+    },
+    {
+      "id": "peach-cobbler",
+      "name": "Peach Cobbler",
+      "emoji": "🍑",
+      "blurb": "Warm peaches under a sweet crust. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

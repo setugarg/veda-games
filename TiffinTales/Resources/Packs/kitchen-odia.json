@@ -1,0 +1,92 @@
+{
+  "id": "odia",
+  "name": "Odia Rasoi",
+  "emoji": "🛕",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Aai", "Aaja", "Nani"],
+  "summary": "Gentle, mustard-scented food from Odisha: dalma, santula, pakhala and pitha.",
+  "foods": [
+    {
+      "id": "dalma",
+      "name": "Dalma",
+      "emoji": "🍲",
+      "blurb": "Toor dal cooked with pumpkin, raw papaya and banana. Puri's temple favourite.",
+      "nutrients": ["protein", "fiber", "vitaminA", "potassium", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pakhala",
+      "name": "Pakhala Bhata",
+      "emoji": "🍚",
+      "blurb": "Rice soaked in water overnight. Cool, fermented summer food.",
+      "nutrients": ["water", "probiotics", "carbs", "potassium"],
+      "tags": ["grain", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "santula",
+      "name": "Santula",
+      "emoji": "🥘",
+      "blurb": "Lightly spiced boiled vegetables. Easy on the tummy.",
+      "nutrients": ["vitaminA", "fiber", "water", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "saga-bhaja",
+      "name": "Saga Bhaja",
+      "emoji": "🥬",
+      "blurb": "Leafy greens stir-fried with garlic and dry chilli.",
+      "nutrients": ["iron", "calcium", "vitaminA", "magnesium"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "chakuli-pitha",
+      "name": "Chakuli Pitha",
+      "emoji": "🥞",
+      "blurb": "Thin fermented rice-and-urad pancakes.",
+      "nutrients": ["carbs", "protein", "probiotics"],
+      "tags": ["legume", "grain", "fermented"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ghanta",
+      "name": "Ghanta Tarkari",
+      "emoji": "🫕",
+      "blurb": "A mixed-vegetable and lentil curry made for festivals and family days.",
+      "nutrients": ["fiber", "protein", "vitaminA", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "dahi-baigana",
+      "name": "Dahi Baigana",
+      "emoji": "🍆",
+      "blurb": "Fried brinjal in tempered curd.",
+      "nutrients": ["probiotics", "calcium", "fiber"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "macha-besara",
+      "name": "Macha Besara",
+      "emoji": "🐟",
+      "blurb": "Fish cooked in mustard paste.",
+      "nutrients": ["protein", "omega3", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "chhena-poda",
+      "name": "Chhena Poda",
+      "emoji": "🍮",
+      "blurb": "Baked cottage-cheese sweet. Delicious and very sugary!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

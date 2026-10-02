@@ -1,0 +1,86 @@
+{
+  "id": "maharashtrian",
+  "name": "Marathi Swayampakghar",
+  "emoji": "🛺",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Aaji", "Ajoba"],
+  "summary": "Poha, varan-bhaat, bhakri-pithla, usal and Konkan solkadhi.",
+  "foods": [
+    {
+      "id": "kanda-poha",
+      "name": "Kanda Poha",
+      "emoji": "🍛",
+      "blurb": "Flattened rice with onion, turmeric, lemon and peanuts.",
+      "nutrients": ["carbs", "iron", "vitaminC"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["peanuts"]
+    },
+    {
+      "id": "varan-bhaat",
+      "name": "Varan Bhaat with Toop",
+      "emoji": "🍚",
+      "blurb": "Plain toor dal and rice with a spoon of ghee. Pure comfort.",
+      "nutrients": ["protein", "carbs", "healthyFats"],
+      "tags": ["legume", "grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "thalipeeth",
+      "name": "Thalipeeth",
+      "emoji": "🥞",
+      "blurb": "Multigrain flatbread of bhajani flour, with a dollop of white butter.",
+      "nutrients": ["carbs", "protein", "fiber", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"]
+    },
+    {
+      "id": "bhakri-pithla",
+      "name": "Jowar Bhakri & Pithla",
+      "emoji": "🫓",
+      "blurb": "Sorghum flatbread with thick besan curry. Farmer's lunch!",
+      "nutrients": ["carbs", "fiber", "protein", "magnesium", "iron"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "misal-usal",
+      "name": "Matki Usal",
+      "emoji": "🌱",
+      "blurb": "Sprouted moth beans cooked with goda masala.",
+      "nutrients": ["protein", "fiber", "iron", "vitaminC"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "solkadhi",
+      "name": "Solkadhi",
+      "emoji": "🩷",
+      "blurb": "Pink kokum and coconut milk drink from the Konkan coast.",
+      "nutrients": ["healthyFats", "water", "vitaminC"],
+      "diet": "vegan"
+    },
+    {
+      "id": "sabudana-khichdi",
+      "name": "Sabudana Khichdi",
+      "emoji": "⚪️",
+      "blurb": "Tapioca pearls with peanuts and potato. Mostly quick energy.",
+      "nutrients": ["carbs", "potassium"],
+      "diet": "vegan",
+      "allergens": ["peanuts"]
+    },
+    {
+      "id": "ukadiche-modak",
+      "name": "Ukadiche Modak",
+      "emoji": "🥟",
+      "blurb": "Ganpati's favourite steamed sweet dumplings.",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "turkish",
+  "name": "Turkish Kitchen",
+  "emoji": "🧿",
+  "region": "middleEast",
+  "countries": ["TR", "CY", "AZ"],
+  "elderNames": ["Babaanne", "Anneanne", "Nine", "Dede"],
+  "summary": "Lentil soup, olive-oil vegetables, beans and yogurt from Turkish homes.",
+  "foods": [
+    {
+      "id": "mercimek",
+      "name": "Mercimek Çorbası",
+      "emoji": "🍲",
+      "blurb": "Red lentil soup with a squeeze of lemon.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kuru-fasulye",
+      "name": "Kuru Fasulye & Pilav",
+      "emoji": "🫘",
+      "blurb": "White bean stew with rice, a beloved home meal.",
+      "nutrients": ["protein", "fiber", "iron", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "menemen",
+      "name": "Menemen",
+      "emoji": "🍳",
+      "blurb": "Eggs softly scrambled with tomatoes and peppers.",
+      "nutrients": ["protein", "vitaminC", "vitaminA", "vitaminD"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "zeytinyagli",
+      "name": "Zeytinyağlı Taze Fasulye",
+      "emoji": "🫛",
+      "blurb": "Green beans slow-cooked in olive oil and tomato, served cool.",
+      "nutrients": ["fiber", "vitaminC", "healthyFats"],
+      "diet": "vegan"
+    },
+    {
+      "id": "cacik",
+      "name": "Cacık",
+      "emoji": "🥒",
+      "blurb": "Yogurt with cucumber, garlic and mint.",
+      "nutrients": ["probiotics", "calcium", "water"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "bulgur-pilavi",
+      "name": "Bulgur Pilavı",
+      "emoji": "🌾",
+      "blurb": "Cracked wheat pilaf with tomato and peppers.",
+      "nutrients": ["carbs", "fiber", "magnesium"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "lokum",
+      "name": "Lokum",
+      "emoji": "🍬",
+      "blurb": "Turkish delight. A sometimes sweet!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

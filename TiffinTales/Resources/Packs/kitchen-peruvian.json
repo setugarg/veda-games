@@ -1,0 +1,66 @@
+{
+  "id": "peruvian",
+  "name": "Peruvian Kitchen",
+  "emoji": "🦙",
+  "region": "latinAmerica",
+  "countries": ["PE", "BO", "EC"],
+  "elderNames": ["Abuela", "Mamita", "Abuelo"],
+  "summary": "Quinoa, potatoes and corn from the Andes, and ceviche from the coast.",
+  "foods": [
+    {
+      "id": "sopa-quinua",
+      "name": "Sopa de Quinua",
+      "emoji": "🍲",
+      "blurb": "Quinoa soup with vegetables. Quinoa is a complete protein on its own!",
+      "nutrients": ["protein", "magnesium", "iron", "fiber"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "tacu-tacu",
+      "name": "Tacu Tacu",
+      "emoji": "🫘",
+      "blurb": "Pan-fried cake of leftover rice and beans.",
+      "nutrients": ["protein", "carbs", "iron", "fiber"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ceviche",
+      "name": "Ceviche",
+      "emoji": "🐟",
+      "blurb": "Fresh fish 'cooked' in lime juice with onion and corn.",
+      "nutrients": ["protein", "omega3", "vitaminC"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "choclo-queso",
+      "name": "Choclo con Queso",
+      "emoji": "🌽",
+      "blurb": "Giant Andean corn with fresh cheese.",
+      "nutrients": ["carbs", "calcium", "fiber", "protein"],
+      "tags": ["grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "aguadito",
+      "name": "Aguadito de Pollo",
+      "emoji": "🍲",
+      "blurb": "Green chicken and rice soup with coriander.",
+      "nutrients": ["protein", "water", "vitaminA", "iron"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "picarones",
+      "name": "Picarones",
+      "emoji": "🍩",
+      "blurb": "Sweet potato doughnuts with syrup. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}

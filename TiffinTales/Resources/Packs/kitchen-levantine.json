@@ -1,0 +1,78 @@
+{
+  "id": "levantine",
+  "name": "Middle Eastern Kitchen",
+  "emoji": "🫒",
+  "region": "middleEast",
+  "countries": ["LB", "SY", "JO", "PS"],
+  "elderNames": ["Teta", "Jiddo"],
+  "summary": "Mezze tables of the Levant: hummus, tabbouleh, lentil soup and labneh.",
+  "foods": [
+    {
+      "id": "hummus",
+      "name": "Hummus & Veggies",
+      "emoji": "🧆",
+      "blurb": "Creamy chickpeas with tahini and olive oil.",
+      "nutrients": ["protein", "fiber", "healthyFats", "iron"],
+      "tags": ["legume"],
+      "diet": "vegan",
+      "allergens": ["sesame"]
+    },
+    {
+      "id": "tabbouleh",
+      "name": "Tabbouleh",
+      "emoji": "🥗",
+      "blurb": "Parsley salad with bulgur, tomato and lemon.",
+      "nutrients": ["vitaminC", "iron", "fiber", "vitaminA"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "shorbat-adas",
+      "name": "Shorbat Adas",
+      "emoji": "🍲",
+      "blurb": "Red lentil soup with cumin and a squeeze of lemon.",
+      "nutrients": ["protein", "iron", "fiber", "water"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "labneh",
+      "name": "Labneh & Za'atar",
+      "emoji": "🧀",
+      "blurb": "Thick strained yogurt with herbs and olive oil.",
+      "nutrients": ["probiotics", "calcium", "protein"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "sesame"]
+    },
+    {
+      "id": "shakshuka",
+      "name": "Shakshuka",
+      "emoji": "🍳",
+      "blurb": "Eggs poached in tomato and pepper sauce.",
+      "nutrients": ["protein", "vitaminC", "vitaminA", "vitaminD"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "dates-walnuts",
+      "name": "Dates & Walnuts",
+      "emoji": "🌰",
+      "blurb": "Sweet dates stuffed with walnuts.",
+      "nutrients": ["carbs", "omega3", "iron", "magnesium"],
+      "diet": "vegan",
+      "allergens": ["treeNuts"]
+    },
+    {
+      "id": "baklava",
+      "name": "Baklava",
+      "emoji": "🥮",
+      "blurb": "Layers of pastry, nuts and syrup for Eid. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten", "treeNuts"],
+      "sometimes": true
+    }
+  ]
+}

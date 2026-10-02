@@ -74,7 +74,7 @@ struct Chapter: Identifiable, Hashable {
 }
 
 extension String {
-    func personalized(_ name: String, elder: String = "Dadi") -> String {
+    func personalized(_ name: String, elder: String = "Grandma") -> String {
         replacingOccurrences(of: "{name}", with: name)
             .replacingOccurrences(of: "{elder}", with: elder)
     }

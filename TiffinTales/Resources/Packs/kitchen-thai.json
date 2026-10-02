@@ -1,0 +1,66 @@
+{
+  "id": "thai",
+  "name": "Thai Home Kitchen",
+  "emoji": "🌶️",
+  "region": "southeastAsia",
+  "countries": ["TH"],
+  "elderNames": ["Yai", "Ya", "Ta", "Pu"],
+  "summary": "Mild family dishes: khao tom, stir-fried vegetables, clear soups and sticky rice.",
+  "foods": [
+    {
+      "id": "khao-tom",
+      "name": "Khao Tom",
+      "emoji": "🥣",
+      "blurb": "Gentle rice soup with ginger and a little chicken or pork.",
+      "nutrients": ["water", "carbs", "protein"],
+      "tags": ["grain"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "pad-pak",
+      "name": "Pad Pak Ruam",
+      "emoji": "🥦",
+      "blurb": "Mixed vegetables stir-fried with garlic.",
+      "nutrients": ["fiber", "vitaminA", "vitaminC"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "kai-jeow",
+      "name": "Kai Jeow",
+      "emoji": "🍳",
+      "blurb": "Crispy-edged Thai omelette over rice.",
+      "nutrients": ["protein", "vitaminD", "bVitamins"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "fish"]
+    },
+    {
+      "id": "gaeng-jued",
+      "name": "Gaeng Jued Tao Hoo",
+      "emoji": "🍲",
+      "blurb": "Clear soup with soft tofu, glass noodles and vegetables.",
+      "nutrients": ["protein", "water", "calcium"],
+      "tags": ["legume"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "gai-yang",
+      "name": "Gai Yang & Sticky Rice",
+      "emoji": "🍗",
+      "blurb": "Grilled chicken with sticky rice and cucumber.",
+      "nutrients": ["protein", "carbs", "zinc"],
+      "tags": ["grain"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "mango-sticky",
+      "name": "Mango Sticky Rice",
+      "emoji": "🥭",
+      "blurb": "Sweet coconut sticky rice with mango. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

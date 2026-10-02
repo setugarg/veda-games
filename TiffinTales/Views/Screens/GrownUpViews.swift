@@ -61,6 +61,7 @@ struct ParentSettingsView: View {
     @Environment(GameStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     @State private var confirmReset = false
+    @State private var expandedRegions: Set<WorldRegion> = []
 
     var body: some View {
         @Bindable var store = store
@@ -69,8 +70,18 @@ struct ParentSettingsView: View {
                 Section {
                     TextField("Child's name", text: $store.settings.childName)
                         .font(.kid(17, weight: .semibold))
-                    TextField("What they call their grandparent (Dadi, Nani, Ba, Aaji…)", text: $store.settings.elderName)
+                    TextField("What they call their grandparent", text: $store.settings.elderName)
                         .font(.kid(17, weight: .semibold))
+                    FlowLayout(spacing: 6) {
+                        ForEach(Catalog.elderNameSuggestions(for: store.settings), id: \.self) { name in
+                            Text(name)
+                                .font(.kid(13, weight: .bold))
+                                .foregroundStyle(Palette.ink)
+                                .padding(.horizontal, 10).padding(.vertical, 5)
+                                .background(Capsule().fill(store.settings.elderName == name ? Palette.mint : Palette.lavender.opacity(0.5)))
+                                .onTapGesture { store.settings.elderName = name }
+                        }
+                    }
                     AvatarPicker(avatar: $store.settings.avatar)
                     Toggle("Read stories aloud", isOn: $store.settings.readAloud)
                 } header: {
@@ -100,31 +111,66 @@ struct ParentSettingsView: View {
 
                 Section {
                     NavigationLink {
-                        FamilyWisdomEditor()
+                        FamilyKitchenEditor()
                     } label: {
-                        Label("Our family's wisdom (\(store.familyTips.count))", systemImage: "heart.text.square.fill")
+                        Label("Our Family Kitchen (\(store.familyFoods.count) dishes)", systemImage: "frying.pan.fill")
                             .font(.kid(16, weight: .heavy))
                     }
+                    NavigationLink {
+                        FamilyRemediesEditor()
+                    } label: {
+                        Label("Our Family Remedies (\(store.familyRemedies.count))", systemImage: "cross.vial.fill")
+                            .font(.kid(16, weight: .heavy))
+                    }
+                    NavigationLink {
+                        FamilyWisdomEditor()
+                    } label: {
+                        Label("Our Family's Wisdom (\(store.familyTips.count))", systemImage: "heart.text.square.fill")
+                            .font(.kid(16, weight: .heavy))
+                    }
+                } header: {
+                    Text("Made by our family")
                 } footer: {
-                    Text("Add your own pairings, seasonal habits and home remedies, in your own words or a grandparent's recorded voice.")
+                    Text("Add the dishes you actually cook, the remedies your family trusts, and the food wisdom your parents taught you. They show up in your child's missions, pantry and books.")
                 }
 
-                packageSection(.india)
-                packageSection(.world)
+                Section {
+                    ForEach(foodRegions) { region in
+                        DisclosureGroup(isExpanded: expansion(region)) {
+                            ForEach(Catalog.foodPackages.filter { $0.region == region }) { pack in
+                                let dishes = pack.foods.filter { $0.isAllowed(for: store.settings.diet, avoiding: store.settings.allergies) }.count
+                                packageRow(emoji: pack.emoji, name: pack.name, summary: pack.summary,
+                                           count: "\(dishes) dishes for you", isOn: membership(pack.id, in: \.foodPackages), locked: false)
+                            }
+                        } label: {
+                            regionLabel(region, selected: Catalog.foodPackages.filter { $0.region == region && store.settings.foodPackages.contains($0.id) }.count)
+                        }
+                    }
+                    Button("Use suggestions for my country") {
+                        let suggestion = Catalog.suggestedPacks(forCountry: Locale.current.region?.identifier)
+                        store.settings.foodPackages = suggestion.food
+                        store.settings.remedyPackages = suggestion.remedies
+                    }
+                    .font(.kid(15, weight: .bold))
+                } header: {
+                    Text("Kitchens of the world")
+                } footer: {
+                    Text("Pick the cuisines your family cooks, or ones you'd love your child to discover. The Everyday Pantry (fruit, milk, eggs, seeds, water…) is always included.")
+                }
 
                 Section {
-                    ForEach(Catalog.remedyPackages) { pack in
+                    ForEach(Catalog.remedyPackages.filter { $0.id != ContentLibrary.familyRemediesID }) { pack in
                         if pack.isCore {
                             packageRow(emoji: pack.emoji, name: pack.name, summary: pack.summary,
                                        count: "\(pack.remedies.count) remedies", isOn: .constant(true), locked: true)
                         } else {
                             packageRow(emoji: pack.emoji, name: pack.name, summary: pack.summary,
-                                       count: "\(pack.remedies.count) remedies",
+                                       count: "\(pack.region.emoji) \(pack.region.name) · \(pack.remedies.count) remedies",
                                        isOn: membership(pack.id, in: \.remedyPackages), locked: false)
                         }
                     }
                 } header: {
-                    Text("Home remedy packages")
+                    Text("Home remedy packs")
                 } footer: {
                     Text("Remedies are traditional home care for mild, everyday troubles. They are not medical advice. Every remedy in the game reminds children to ask a grown-up and to see a doctor if they don't feel better. Honey is never suitable for babies under one.")
                 }
@@ -135,6 +181,13 @@ struct ParentSettingsView: View {
             }
             .navigationTitle("Pantry & Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                if expandedRegions.isEmpty {
+                    expandedRegions = Set(foodRegions.filter { region in
+                        Catalog.foodPackages.contains { $0.region == region && store.settings.foodPackages.contains($0.id) }
+                    })
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }.font(.kid(17))
@@ -147,19 +200,29 @@ struct ParentSettingsView: View {
         .onChange(of: store.settings) { store.saveSettings() }
     }
 
-    @ViewBuilder
-    private func packageSection(_ region: PackageRegion) -> some View {
-        Section {
-            ForEach(Catalog.foodPackages.filter { $0.region == region }) { pack in
-                let dishes = pack.foods.filter { $0.isAllowed(for: store.settings.diet, avoiding: store.settings.allergies) }.count
-                packageRow(emoji: pack.emoji, name: pack.name, summary: pack.summary,
-                           count: "\(dishes) dishes for you", isOn: membership(pack.id, in: \.foodPackages), locked: false)
-            }
-        } header: {
-            Text(region.rawValue)
-        } footer: {
-            if region == .india {
-                Text("The Everyday Pantry (fruit, milk, seeds, water…) is always included.")
+    private var foodRegions: [WorldRegion] {
+        WorldRegion.allCases.filter { region in
+            region != .everyday && region != .family && Catalog.foodPackages.contains { $0.region == region }
+        }
+    }
+
+    private func expansion(_ region: WorldRegion) -> Binding<Bool> {
+        Binding(get: { expandedRegions.contains(region) },
+                set: { open in
+                    if open { expandedRegions.insert(region) } else { expandedRegions.remove(region) }
+                })
+    }
+
+    private func regionLabel(_ region: WorldRegion, selected: Int) -> some View {
+        HStack {
+            Text("\(region.emoji)  \(region.name)").font(.kid(16, weight: .heavy))
+            Spacer()
+            if selected > 0 {
+                Text("\(selected) chosen")
+                    .font(.kid(12, weight: .bold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 8).padding(.vertical, 3)
+                    .background(Capsule().fill(Palette.mintDeep))
             }
         }
     }

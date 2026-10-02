@@ -1,0 +1,64 @@
+{
+  "id": "filipino",
+  "name": "Filipino Home Kitchen",
+  "emoji": "🥥",
+  "region": "southeastAsia",
+  "countries": ["PH"],
+  "elderNames": ["Lola", "Lolo"],
+  "summary": "Sinigang, tinola, monggo and pinakbet from Lola's kitchen.",
+  "foods": [
+    {
+      "id": "sinigang",
+      "name": "Sinigang",
+      "emoji": "🍲",
+      "blurb": "Sour tamarind soup with vegetables and pork or fish.",
+      "nutrients": ["vitaminC", "protein", "water", "fiber"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "tinola",
+      "name": "Tinola",
+      "emoji": "🍲",
+      "blurb": "Chicken and ginger soup with green papaya and malunggay leaves.",
+      "nutrients": ["protein", "vitaminA", "vitaminC", "water"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "monggo",
+      "name": "Ginisang Monggo",
+      "emoji": "🫘",
+      "blurb": "Mung bean stew with greens, every Friday in many homes.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pinakbet",
+      "name": "Pinakbet",
+      "emoji": "🎃",
+      "blurb": "Squash, okra, eggplant and bitter melon with a little shrimp paste.",
+      "nutrients": ["fiber", "vitaminA", "vitaminC", "potassium"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "arroz-caldo",
+      "name": "Arroz Caldo",
+      "emoji": "🥣",
+      "blurb": "Ginger-chicken rice porridge for rainy days.",
+      "nutrients": ["carbs", "protein", "water"],
+      "tags": ["grain"],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "halo-halo",
+      "name": "Halo-Halo",
+      "emoji": "🍧",
+      "blurb": "Shaved ice with sweet beans, jelly and milk. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

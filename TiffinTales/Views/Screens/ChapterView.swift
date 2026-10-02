@@ -17,7 +17,7 @@ struct ChapterView: View {
                         Text("Chapter \(chapter.number)")
                             .font(.kid(14, weight: .heavy))
                             .foregroundStyle(Palette.inkSoft)
-                        Text(chapter.title)
+                        Text(store.text(chapter.title))
                             .font(.kid(28, weight: .heavy))
                             .foregroundStyle(Palette.ink)
                             .multilineTextAlignment(.center)
@@ -77,7 +77,7 @@ struct ChapterView: View {
                     }
                 }
                 .modifier(PulseIf(active: isNext))
-                Text(mission.title)
+                Text(store.text(mission.title))
                     .font(.kid(14, weight: .heavy))
                     .foregroundStyle(Palette.ink)
                     .multilineTextAlignment(.center)

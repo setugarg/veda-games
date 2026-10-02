@@ -1,0 +1,64 @@
+{
+  "id": "spanish",
+  "name": "Spanish Kitchen",
+  "emoji": "🥘",
+  "region": "europe",
+  "countries": ["ES"],
+  "elderNames": ["Abuela", "Yaya", "Abuelo"],
+  "summary": "Lentejas, tortilla, gazpacho and pisto from Spanish family tables.",
+  "foods": [
+    {
+      "id": "lentejas",
+      "name": "Lentejas",
+      "emoji": "🍲",
+      "blurb": "Grandma's lentil stew with carrots and peppers.",
+      "nutrients": ["protein", "iron", "fiber", "vitaminA"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "tortilla-espanola",
+      "name": "Tortilla Española",
+      "emoji": "🥔",
+      "blurb": "Thick potato omelette.",
+      "nutrients": ["protein", "carbs", "vitaminD"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "gazpacho",
+      "name": "Gazpacho",
+      "emoji": "🍅",
+      "blurb": "Cold tomato and cucumber soup for hot days.",
+      "nutrients": ["vitaminC", "water", "vitaminA", "healthyFats"],
+      "diet": "vegan"
+    },
+    {
+      "id": "pisto",
+      "name": "Pisto",
+      "emoji": "🫑",
+      "blurb": "Slow-cooked peppers, zucchini and tomato.",
+      "nutrients": ["fiber", "vitaminC", "vitaminA"],
+      "diet": "vegan"
+    },
+    {
+      "id": "garbanzos-espinacas",
+      "name": "Garbanzos con Espinacas",
+      "emoji": "🥬",
+      "blurb": "Chickpeas and spinach from Seville.",
+      "nutrients": ["protein", "iron", "fiber", "vitaminA"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "churros-chocolate",
+      "name": "Churros con Chocolate",
+      "emoji": "🍫",
+      "blurb": "Fried dough with thick hot chocolate. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"],
+      "sometimes": true
+    }
+  ]
+}

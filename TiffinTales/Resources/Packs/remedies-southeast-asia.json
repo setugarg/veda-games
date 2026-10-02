@@ -1,0 +1,80 @@
+{
+  "id": "southeast-asia",
+  "name": "Southeast Asian Home Remedies",
+  "emoji": "🌴",
+  "region": "southeastAsia",
+  "countries": ["VN", "TH", "PH", "ID", "MY", "SG"],
+  "summary": "Salabat, lemongrass steam, calamansi, cháo hành and coconut water from Southeast Asia.",
+  "remedies": [
+    {
+      "id": "salabat",
+      "name": "Salabat",
+      "emoji": "🫚",
+      "treats": ["cough", "soreThroat"],
+      "howItHelps": "Filipino ginger tea, sipped warm to soothe a scratchy throat.",
+      "steps": [
+        "Grown-up boils sliced ginger in water for 10 minutes.",
+        "Add a little honey or brown sugar.",
+        "Sip when warm, not hot."
+      ],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "calamansi-honey",
+      "name": "Calamansi Juice with Honey",
+      "emoji": "🍋",
+      "treats": ["cough", "soreThroat"],
+      "howItHelps": "Little calamansi limes bring vitamin C, and honey coats the throat.",
+      "steps": ["Squeeze calamansi into warm water.", "Stir in a spoon of honey."],
+      "caution": "Honey is fine for big kids, never for babies under one year.",
+      "diet": "vegetarian"
+    },
+    {
+      "id": "xong",
+      "name": "Herbal Steam",
+      "localName": "Xông",
+      "emoji": "♨️",
+      "treats": ["sniffles"],
+      "howItHelps": "Vietnamese families breathe steam from a pot of lemongrass, ginger and leaves to clear a stuffy nose.",
+      "steps": [
+        "Grown-up boils lemongrass, ginger and herbs.",
+        "Sit at a safe distance with a towel over your head.",
+        "Breathe slowly for a few minutes."
+      ],
+      "caution": "Hot water! Only with a grown-up, and never lean too close.",
+      "diet": "vegan"
+    },
+    {
+      "id": "chao-hanh",
+      "name": "Cháo Hành",
+      "emoji": "🥣",
+      "treats": ["sniffles", "tummyAche"],
+      "howItHelps": "Rice porridge with spring onion and ginger: warm, gentle and easy to eat when you're poorly.",
+      "steps": [
+        "Cook rice in lots of water until soft.",
+        "Stir in chopped spring onion and a little ginger."
+      ],
+      "diet": "vegan"
+    },
+    {
+      "id": "coconut-water",
+      "name": "Fresh Coconut Water",
+      "localName": "Buko / Nước dừa",
+      "emoji": "🥥",
+      "treats": ["tooHot"],
+      "howItHelps": "Coconut water has natural salts like potassium that you lose when you sweat.",
+      "steps": ["Sip cool coconut water slowly in the shade."],
+      "diet": "vegan"
+    },
+    {
+      "id": "ginger-lemongrass",
+      "name": "Ginger Lemongrass Tea",
+      "emoji": "🌿",
+      "treats": ["travelTummy", "tummyAche"],
+      "howItHelps": "Ginger settles a queasy tummy and lemongrass smells calming.",
+      "steps": ["Simmer ginger slices and a lemongrass stalk.", "Let it cool till warm and sip."],
+      "diet": "vegan"
+    }
+  ]
+}

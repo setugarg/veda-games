@@ -1,0 +1,106 @@
+{
+  "id": "rajasthani",
+  "name": "Rajasthani Rasoi",
+  "emoji": "🐪",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Dadisa", "Nanisa", "Dadi", "Nani"],
+  "summary": "Desert-smart cooking: millets, dried beans and berries, and plenty of buttermilk.",
+  "foods": [
+    {
+      "id": "bajra-roti",
+      "name": "Bajra Roti with Gur",
+      "emoji": "🫓",
+      "blurb": "Thick pearl-millet roti with a lump of jaggery. Warming winter fuel.",
+      "nutrients": ["carbs", "iron", "magnesium", "fiber"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ker-sangri",
+      "name": "Ker Sangri",
+      "emoji": "🌿",
+      "blurb": "Desert beans and tiny berries, dried and cooked with spices.",
+      "nutrients": ["fiber", "calcium", "iron", "protein"],
+      "diet": "vegan"
+    },
+    {
+      "id": "raab",
+      "name": "Bajra Raab",
+      "localName": "Raab",
+      "emoji": "🥣",
+      "blurb": "A warm, thin porridge of bajra and buttermilk.",
+      "nutrients": ["carbs", "magnesium", "fiber", "calcium", "water"],
+      "tags": ["grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "gatte",
+      "name": "Gatte ki Sabzi",
+      "emoji": "🟡",
+      "blurb": "Steamed besan dumplings in a yogurt curry.",
+      "nutrients": ["protein", "calcium", "iron"],
+      "tags": ["legume"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "panchkuta",
+      "name": "Panchkuta",
+      "emoji": "🫛",
+      "blurb": "Five desert foods, ker, sangri, kumat, gunda and amchur, cooked together.",
+      "nutrients": ["fiber", "iron", "calcium", "magnesium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "missi-roti",
+      "name": "Missi Roti",
+      "emoji": "🫓",
+      "blurb": "Flatbread of besan and wheat with onion and ajwain.",
+      "nutrients": ["protein", "fiber", "iron", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "dal-baati",
+      "name": "Dal Baati",
+      "emoji": "🍘",
+      "blurb": "Baked wheat balls with panchmel dal. Hearty farm food.",
+      "nutrients": ["protein", "carbs", "fiber"],
+      "tags": ["legume", "grain"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"]
+    },
+    {
+      "id": "rajasthani-chaach",
+      "name": "Chaach",
+      "emoji": "🥛",
+      "blurb": "Cool spiced buttermilk, the desert's best drink.",
+      "nutrients": ["probiotics", "water", "calcium"],
+      "tags": ["fermented"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "churma",
+      "name": "Churma",
+      "emoji": "🍯",
+      "blurb": "Crumbled baati with ghee and sugar. Festive and very sweet!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy", "gluten"],
+      "sometimes": true
+    },
+    {
+      "id": "mirchi-bada",
+      "name": "Mirchi Bada",
+      "emoji": "🌶️",
+      "blurb": "Big fried chilli fritters from Jodhpur. A spicy sometimes snack.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

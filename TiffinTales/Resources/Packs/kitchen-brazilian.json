@@ -1,0 +1,66 @@
+{
+  "id": "brazilian",
+  "name": "Brazilian Kitchen",
+  "emoji": "🦜",
+  "region": "latinAmerica",
+  "countries": ["BR"],
+  "elderNames": ["Vovó", "Vovô"],
+  "summary": "Arroz e feijão every day, with couve, mandioca and moqueca.",
+  "foods": [
+    {
+      "id": "arroz-feijao",
+      "name": "Arroz e Feijão",
+      "emoji": "🍛",
+      "blurb": "Rice and beans, Brazil's everyday plate.",
+      "nutrients": ["protein", "carbs", "iron", "fiber"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "couve",
+      "name": "Couve Refogada",
+      "emoji": "🥬",
+      "blurb": "Thinly sliced collard greens sautéed with garlic.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "mandioca",
+      "name": "Mandioca Cozida",
+      "emoji": "🥔",
+      "blurb": "Boiled cassava with a little butter.",
+      "nutrients": ["carbs", "potassium", "vitaminC"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "moqueca",
+      "name": "Moqueca",
+      "emoji": "🐟",
+      "blurb": "Fish stewed with coconut milk, tomato and peppers.",
+      "nutrients": ["protein", "omega3", "vitaminC", "healthyFats"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "pao-de-queijo",
+      "name": "Pão de Queijo",
+      "emoji": "🧀",
+      "blurb": "Cheesy tapioca bread rolls.",
+      "nutrients": ["carbs", "calcium"],
+      "diet": "eggetarian",
+      "allergens": ["dairy", "egg"]
+    },
+    {
+      "id": "brigadeiro",
+      "name": "Brigadeiro",
+      "emoji": "🍫",
+      "blurb": "Chocolate fudge balls for birthdays. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"],
+      "sometimes": true
+    }
+  ]
+}

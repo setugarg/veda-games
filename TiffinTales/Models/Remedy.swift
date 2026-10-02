@@ -74,20 +74,25 @@ enum Ailment: String, CaseIterable, Codable, Identifiable {
     }
 }
 
-/// A traditional home remedy from a particular culture.
-struct Remedy: Identifiable, Hashable {
-    let id: String
-    let name: String
-    let localName: String?
-    let emoji: String
-    let treats: Set<Ailment>
+/// A traditional home remedy from a particular culture. Remedies live in JSON
+/// remedy packs (see `PackTemplates/remedies.template.json`) or are added by
+/// parents in the Family Remedies editor.
+struct Remedy: Identifiable, Hashable, Codable {
+    var id: String
+    var name: String
+    var localName: String?
+    var emoji: String
+    var treats: Set<Ailment>
     /// The key ingredient and how it helps.
-    let howItHelps: String
+    var howItHelps: String
     /// Simple steps, made *with a grown-up*.
-    let steps: [String]
-    let caution: String?
-    let diet: Diet
-    let allergens: Set<Allergen>
+    var steps: [String]
+    var caution: String?
+    var diet: Diet
+    var allergens: Set<Allergen>
+    /// For family-made remedies: who taught it, and an optional voice recording.
+    var author: String?
+    var audioFile: String?
 
     init(_ id: String,
          _ name: String,
@@ -111,6 +116,26 @@ struct Remedy: Identifiable, Hashable {
         self.allergens = allergens
     }
 
+    enum CodingKeys: String, CodingKey {
+        case id, name, localName, emoji, treats, howItHelps, steps, caution, diet, allergens, author, audioFile
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decode(String.self, forKey: .id)
+        name = try c.decode(String.self, forKey: .name)
+        localName = try c.decodeIfPresent(String.self, forKey: .localName)
+        emoji = try c.decode(String.self, forKey: .emoji)
+        treats = try c.decode(Set<Ailment>.self, forKey: .treats)
+        howItHelps = try c.decodeIfPresent(String.self, forKey: .howItHelps) ?? ""
+        steps = try c.decodeIfPresent([String].self, forKey: .steps) ?? []
+        caution = try c.decodeIfPresent(String.self, forKey: .caution)
+        diet = try c.decodeIfPresent(Diet.self, forKey: .diet) ?? .vegetarian
+        allergens = try c.decodeIfPresent(Set<Allergen>.self, forKey: .allergens) ?? []
+        author = try c.decodeIfPresent(String.self, forKey: .author)
+        audioFile = try c.decodeIfPresent(String.self, forKey: .audioFile)
+    }
+
     func isAllowed(for diet: Diet, avoiding allergies: Set<Allergen>) -> Bool {
         self.diet <= diet && allergens.isDisjoint(with: allergies)
     }
@@ -119,13 +144,43 @@ struct Remedy: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
-struct RemedyPackage: Identifiable, Hashable {
-    let id: String
-    let name: String
-    let emoji: String
-    let summary: String
-    let remedies: [Remedy]
-    var isCore: Bool = false
+struct RemedyPackage: Identifiable, Hashable, Codable {
+    var id: String
+    var name: String
+    var emoji: String
+    var region: WorldRegion
+    var countries: [String]
+    var summary: String
+    var remedies: [Remedy]
+    var isCore: Bool
+
+    init(id: String, name: String, emoji: String, region: WorldRegion = .everyday, countries: [String] = [],
+         summary: String, remedies: [Remedy], isCore: Bool = false) {
+        self.id = id
+        self.name = name
+        self.emoji = emoji
+        self.region = region
+        self.countries = countries
+        self.summary = summary
+        self.remedies = remedies
+        self.isCore = isCore
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, emoji, region, countries, summary, isCore, remedies
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decode(String.self, forKey: .id)
+        name = try c.decode(String.self, forKey: .name)
+        emoji = try c.decode(String.self, forKey: .emoji)
+        region = try c.decode(WorldRegion.self, forKey: .region)
+        countries = try c.decodeIfPresent([String].self, forKey: .countries) ?? []
+        summary = try c.decodeIfPresent(String.self, forKey: .summary) ?? ""
+        remedies = try c.decode([Remedy].self, forKey: .remedies)
+        isCore = try c.decodeIfPresent(Bool.self, forKey: .isCore) ?? false
+    }
 
     static func == (lhs: RemedyPackage, rhs: RemedyPackage) -> Bool { lhs.id == rhs.id }
     func hash(into hasher: inout Hasher) { hasher.combine(id) }

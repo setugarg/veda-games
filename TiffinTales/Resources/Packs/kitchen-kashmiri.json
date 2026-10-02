@@ -1,0 +1,64 @@
+{
+  "id": "kashmiri",
+  "name": "Kashmiri Kitchen",
+  "emoji": "🏔️",
+  "region": "southAsia",
+  "countries": ["IN"],
+  "elderNames": ["Dadi", "Nani"],
+  "summary": "Warming valley food: haak saag, nadru, rajma and walnuts.",
+  "foods": [
+    {
+      "id": "haak",
+      "name": "Haak Saag",
+      "emoji": "🥬",
+      "blurb": "Collard greens simmered simply with mustard oil and hing.",
+      "nutrients": ["iron", "calcium", "vitaminA", "vitaminC"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "nadru-yakhni",
+      "name": "Nadru Yakhni",
+      "emoji": "🪷",
+      "blurb": "Lotus stem in a gentle yogurt gravy with fennel.",
+      "nutrients": ["fiber", "vitaminC", "potassium", "probiotics"],
+      "diet": "vegetarian",
+      "allergens": ["dairy"]
+    },
+    {
+      "id": "kashmiri-rajma",
+      "name": "Kashmiri Rajma & Rice",
+      "emoji": "🫘",
+      "blurb": "Small, sweet Bhaderwahi rajma cooked with rice.",
+      "nutrients": ["protein", "iron", "fiber", "carbs"],
+      "tags": ["legume", "grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "walnuts",
+      "name": "Kashmiri Walnuts",
+      "emoji": "🌰",
+      "blurb": "Brain-shaped nuts that really are brain food!",
+      "nutrients": ["omega3", "healthyFats", "magnesium"],
+      "diet": "vegan",
+      "allergens": ["treeNuts"]
+    },
+    {
+      "id": "monji-haak",
+      "name": "Monji Haak",
+      "emoji": "🥬",
+      "blurb": "Kohlrabi with its leaves, cooked till soft.",
+      "nutrients": ["fiber", "vitaminC", "potassium"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kashmiri-mutton",
+      "name": "Rogan Josh",
+      "emoji": "🍖",
+      "blurb": "Slow-cooked mutton with fennel and dry ginger.",
+      "nutrients": ["protein", "iron", "zinc", "bVitamins"],
+      "diet": "nonVegetarian",
+      "allergens": ["dairy"]
+    }
+  ]
+}

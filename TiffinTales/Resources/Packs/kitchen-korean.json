@@ -1,0 +1,68 @@
+{
+  "id": "korean",
+  "name": "Korean Home Kitchen",
+  "emoji": "🍚",
+  "region": "eastAsia",
+  "countries": ["KR"],
+  "elderNames": ["Halmeoni", "Harabeoji"],
+  "summary": "Bap, guk and banchan: rice, soup and lots of little sides.",
+  "foods": [
+    {
+      "id": "bibimbap",
+      "name": "Bibimbap",
+      "emoji": "🍲",
+      "blurb": "Rice topped with colourful vegetables and an egg.",
+      "nutrients": ["fiber", "vitaminA", "protein", "carbs", "iron"],
+      "tags": ["grain"],
+      "diet": "eggetarian",
+      "allergens": ["egg", "sesame", "soy"]
+    },
+    {
+      "id": "kimchi",
+      "name": "Mild Kimchi",
+      "emoji": "🥬",
+      "blurb": "Fermented cabbage, full of good bacteria.",
+      "nutrients": ["probiotics", "vitaminC", "fiber"],
+      "tags": ["fermented"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "doenjang",
+      "name": "Doenjang Jjigae",
+      "emoji": "🍲",
+      "blurb": "Soybean-paste stew with tofu, zucchini and potato.",
+      "nutrients": ["protein", "probiotics", "fiber"],
+      "tags": ["legume", "fermented"],
+      "diet": "vegan",
+      "allergens": ["soy"]
+    },
+    {
+      "id": "gyeran-jjim",
+      "name": "Gyeran Jjim",
+      "emoji": "🥚",
+      "blurb": "Fluffy steamed egg in a stone pot.",
+      "nutrients": ["protein", "vitaminD", "bVitamins"],
+      "diet": "eggetarian",
+      "allergens": ["egg"]
+    },
+    {
+      "id": "japchae",
+      "name": "Japchae",
+      "emoji": "🍜",
+      "blurb": "Sweet-potato glass noodles with spinach and carrots.",
+      "nutrients": ["carbs", "vitaminA", "fiber"],
+      "diet": "vegan",
+      "allergens": ["sesame", "soy"]
+    },
+    {
+      "id": "tteok",
+      "name": "Honey Tteok",
+      "emoji": "🍡",
+      "blurb": "Sweet rice cakes for celebrations.",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

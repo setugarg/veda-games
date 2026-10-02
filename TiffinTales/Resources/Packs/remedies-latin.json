@@ -1,0 +1,64 @@
+{
+  "id": "latin",
+  "name": "Remedios de la Abuela",
+  "emoji": "🌵",
+  "region": "latinAmerica",
+  "countries": ["MX", "GT", "CO", "PE", "AR", "BR", "CL", "EC", "BO", "VE", "US"],
+  "summary": "Manzanilla, limón con miel, caldo, sábila and agua fresca from Latin America.",
+  "remedies": [
+    {
+      "id": "manzanilla",
+      "name": "Té de Manzanilla",
+      "emoji": "🌼",
+      "treats": ["tummyAche"],
+      "howItHelps": "Chamomile tea relaxes the tummy and helps you rest.",
+      "steps": ["Steep chamomile flowers in hot water.", "Let it cool till warm and sip."],
+      "diet": "vegan"
+    },
+    {
+      "id": "limon-miel",
+      "name": "Limón con Miel",
+      "emoji": "🍋",
+      "treats": ["cough", "soreThroat"],
+      "howItHelps": "Warm lime and honey: vitamin C plus a soothing coat for the throat.",
+      "steps": ["Squeeze lime into warm water.", "Add a spoon of honey."],
+      "diet": "vegetarian"
+    },
+    {
+      "id": "caldo",
+      "name": "Caldo de Pollo",
+      "emoji": "🍲",
+      "treats": ["sniffles"],
+      "howItHelps": "Warm chicken broth with vegetables keeps you hydrated and helps clear a stuffy nose.",
+      "steps": ["Sip warm broth with carrots, squash and a squeeze of lime."],
+      "diet": "nonVegetarian"
+    },
+    {
+      "id": "sabila",
+      "name": "Sábila (Aloe Vera)",
+      "emoji": "🪴",
+      "treats": ["itchyBite"],
+      "howItHelps": "Cool aloe gel calms itchy, swollen skin.",
+      "steps": ["Grown-up cuts an aloe leaf.", "Dab the clear gel on the bite."],
+      "diet": "vegan"
+    },
+    {
+      "id": "agua-pepino",
+      "name": "Agua Fresca de Pepino",
+      "emoji": "🥒",
+      "treats": ["tooHot"],
+      "howItHelps": "Cucumber-lime water is cooling and refreshing.",
+      "steps": ["Blend cucumber with water and lime.", "Strain and drink cool."],
+      "diet": "vegan"
+    },
+    {
+      "id": "hierbabuena",
+      "name": "Té de Hierbabuena",
+      "emoji": "🌱",
+      "treats": ["travelTummy", "tummyAche"],
+      "howItHelps": "Mint tea calms a queasy tummy.",
+      "steps": ["Steep fresh mint leaves in hot water.", "Cool a little and sip."],
+      "diet": "vegan"
+    }
+  ]
+}

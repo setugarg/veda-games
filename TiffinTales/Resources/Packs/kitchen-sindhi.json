@@ -1,0 +1,57 @@
+{
+  "id": "sindhi",
+  "name": "Sindhi Rasoi",
+  "emoji": "⛵",
+  "region": "southAsia",
+  "countries": ["IN", "PK"],
+  "elderNames": ["Dadi", "Nani"],
+  "summary": "Comforting Sindhi home food: sai bhaji, koki and veggie-loaded kadhi.",
+  "foods": [
+    {
+      "id": "sai-bhaji",
+      "name": "Sai Bhaji & Rice",
+      "emoji": "🥬",
+      "blurb": "Spinach, dill and chana dal cooked with vegetables.",
+      "nutrients": ["iron", "protein", "fiber", "vitaminA"],
+      "tags": ["legume", "grain", "greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "sindhi-kadhi",
+      "name": "Sindhi Kadhi",
+      "emoji": "🍲",
+      "blurb": "Tangy besan and tamarind curry full of drumsticks and vegetables. No curd!",
+      "nutrients": ["fiber", "vitaminA", "potassium", "protein", "vitaminC"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "koki",
+      "name": "Koki",
+      "emoji": "🫓",
+      "blurb": "Thick, crispy flatbread with onion and pomegranate seeds.",
+      "nutrients": ["carbs", "fiber", "iron"],
+      "tags": ["grain"],
+      "diet": "vegan",
+      "allergens": ["gluten"]
+    },
+    {
+      "id": "tidali-dal",
+      "name": "Tidali Dal",
+      "emoji": "🍛",
+      "blurb": "Three dals cooked together.",
+      "nutrients": ["protein", "iron", "fiber"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "aloo-tuk",
+      "name": "Aloo Tuk",
+      "emoji": "🥔",
+      "blurb": "Double-fried smashed potatoes with masala. A sometimes side.",
+      "nutrients": ["carbs", "potassium"],
+      "diet": "vegan",
+      "sometimes": true
+    }
+  ]
+}

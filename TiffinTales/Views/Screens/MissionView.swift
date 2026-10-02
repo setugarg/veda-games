@@ -77,7 +77,7 @@ struct MissionView: View {
             }
             if phase == .celebrating { ConfettiView() }
         }
-        .navigationTitle(mission.title)
+        .navigationTitle(store.text(mission.title))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(item: $detailFood) { food in
             FoodDetailView(food: food).presentationDetents([.medium, .large])
@@ -747,8 +747,14 @@ struct RemedyLessonCard: View {
                     if let pack = Catalog.package(of: remedy) {
                         Text("\(pack.emoji) \(pack.name)").font(.kid(12, weight: .bold)).foregroundStyle(Palette.inkSoft)
                     }
+                    if let author = remedy.author {
+                        Text("💛 Taught by \(author)").font(.kid(12, weight: .heavy)).foregroundStyle(Palette.inkSoft)
+                    }
                 }
                 Spacer()
+                if let file = remedy.audioFile {
+                    PlayVoiceButton(file: file)
+                }
                 SpeakButton(text: remedy.howItHelps + " " + remedy.steps.joined(separator: " "), tint: Palette.sageDeep)
             }
             Text("How it helps").font(.kid(15, weight: .heavy)).foregroundStyle(Palette.inkSoft)

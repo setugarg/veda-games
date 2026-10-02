@@ -1,0 +1,75 @@
+{
+  "id": "sri-lankan",
+  "name": "Sri Lankan Kitchen",
+  "emoji": "🐘",
+  "region": "southAsia",
+  "countries": ["LK"],
+  "elderNames": ["Achchi", "Aththa", "Paati"],
+  "summary": "Rice and curry with coconut, gotukola, parippu and kola kenda.",
+  "foods": [
+    {
+      "id": "parippu",
+      "name": "Parippu",
+      "emoji": "🍛",
+      "blurb": "Red lentils simmered in coconut milk with curry leaves.",
+      "nutrients": ["protein", "iron", "fiber", "healthyFats"],
+      "tags": ["legume"],
+      "diet": "vegan"
+    },
+    {
+      "id": "gotukola-sambol",
+      "name": "Gotukola Sambol",
+      "emoji": "🥗",
+      "blurb": "Finely chopped pennywort leaves tossed with coconut and lime.",
+      "nutrients": ["vitaminA", "vitaminC", "iron", "fiber"],
+      "tags": ["greens"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kola-kenda",
+      "name": "Kola Kenda",
+      "emoji": "🥣",
+      "blurb": "A green herbal porridge of rice, coconut milk and leaves, for breakfast.",
+      "nutrients": ["iron", "vitaminC", "carbs", "water"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kiribath",
+      "name": "Kiribath",
+      "emoji": "🍚",
+      "blurb": "Rice cooked in coconut milk, made for new beginnings and New Year.",
+      "nutrients": ["carbs", "healthyFats"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "ambul-thiyal",
+      "name": "Fish Ambul Thiyal",
+      "emoji": "🐟",
+      "blurb": "Sour fish curry cooked with goraka.",
+      "nutrients": ["protein", "omega3", "vitaminD"],
+      "diet": "nonVegetarian",
+      "allergens": ["fish"]
+    },
+    {
+      "id": "string-hoppers",
+      "name": "String Hoppers & Kiri Hodi",
+      "emoji": "🍜",
+      "blurb": "Steamed rice noodle nests with a mild coconut gravy.",
+      "nutrients": ["carbs", "healthyFats"],
+      "tags": ["grain"],
+      "diet": "vegan"
+    },
+    {
+      "id": "kavum",
+      "name": "Kavum",
+      "emoji": "🟤",
+      "blurb": "Deep-fried oil cakes for Sinhala and Tamil New Year. Sometimes!",
+      "nutrients": ["carbs"],
+      "diet": "vegan",
+      "allergens": ["gluten"],
+      "sometimes": true
+    }
+  ]
+}
