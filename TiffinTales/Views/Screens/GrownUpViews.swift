@@ -69,12 +69,14 @@ struct ParentSettingsView: View {
                 Section {
                     TextField("Child's name", text: $store.settings.childName)
                         .font(.kid(17, weight: .semibold))
+                    TextField("What they call their grandparent (Dadi, Nani, Ba, Aaji…)", text: $store.settings.elderName)
+                        .font(.kid(17, weight: .semibold))
                     AvatarPicker(avatar: $store.settings.avatar)
                     Toggle("Read stories aloud", isOn: $store.settings.readAloud)
                 } header: {
                     Text("Your child")
                 } footer: {
-                    Text("The story uses this name for the character.")
+                    Text("The story uses these names. The grandparent teaches family food wisdom in the game.")
                 }
 
                 Section {
@@ -94,6 +96,17 @@ struct ParentSettingsView: View {
                     Text("Diet & allergies")
                 } footer: {
                     Text("Dishes that don't fit are never shown. Allergy-safety missions still teach your child to check for allergens.")
+                }
+
+                Section {
+                    NavigationLink {
+                        FamilyWisdomEditor()
+                    } label: {
+                        Label("Our family's wisdom (\(store.familyTips.count))", systemImage: "heart.text.square.fill")
+                            .font(.kid(16, weight: .heavy))
+                    }
+                } footer: {
+                    Text("Add your own pairings, seasonal habits and home remedies, in your own words or a grandparent's recorded voice.")
                 }
 
                 packageSection(.india)

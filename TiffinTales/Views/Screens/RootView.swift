@@ -16,6 +16,7 @@ struct RootView: View {
                             case .mission(let mission): MissionView(mission: mission).id(mission.id)
                             case .nutrientBook: NutrientBookView()
                             case .remedyBook: RemedyBookView()
+                            case .wisdomBook: WisdomBookView()
                             case .pantry: PantryView()
                             }
                         }
@@ -57,7 +58,7 @@ struct WelcomeView: View {
                     .scaleEffect(appear ? 1 : 0.6)
                     .opacity(appear ? 1 : 0)
 
-                    TiffySays(text: StoryContent.prologue.personalized(store.name), showTiffy: false)
+                    TiffySays(text: StoryContent.prologue.personalized(store.name, elder: store.elder), showTiffy: false)
                         .padding(.horizontal)
 
                     VStack(spacing: 14) {

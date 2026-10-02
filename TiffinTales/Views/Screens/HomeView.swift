@@ -9,10 +9,10 @@ struct HomeView: View {
     private var greeting: String {
         if let next = store.progress.nextMission, let chapter = store.chapter(of: next) {
             return next == StoryContent.allMissions.first
-                ? "Hi {name}! Our adventure is about to begin. Ready?".personalized(store.name)
-                : "Welcome back, {name}! Chapter \(chapter.number) is waiting: \(chapter.title)!".personalized(store.name)
+                ? "Hi {name}! Our adventure is about to begin. Ready?".personalized(store.name, elder: store.elder)
+                : "Welcome back, {name}! Chapter \(chapter.number) is waiting: \(chapter.title)!".personalized(store.name, elder: store.elder)
         }
-        return "You finished the whole year, {name}! Replay any mission to earn more stars.".personalized(store.name)
+        return "You finished the whole year, {name}! Replay any mission to earn more stars.".personalized(store.name, elder: store.elder)
     }
 
     var body: some View {
@@ -24,6 +24,14 @@ struct HomeView: View {
                     hero
                     if let next = store.progress.nextMission {
                         continueButton(next)
+                    }
+                    if let tip = familyTip {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("💛 \(tip.author) says…")
+                                .font(.kid(15, weight: .heavy))
+                                .foregroundStyle(Palette.inkSoft)
+                            FamilyTipRow(tip: tip)
+                        }
                     }
                     chapters
                     books
@@ -156,8 +164,20 @@ struct HomeView: View {
         }
     }
 
+    /// A different family tip each day, so grandparents' knowledge keeps showing up.
+    private var familyTip: FamilyTip? {
+        let tips = store.familyTips
+        guard !tips.isEmpty else { return nil }
+        let day = Calendar.current.ordinality(of: .day, in: .era, for: Date()) ?? 0
+        return tips[day % tips.count]
+    }
+
     private var books: some View {
-        HStack(spacing: 12) {
+        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+            bookTile("Wisdom Book", emoji: "👵🏽",
+                     detail: "\(store.progress.learnedWisdom.count + store.familyTips.count) collected", tint: 4) {
+                router.path.append(.wisdomBook)
+            }
             bookTile("Nutrient Book", emoji: "📖",
                      detail: "\(store.progress.discoveredNutrients.count)/\(Nutrient.allCases.count)", tint: 3) {
                 router.path.append(.nutrientBook)

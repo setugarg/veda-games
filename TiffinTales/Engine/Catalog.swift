@@ -33,6 +33,23 @@ enum Catalog {
                       remedies: remedies)
     }
 
+    /// Picks the version of a wisdom topic that fits this family: their own
+    /// culture's tradition first, then the shared version.
+    static func wisdom<R: RandomNumberGenerator>(for topic: WisdomTopic, settings: FamilySettings, using rng: inout R) -> Wisdom? {
+        let cards = WisdomContent.all.filter { $0.topic == topic }
+        let allowed = cards.filter { $0.isAllowed(for: settings.diet, avoiding: settings.allergies) }
+        let families = settings.foodPackages.union(settings.remedyPackages)
+        let ours = allowed.filter { !$0.cultures.isDisjoint(with: families) }
+        if let pick = ours.randomElement(using: &rng) { return pick }
+        return allowed.first(where: \.isUniversal) ?? allowed.first ?? cards.first
+    }
+
+    /// Wisdom cards a family would recognise: shared ones plus their own cultures'.
+    static func familiarWisdom(for settings: FamilySettings) -> [Wisdom] {
+        let families = settings.foodPackages.union(settings.remedyPackages)
+        return WisdomContent.all.filter { $0.isUniversal || !$0.cultures.isDisjoint(with: families) }
+    }
+
     /// Which package a dish comes from (for the "From Gujarati Rasoi" label).
     static func package(of food: Food) -> FoodPackage? {
         foodPackages.first { $0.foods.contains(food) }

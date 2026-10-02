@@ -13,6 +13,8 @@ struct MealResult {
     let sources: [BenefitSource]
     let treatsEaten: [Food]
     let allergenFoods: [Food]
+    /// Grandma Combos found on the plate.
+    let combos: [Combo]
 
     var success: Bool { missing.isEmpty && allergenFoods.isEmpty }
 }
@@ -103,7 +105,23 @@ enum MissionEngine {
                           missing: needs.filter { !covered.contains($0) },
                           sources: sources,
                           treatsEaten: treats,
-                          allergenFoods: allergenFoods)
+                          allergenFoods: allergenFoods,
+                          combos: combos(on: plate))
+    }
+
+    /// Food pairings grandmas know about, spotted on the plate.
+    static func combos(on plate: [Food]) -> [Combo] {
+        let everyday = plate.filter { !$0.isSometimes }
+        let nutrients = Set(everyday.flatMap(\.nutrients))
+        return WisdomContent.combos.filter { combo in
+            switch combo.rule {
+            case .nutrients(let required):
+                return required.allSatisfy(nutrients.contains)
+            case .legumeAndGrain:
+                return everyday.contains { WisdomContent.legumeDishes.contains($0.id) }
+                    && everyday.contains { WisdomContent.grainDishes.contains($0.id) }
+            }
+        }
     }
 
     static func stars(for result: MealResult, attempts: Int) -> Int {
@@ -146,6 +164,13 @@ enum MissionEngine {
         }
         // Treat choices always carry a food.
         return .treat(choice.treat!)
+    }
+
+    // MARK: Wisdom missions
+
+    /// The right answer plus three distractors, shuffled.
+    static func wisdomChoices<R: RandomNumberGenerator>(for wisdom: Wisdom, using rng: inout R) -> [WisdomChoice] {
+        ([wisdom.answer] + wisdom.distractors).shuffled(using: &rng)
     }
 
     static func remedyStars(attempts: Int) -> Int {

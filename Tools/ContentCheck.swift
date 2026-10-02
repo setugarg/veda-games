@@ -26,7 +26,11 @@ struct ContentCheck {
         }
 
         // Every mission winnable under many settings, including very strict ones.
-        let strict = FamilySettings(childName: "T", diet: .vegan, allergies: Set(Allergen.allCases), foodPackages: [], remedyPackages: [])
+        var strict = FamilySettings()
+        strict.diet = .vegan
+        strict.allergies = Set(Allergen.allCases)
+        strict.foodPackages = []
+        strict.remedyPackages = []
         let defaults = FamilySettings()
         var everything = FamilySettings()
         everything.diet = .nonVegetarian
@@ -37,7 +41,15 @@ struct ContentCheck {
             let pantry = Catalog.pantry(for: settings)
             for _ in 0..<50 {
                 for mission in StoryContent.allMissions {
-                    if let ailment = mission.ailment {
+                    if let topic = mission.wisdomTopic {
+                        let card = Catalog.wisdom(for: topic, settings: settings, using: &rng)
+                        check(card != nil, "\(label): \(mission.id) no wisdom card for \(topic)")
+                        if let card, label == "strict" {
+                            check(card.isAllowed(for: settings.diet, avoiding: settings.allergies), "strict: \(mission.id) wisdom \(card.id) breaks diet/allergies")
+                        }
+                    } else if mission.elderQuestion != nil {
+                        continue
+                    } else if let ailment = mission.ailment {
                         let choices = MissionEngine.remedyChoices(for: ailment, pantry: pantry, using: &rng)
                         check(choices.contains(where: \.isCorrect), "\(label): \(mission.id) has no correct remedy")
                         check(Set(choices.map(\.id)).count == choices.count, "\(label): \(mission.id) duplicate remedy cards")
@@ -64,11 +76,36 @@ struct ContentCheck {
             }
         }
 
+        // Wisdom: every topic has a shared card that works for any family.
+        for topic in WisdomTopic.allCases {
+            let universal = WisdomContent.all.filter { $0.topic == topic && $0.isUniversal }
+            check(universal.contains { $0.diet == .vegan && $0.allergens.isEmpty }, "topic \(topic) has no universal vegan, allergen-free card")
+        }
+        let wisdomIDs = WisdomContent.all.map(\.id)
+        check(Set(wisdomIDs).count == wisdomIDs.count, "duplicate wisdom ids")
+        let validCultures = Set(Catalog.foodPackages.map(\.id))
+        for card in WisdomContent.all {
+            check(card.cultures.isSubset(of: validCultures), "wisdom \(card.id) has unknown culture \(card.cultures.subtracting(validCultures))")
+            check(card.distractors.count == 3, "wisdom \(card.id) needs 3 distractors")
+        }
+        let foodIDSet = Set(foodIDs)
+        for id in WisdomContent.legumeDishes.union(WisdomContent.grainDishes) {
+            check(foodIDSet.contains(id), "combo list references unknown food \(id)")
+        }
+        let comboIDs = WisdomContent.combos.map(\.id)
+        check(Set(comboIDs).count == comboIDs.count, "duplicate combo ids")
+        let topicsInStory = Set(StoryContent.allMissions.compactMap(\.wisdomTopic))
+        check(topicsInStory == Set(WisdomTopic.allCases), "topics not used in story: \(Set(WisdomTopic.allCases).subtracting(topicsInStory))")
+        // The classic dal-chawal plate should be spotted as a combo.
+        if let dal = Catalog.food(id: "arhar-dal") {
+            check(MissionEngine.combos(on: [dal]).contains { $0.id == "complete-protein" }, "dal-chawal not detected as complete protein")
+        }
+
         // Benefit coverage per nutrient
         for benefit in Benefit.allCases { check(!benefit.sources.isEmpty, "benefit \(benefit) has no nutrient source") }
 
         let foods = Catalog.allFoods.count, remedies = Catalog.allRemedies.count
-        print("Packages: \(Catalog.foodPackages.count) food, \(Catalog.remedyPackages.count) remedy | foods: \(foods) | remedies: \(remedies) | missions: \(StoryContent.allMissions.count)")
+        print("Packages: \(Catalog.foodPackages.count) food, \(Catalog.remedyPackages.count) remedy | foods: \(foods) | remedies: \(remedies) | missions: \(StoryContent.allMissions.count) | wisdom: \(WisdomContent.all.count) | combos: \(WisdomContent.combos.count)")
         print(failures == 0 ? "All content checks passed ✅" : "\(failures) failures ❌")
         exit(failures == 0 ? 0 : 1)
     }

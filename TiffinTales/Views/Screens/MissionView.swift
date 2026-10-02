@@ -31,6 +31,16 @@ struct MissionView: View {
     @State private var shakeCount: CGFloat = 0
     @State private var soothedWith: Remedy?
 
+    // Wisdom missions
+    @State private var wisdom: Wisdom?
+    @State private var wisdomChoices: [WisdomChoice] = []
+    @State private var wrongWisdom: Set<String> = []
+    @State private var wisdomLearned = false
+
+    // Ask-an-elder missions
+    @State private var recorder = VoiceRecorder()
+    @State private var interviewee = ""
+
     init(mission: Mission) {
         self.mission = mission
         _mood = State(initialValue: mission.stuckMood)
@@ -48,7 +58,15 @@ struct MissionView: View {
                     switch phase {
                     case .intro: intro
                     case .playing:
-                        if let ailment = mission.ailment { remedyBoard(ailment) } else { mealBoard }
+                        if let ailment = mission.ailment {
+                            remedyBoard(ailment)
+                        } else if let wisdom {
+                            wisdomBoard(wisdom)
+                        } else if let question = mission.elderQuestion {
+                            interviewBoard(question)
+                        } else {
+                            mealBoard
+                        }
                     case .celebrating: celebration
                     }
                 }
@@ -65,7 +83,11 @@ struct MissionView: View {
             FoodDetailView(food: food).presentationDetents([.medium, .large])
         }
         .onAppear(perform: setUp)
-        .onDisappear { Narrator.shared.stop() }
+        .onDisappear {
+            Narrator.shared.stop()
+            VoicePlayer.shared.stop()
+            if recorder.isRecording { recorder.stop() }
+        }
     }
 
     // MARK: Stage
@@ -92,7 +114,19 @@ struct MissionView: View {
 
             VStack(spacing: 10) {
                 ZStack {
-                    CharacterView(mood: mood, avatar: store.settings.avatar, size: 150)
+                    HStack(alignment: .bottom, spacing: -10) {
+                        CharacterView(mood: mood, avatar: store.settings.avatar, size: 150)
+                        if mission.wisdomTopic != nil || mission.elderQuestion != nil {
+                            VStack(spacing: 2) {
+                                ElderView(avatar: store.settings.avatar, size: 120)
+                                Text(store.elder)
+                                    .font(.kid(13, weight: .heavy))
+                                    .foregroundStyle(Palette.ink)
+                                    .padding(.horizontal, 10).padding(.vertical, 3)
+                                    .background(Capsule().fill(.white.opacity(0.8)))
+                            }
+                        }
+                    }
                     if eating {
                         HStack(spacing: 4) {
                             ForEach(plate) { food in Text(food.emoji).font(.system(size: 34)) }
@@ -128,11 +162,11 @@ struct MissionView: View {
     private var intro: some View {
         VStack(spacing: 16) {
             HStack(alignment: .top, spacing: 10) {
-                Text(mission.situation.personalized(name))
+                Text(mission.situation.personalized(name, elder: store.elder))
                     .font(.kid(19, weight: .semibold))
                     .foregroundStyle(Palette.ink)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                SpeakButton(text: mission.situation.personalized(name))
+                SpeakButton(text: mission.situation.personalized(name, elder: store.elder))
             }
             .padding(18)
             .puffyCard()
@@ -147,7 +181,7 @@ struct MissionView: View {
             .buttonStyle(SquishyButtonStyle(color: Palette.peachDeep))
         }
         .task {
-            speakIfEnabled(mission.situation.personalized(name))
+            speakIfEnabled(mission.situation.personalized(name, elder: store.elder))
         }
     }
 
@@ -284,6 +318,180 @@ struct MissionView: View {
         .disabled(wrong || soothedWith != nil)
     }
 
+    // MARK: Wisdom board
+
+    private func wisdomBoard(_ wisdom: Wisdom) -> some View {
+        VStack(spacing: 16) {
+            HStack(alignment: .top, spacing: 10) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("\(store.elder) asks…")
+                        .font(.kid(14, weight: .heavy))
+                        .foregroundStyle(Palette.inkSoft)
+                    Text(tiffyLine)
+                        .font(.kid(19, weight: .heavy))
+                        .foregroundStyle(Palette.ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("\(wisdom.kind.emoji) \(wisdom.kind.name) · \(wisdom.origin)")
+                        .font(.kid(12, weight: .bold))
+                        .foregroundStyle(Palette.inkSoft)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                SpeakButton(text: tiffyLine, tint: Palette.butterDeep)
+            }
+            .padding(18)
+            .puffyCard(Palette.butter.opacity(0.8))
+
+            VStack(spacing: 12) {
+                ForEach(wisdomChoices, id: \.self) { choice in
+                    wisdomChoiceRow(choice, wisdom: wisdom)
+                }
+            }
+        }
+        .transition(.move(edge: .bottom).combined(with: .opacity))
+    }
+
+    private func wisdomChoiceRow(_ choice: WisdomChoice, wisdom: Wisdom) -> some View {
+        let wrong = wrongWisdom.contains(choice.name)
+        let right = wisdomLearned && choice == wisdom.answer
+        return Button {
+            pickWisdom(choice, in: wisdom)
+        } label: {
+            HStack(spacing: 14) {
+                Text(choice.emoji).font(.system(size: 36))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(choice.name)
+                        .font(.kid(17, weight: .heavy))
+                        .foregroundStyle(Palette.ink)
+                        .multilineTextAlignment(.leading)
+                    if wrong || right, !choice.note.isEmpty {
+                        Text(choice.note)
+                            .font(.kid(13, weight: .semibold))
+                            .foregroundStyle(Palette.inkSoft)
+                            .multilineTextAlignment(.leading)
+                    }
+                }
+                Spacer(minLength: 0)
+                if wrong {
+                    Image(systemName: "xmark.circle.fill").font(.system(size: 22)).foregroundStyle(Palette.roseDeep)
+                } else if right {
+                    Image(systemName: "checkmark.circle.fill").font(.system(size: 22)).foregroundStyle(Palette.mintDeep)
+                }
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .puffyCard(right ? Palette.mint : Palette.soft(Palette.tint(for: choice.name)), radius: 20)
+            .opacity(wrong ? 0.5 : 1)
+            .modifier(Shake(animatableData: shakeID == choice.name ? shakeCount : 0))
+        }
+        .buttonStyle(PressableStyle())
+        .disabled(wrong || wisdomLearned)
+    }
+
+    private func pickWisdom(_ choice: WisdomChoice, in wisdom: Wisdom) {
+        attempts += 1
+        if choice == wisdom.answer {
+            earnedStars = MissionEngine.remedyStars(attempts: attempts)
+            store.completeWisdom(mission, stars: earnedStars, wisdom: wisdom)
+            Haptics.success()
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                wisdomLearned = true
+                mood = .happy
+            }
+            Task { @MainActor in
+                try? await Task.sleep(nanoseconds: 900_000_000)
+                withAnimation(.spring(response: 0.6, dampingFraction: 0.6)) {
+                    mood = .excited
+                    phase = .celebrating
+                }
+                speakIfEnabled(wisdom.grandmaSays + " " + wisdom.scienceSays)
+            }
+        } else {
+            Haptics.oops()
+            shakeID = choice.name
+            withAnimation(.linear(duration: 0.4)) { shakeCount += 1 }
+            withAnimation { _ = wrongWisdom.insert(choice.name) }
+            if !choice.note.isEmpty { speakIfEnabled(choice.note) }
+        }
+    }
+
+    // MARK: Ask-an-elder board
+
+    private func interviewBoard(_ question: String) -> some View {
+        VStack(spacing: 16) {
+            TiffySays(text: tiffyLine, size: 54)
+
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top) {
+                    Text("Ask them:")
+                        .font(.kid(14, weight: .heavy))
+                        .foregroundStyle(Palette.inkSoft)
+                    Spacer()
+                    SpeakButton(text: question, tint: Palette.butterDeep)
+                }
+                Text("“\(question)”")
+                    .font(.kid(21, weight: .heavy))
+                    .foregroundStyle(Palette.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Text("Who are you asking?")
+                    .font(.kid(14, weight: .heavy))
+                    .foregroundStyle(Palette.inkSoft)
+                    .padding(.top, 4)
+                FlowLayout(spacing: 8) {
+                    ForEach(Self.elderNames(store.elder), id: \.self) { who in
+                        Text(who)
+                            .font(.kid(14, weight: .bold))
+                            .foregroundStyle(Palette.ink)
+                            .padding(.horizontal, 12).padding(.vertical, 7)
+                            .background(Capsule().fill(interviewee == who ? Palette.mint : .white))
+                            .overlay(Capsule().stroke(interviewee == who ? Palette.mintDeep : Palette.lavender, lineWidth: 2))
+                            .onTapGesture {
+                                Haptics.tap()
+                                interviewee = who
+                            }
+                    }
+                }
+
+                RecordButton(recorder: recorder)
+                    .padding(.top, 6)
+            }
+            .padding(18)
+            .puffyCard(Palette.butter.opacity(0.8))
+
+            Button {
+                finishInterview(question)
+            } label: {
+                Label(recorder.fileName == nil ? "We talked!" : "Save their answer", systemImage: "checkmark.seal.fill")
+            }
+            .buttonStyle(SquishyButtonStyle(color: Palette.mintDeep))
+            .disabled(recorder.isRecording)
+        }
+        .transition(.move(edge: .bottom).combined(with: .opacity))
+    }
+
+    static func elderNames(_ elder: String) -> [String] {
+        var names = [elder]
+        for name in ["Dadi", "Dada", "Nani", "Nana", "Maa", "Papa", "Grandma", "Grandpa"] where !names.contains(name) {
+            names.append(name)
+        }
+        return names
+    }
+
+    private func finishInterview(_ question: String) {
+        if recorder.isRecording { recorder.stop() }
+        let tip = recorder.fileName.map {
+            FamilyTip(author: interviewee, kind: .story, title: question, text: "\(interviewee) answered \(name)'s question.", audioFile: $0)
+        }
+        store.completeElderInterview(mission, tip: tip)
+        earnedStars = 3
+        Haptics.success()
+        withAnimation(.spring(response: 0.6, dampingFraction: 0.6)) {
+            mood = .excited
+            phase = .celebrating
+        }
+        speakIfEnabled(mission.successText.personalized(name, elder: store.elder))
+    }
+
     // MARK: Celebration
 
     private var celebration: some View {
@@ -293,11 +501,11 @@ struct MissionView: View {
                     .scaleEffect(phase == .celebrating ? 1 : 0.2)
                     .animation(.spring(response: 0.5, dampingFraction: 0.45).delay(0.2), value: phase)
                 HStack(alignment: .top) {
-                    Text(mission.successText.personalized(name))
+                    Text(mission.successText.personalized(name, elder: store.elder))
                         .font(.kid(20, weight: .heavy))
                         .foregroundStyle(Palette.ink)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    SpeakButton(text: mission.successText.personalized(name), tint: Palette.mintDeep)
+                    SpeakButton(text: mission.successText.personalized(name, elder: store.elder), tint: Palette.mintDeep)
                 }
             }
             .padding(18)
@@ -305,6 +513,15 @@ struct MissionView: View {
 
             if let result = lastResult { mealLesson(result) }
             if let remedy = soothedWith { RemedyLessonCard(remedy: remedy, ailment: mission.ailment) }
+            if let wisdom, wisdomLearned { WisdomCardView(wisdom: wisdom) }
+            if mission.elderQuestion != nil {
+                Text("📜 Saved in your Wisdom Book under \"From our family\". Knowledge that came from a grandparent's kitchen, kept safe.")
+                    .font(.kid(15, weight: .semibold))
+                    .foregroundStyle(Palette.ink)
+                    .padding(16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .puffyCard(Palette.butter)
+            }
 
             HStack(spacing: 12) {
                 Button {
@@ -347,6 +564,20 @@ struct MissionView: View {
                 }
                 .onTapGesture { detailFood = source.food }
             }
+            ForEach(result.combos) { combo in
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("✨ Grandma Combo! \(combo.emoji) \(combo.title)")
+                        .font(.kid(16, weight: .heavy))
+                        .foregroundStyle(Palette.ink)
+                    Text(combo.explanation)
+                        .font(.kid(14, weight: .semibold))
+                        .foregroundStyle(Palette.ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(12)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(RoundedRectangle(cornerRadius: 16).fill(Palette.butter))
+            }
             ForEach(result.treatsEaten) { treat in
                 Text("\(treat.emoji) \(treat.name) didn't help this time. It's a sometimes food: fun for parties, not for tricky spots!")
                     .font(.kid(14, weight: .semibold))
@@ -361,10 +592,19 @@ struct MissionView: View {
     // MARK: Logic
 
     private func setUp() {
-        guard options.isEmpty && remedyChoices.isEmpty else { return }
+        guard tiffyLine.isEmpty else { return }
         var rng = SystemRandomNumberGenerator()
         let pantry = store.pantry
-        if let ailment = mission.ailment {
+        if let topic = mission.wisdomTopic {
+            if let card = Catalog.wisdom(for: topic, settings: store.settings, using: &rng) {
+                wisdom = card
+                wisdomChoices = MissionEngine.wisdomChoices(for: card, using: &rng)
+                tiffyLine = card.question.personalized(name, elder: store.elder)
+            }
+        } else if mission.elderQuestion != nil {
+            interviewee = store.elder
+            tiffyLine = "Find a grandparent, parent or elder. Ask them this question, and record their answer so it's saved forever!"
+        } else if let ailment = mission.ailment {
             remedyChoices = MissionEngine.remedyChoices(for: ailment, pantry: pantry, using: &rng)
             tiffyLine = "Which home remedy will help \(name)'s \(ailment.name.lowercased())? Tap one!"
         } else {
@@ -419,13 +659,13 @@ struct MissionView: View {
         lastResult = result
         if result.success {
             earnedStars = MissionEngine.stars(for: result, attempts: attempts)
-            store.completeMeal(mission, stars: earnedStars, plate: plate)
+            store.completeMeal(mission, stars: earnedStars, plate: plate, combos: result.combos)
             Haptics.success()
             withAnimation(.spring(response: 0.6, dampingFraction: 0.6)) {
                 mood = .excited
                 phase = .celebrating
             }
-            speakIfEnabled(mission.successText.personalized(name))
+            speakIfEnabled(mission.successText.personalized(name, elder: store.elder))
             return
         }
 
@@ -466,7 +706,7 @@ struct MissionView: View {
                     mood = .excited
                     phase = .celebrating
                 }
-                speakIfEnabled(mission.successText.personalized(name))
+                speakIfEnabled(mission.successText.personalized(name, elder: store.elder))
             }
         case .wrongRemedy(let remedy, let meantFor):
             tiffyLine = "\(remedy.emoji) \(remedy.name) is great for \(meantFor.emoji) \(meantFor.name.lowercased()), but not for a \(ailment.name.lowercased()). Try another!"

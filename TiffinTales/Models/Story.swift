@@ -12,6 +12,10 @@ struct Mission: Identifiable, Hashable {
         case meal(needs: [Benefit], avoid: Allergen?)
         /// Pick the right home remedy.
         case remedy(Ailment)
+        /// Answer a grandparent's kitchen-wisdom question (culture-specific when possible).
+        case wisdom(WisdomTopic)
+        /// Go and ask a real grandparent or parent, and record their answer.
+        case askElder(question: String)
     }
 
     let id: String
@@ -33,6 +37,16 @@ struct Mission: Identifiable, Hashable {
 
     var ailment: Ailment? {
         if case let .remedy(ailment) = kind { return ailment }
+        return nil
+    }
+
+    var wisdomTopic: WisdomTopic? {
+        if case let .wisdom(topic) = kind { return topic }
+        return nil
+    }
+
+    var elderQuestion: String? {
+        if case let .askElder(question) = kind { return question }
         return nil
     }
 
@@ -60,7 +74,8 @@ struct Chapter: Identifiable, Hashable {
 }
 
 extension String {
-    func personalized(_ name: String) -> String {
+    func personalized(_ name: String, elder: String = "Dadi") -> String {
         replacingOccurrences(of: "{name}", with: name)
+            .replacingOccurrences(of: "{elder}", with: elder)
     }
 }

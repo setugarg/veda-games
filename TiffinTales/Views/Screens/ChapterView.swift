@@ -24,7 +24,7 @@ struct ChapterView: View {
                     }
                     .padding(.top, 8)
 
-                    TiffySays(text: chapter.intro.personalized(store.name), size: 56)
+                    TiffySays(text: chapter.intro.personalized(store.name, elder: store.elder), size: 56)
 
                     VStack(spacing: 0) {
                         ForEach(Array(chapter.missions.enumerated()), id: \.element.id) { index, mission in
@@ -68,7 +68,7 @@ struct ChapterView: View {
                         .overlay(Circle().stroke(isNext ? Palette.deep(chapter.tint) : .white, lineWidth: isNext ? 5 : 3))
                         .shadow(color: Palette.ink.opacity(0.1), radius: 8, y: 4)
                     if unlocked {
-                        Text(mission.ailment?.emoji ?? mission.needs.first?.emoji ?? "⭐️")
+                        Text(mission.ailment?.emoji ?? mission.wisdomTopic?.emoji ?? mission.needs.first?.emoji ?? (mission.elderQuestion != nil ? "🎙️" : "⭐️"))
                             .font(.system(size: 40))
                     } else {
                         Image(systemName: "lock.fill")
@@ -82,8 +82,8 @@ struct ChapterView: View {
                     .foregroundStyle(Palette.ink)
                     .multilineTextAlignment(.center)
                     .frame(width: 150)
-                if mission.ailment != nil {
-                    Text("Home remedy")
+                if let badge = badge(for: mission) {
+                    Text(badge)
                         .font(.kid(10, weight: .heavy))
                         .foregroundStyle(Palette.inkSoft)
                         .padding(.horizontal, 8).padding(.vertical, 2)
@@ -95,6 +95,13 @@ struct ChapterView: View {
         .buttonStyle(PressableStyle())
         .disabled(!unlocked)
     }
+}
+
+private func badge(for mission: Mission) -> String? {
+    if mission.ailment != nil { return "Home remedy" }
+    if mission.wisdomTopic != nil { return "Grandma wisdom" }
+    if mission.elderQuestion != nil { return "Ask an elder" }
+    return nil
 }
 
 private struct PathDots: View {

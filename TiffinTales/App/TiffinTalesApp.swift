@@ -21,6 +21,7 @@ enum Route: Hashable {
     case mission(Mission)
     case nutrientBook
     case remedyBook
+    case wisdomBook
     case pantry
 }
 

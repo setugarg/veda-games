@@ -6,13 +6,15 @@ struct CharacterView: View {
     var mood: Mood
     var avatar: AvatarStyle
     var size: CGFloat = 180
+    /// Draws a grandparent: silver hair and round glasses.
+    var elder: Bool = false
 
     @State private var breathe = false
     @State private var blink = false
     @State private var floatBadge = false
 
     private var skin: Color { Palette.skinTones[avatar.skinTone % Palette.skinTones.count] }
-    private var hair: Color { Palette.hairColors[avatar.hairColor % Palette.hairColors.count] }
+    private var hair: Color { elder ? Color(hex: 0xDAD7E0) : Palette.hairColors[avatar.hairColor % Palette.hairColors.count] }
     private var outfit: Color { Palette.outfits[avatar.outfitColor % Palette.outfits.count] }
 
     var body: some View {
@@ -148,6 +150,7 @@ struct CharacterView: View {
 
             eyes(d)
             brows(d)
+            if elder { glasses(d) }
 
             MouthShape(curve: mouthCurve)
                 .stroke(Palette.ink, style: StrokeStyle(lineWidth: d * 0.035, lineCap: .round))
@@ -184,6 +187,17 @@ struct CharacterView: View {
                 .scaleEffect(y: blink ? 0.1 : 1)
                 .offset(x: side * spacing, y: 0)
             }
+        }
+    }
+
+    private func glasses(_ d: CGFloat) -> some View {
+        ZStack {
+            Circle().stroke(Palette.ink.opacity(0.7), lineWidth: d * 0.025)
+                .frame(width: d * 0.24).offset(x: -d * 0.18)
+            Circle().stroke(Palette.ink.opacity(0.7), lineWidth: d * 0.025)
+                .frame(width: d * 0.24).offset(x: d * 0.18)
+            Capsule().fill(Palette.ink.opacity(0.7))
+                .frame(width: d * 0.1, height: d * 0.025)
         }
     }
 
@@ -287,4 +301,16 @@ struct EyeArc: Shape {
     }
     .padding()
     .background(Palette.cream)
+}
+
+/// The grandparent who teaches in Wisdom missions.
+struct ElderView: View {
+    var avatar: AvatarStyle
+    var size: CGFloat = 120
+
+    var body: some View {
+        CharacterView(mood: .happy,
+                      avatar: AvatarStyle(skinTone: avatar.skinTone, hairStyle: 1, hairColor: 0, outfitColor: 4),
+                      size: size, elder: true)
+    }
 }
