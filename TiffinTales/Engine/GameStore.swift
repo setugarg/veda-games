@@ -138,6 +138,10 @@ final class GameStore {
     // MARK: Persistence
 
     private func save<T: Encodable>(_ value: T, key: String) {
+        #if DEBUG
+        // Screenshot mode (launched with `-screen …`) never touches saved data.
+        if UserDefaults.standard.string(forKey: "screen") != nil { return }
+        #endif
         if let data = try? JSONEncoder().encode(value) {
             defaults.set(data, forKey: key)
         }

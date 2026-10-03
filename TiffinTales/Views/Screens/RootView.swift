@@ -4,10 +4,22 @@ struct RootView: View {
     @Environment(GameStore.self) private var store
     @Environment(Router.self) private var router
 
+    private var screenshotOverride: Bool {
+        #if DEBUG
+        return ScreenshotMode.overridesRoot
+        #else
+        return false
+        #endif
+    }
+
     var body: some View {
         @Bindable var router = router
         Group {
-            if store.settings.hasCompletedSetup {
+            if screenshotOverride {
+                #if DEBUG
+                ScreenshotMode.overrideRoot(store: store)
+                #endif
+            } else if store.settings.hasCompletedSetup {
                 NavigationStack(path: $router.path) {
                     HomeView()
                         .navigationDestination(for: Route.self) { route in

@@ -593,6 +593,9 @@ struct MissionView: View {
 
     private func setUp() {
         guard tiffyLine.isEmpty else { return }
+        #if DEBUG
+        if ScreenshotMode.startsPlaying { phase = .playing }
+        #endif
         var rng = SystemRandomNumberGenerator()
         let pantry = store.pantry
         if let topic = mission.wisdomTopic {

@@ -12,6 +12,9 @@ struct TiffinTalesApp: App {
                 .environment(router)
                 .preferredColorScheme(.light)
                 .tint(Palette.lavenderDeep)
+            #if DEBUG
+                .onAppear { ScreenshotMode.prepare(store: store, router: router) }
+            #endif
         }
     }
 }
