@@ -1,0 +1,56 @@
+name: iOS build
+
+on:
+  push:
+    paths:
+      - "TiffinTales/**"
+      - "TiffinTales.xcodeproj/**"
+      - "Tools/**"
+      - "PackTemplates/**"
+      - ".github/workflows/ios-build.yml"
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Tiffin Tales (iOS Simulator)
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Content check
+        run: |
+          swiftc -parse-as-library TiffinTales/Models/*.swift TiffinTales/Content/*.swift \
+            TiffinTales/Engine/*.swift Tools/ContentCheck.swift -o "$RUNNER_TEMP/content-check"
+          "$RUNNER_TEMP/content-check" TiffinTales/Resources/Packs
+
+      - name: Build app
+        run: |
+          set -o pipefail
+          xcodebuild -project TiffinTales.xcodeproj -target TiffinTales \
+            -sdk iphonesimulator -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | tee "$RUNNER_TEMP/build.log" | grep -E "error:|warning:|BUILD (SUCCEEDED|FAILED)" || true
+          status=${PIPESTATUS[0]}
+          echo "### Build errors" >> "$GITHUB_STEP_SUMMARY"
+          grep -E "error:" "$RUNNER_TEMP/build.log" | sort -u | head -100 >> "$GITHUB_STEP_SUMMARY" || true
+          echo "=== UNIQUE ERRORS ==="
+          grep -E "error:" "$RUNNER_TEMP/build.log" | sort -u | head -150 || true
+          exit $status
+
+      - name: Check packs were bundled
+        run: |
+          app=$(find build -name "*.app" -maxdepth 3 | head -1)
+          echo "App: $app"
+          count=$(find "$app" -name "kitchen-*.json" | wc -l)
+          echo "Kitchen packs in bundle: $count"
+          test "$count" -gt 10
