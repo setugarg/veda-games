@@ -208,17 +208,17 @@ struct MissionView: View {
     }
 
     private var plateRow: some View {
-        HStack(spacing: 12) {
-            HStack(spacing: 10) {
+        HStack(spacing: 10) {
+            HStack(spacing: 8) {
                 ForEach(0..<MissionEngine.plateSize, id: \.self) { slot in
                     ZStack {
                         Circle()
                             .fill(.white)
                             .overlay(Circle().stroke(Palette.lavender, style: StrokeStyle(lineWidth: 3, dash: plate.indices.contains(slot) ? [] : [6, 5])))
-                            .frame(width: 62, height: 62)
+                            .frame(width: 56, height: 56)
                         if plate.indices.contains(slot) {
                             Text(plate[slot].emoji)
-                                .font(.system(size: 32))
+                                .font(.system(size: 30))
                                 .transition(.scale.combined(with: .opacity))
                         }
                     }
@@ -234,6 +234,8 @@ struct MissionView: View {
                 Label("Eat!", systemImage: "fork.knife")
             }
             .buttonStyle(SquishyButtonStyle(color: plate.isEmpty ? Palette.inkSoft.opacity(0.35) : Palette.mintDeep))
+            .fixedSize()
+            .layoutPriority(1)
             .disabled(plate.isEmpty || eating)
         }
         .padding(14)

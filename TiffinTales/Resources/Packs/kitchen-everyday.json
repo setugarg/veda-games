@@ -9,7 +9,7 @@
     {
       "id": "water",
       "name": "Glass of Water",
-      "emoji": "🥛",
+      "emoji": "💧",
       "blurb": "Plain water. The best drink for thinking, playing and cooling down.",
       "nutrients": ["water"],
       "diet": "vegan"
