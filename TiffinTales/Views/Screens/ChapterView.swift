@@ -82,7 +82,7 @@ struct ChapterView: View {
                     .foregroundStyle(Palette.ink)
                     .multilineTextAlignment(.center)
                     .frame(width: 150)
-                if let badge = badge(for: mission) {
+                if let badge = missionBadge(for: mission) {
                     Text(badge)
                         .font(.kid(10, weight: .heavy))
                         .foregroundStyle(Palette.inkSoft)
@@ -97,7 +97,7 @@ struct ChapterView: View {
     }
 }
 
-private func badge(for mission: Mission) -> String? {
+private func missionBadge(for mission: Mission) -> String? {
     if mission.ailment != nil { return "Home remedy" }
     if mission.wisdomTopic != nil { return "Grandma wisdom" }
     if mission.elderQuestion != nil { return "Ask an elder" }
